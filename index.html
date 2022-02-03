@@ -329,10 +329,9 @@
         document
           .getElementsByClassName("downchevron")[0]
           .addEventListener("click", function (event) {
-            window.bringIntoView(
-              document.getElementsByClassName("projects")[0],
-              2000
-            );
+            document
+              .getElementsByClassName("projects")[0]
+              .scrollIntoView({ behavior: "smooth" });
           });
       })();
     </script>
