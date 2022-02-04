@@ -37,6 +37,23 @@
     url("../fonts/prxnv-lt.svg#webfont") format("svg");
 }
 
+:root {
+  --grey: #303033;
+  --white: #fff;
+
+  --links: #337ab7;
+  --text: var(--grey);
+  --bg: var(--white);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --links: hsl(208, 72%, 68%);
+    --text: var(--white);
+    --bg: var(--grey);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -47,9 +64,15 @@ html {
 }
 
 body {
-  color: #303033;
+  background-color: var(--bg);
+  color: var(--text);
   font-family: "proxima-nova-regular", "Helvetica", sans-serif;
   line-height: 1.5;
+}
+
+a,
+a:hover {
+  color: var(--links);
 }
 
 .am-bold {
@@ -304,7 +327,8 @@ footer .socialicons li a i.fa-envelope-o:hover {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  background-color: #fff;
+  color: var(--grey);
+  background-color: var(--white);
   text-align: center;
   padding: 25px;
   font-size: 300%;
@@ -367,6 +391,7 @@ section#intro {
   flex-direction: column;
   line-height: inherit;
   justify-content: center;
+  color: var(--grey);
 }
 
 section#intro p {
@@ -399,11 +424,12 @@ div.project {
   position: relative;
 }
 
-.projectniceties p {
-  margin-top: 10px;
+.projectDesc {
+  color: var(--grey);
 }
 
-.projectTitle {
+.projectniceties p {
+  margin-top: 10px;
 }
 
 .viewProject {
@@ -499,6 +525,7 @@ div.project {
 }
 
 .downchevron {
+  color: var(--grey);
   width: 150px;
   margin: 0 auto;
   position: relative;

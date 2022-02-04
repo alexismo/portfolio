@@ -1,7 +1,5 @@
 /* tablets in Portrait */
-@media only screen
-  and (min-width: 735px)
-  and (max-width: 1024px) {
+@media only screen and (min-width: 735px) and (max-width: 1024px) {
   html {
     font-size: 120%;
   }
@@ -21,7 +19,7 @@
   #project-1 .projectHero img,
   #project-2 .projectHero img,
   #project-3 .projectHero img,
-  #project-5 .projectHero img, {
+  #project-5 .projectHero img {
     float: right; /* not all projects focus on the right side */
   }
 
@@ -33,16 +31,14 @@
     background-position: 93%;
   }
 
-  .workwithlogo{
+  .workwithlogo {
     padding: 15px;
     text-align: center;
   }
 }
 
 /* iPhone 5, 6, and 6 Plus, Portrait and Landscape */
-@media only screen
-  and (max-width: 736px)
-  and (min-width: 320px) {
+@media only screen and (max-width: 736px) and (min-width: 320px) {
   body {
     font-size: 115%;
   }
@@ -190,7 +186,7 @@
     text-align: left;
   }
 
-  #about_side_projects .row .col-sm-6{
+  #about_side_projects .row .col-sm-6 {
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -199,18 +195,14 @@
     background-position: 93%;
   }
 
-  .workwithlogo{
+  .workwithlogo {
     padding: 15px;
     text-align: center;
   }
 }
 
 /* Landscape */
-@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 690px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 690px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .topbar {
     height: 84px;
     flex-direction: row;
@@ -237,9 +229,7 @@
 }
 
 /* for itty bitty things, like iPhone 4 sized things */
-@media only screen
-  and (max-height: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-height: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   section#intro {
     padding-top: 5%;
   }
