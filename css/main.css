@@ -38,20 +38,13 @@
 }
 
 :root {
-  --grey: #303033;
+  --dark-grey: #09090c;
+  --grey: #161619;
   --white: #fff;
 
-  --links: #337ab7;
-  --text: var(--grey);
-  --bg: var(--white);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --links: hsl(208, 72%, 68%);
-    --text: var(--white);
-    --bg: var(--grey);
-  }
+  --links: hsl(208, 72%, 68%);
+  --text: var(--white);
+  --bg: var(--grey);
 }
 
 * {
@@ -64,10 +57,23 @@ html {
 }
 
 body {
-  background-color: var(--bg);
   color: var(--text);
   font-family: "proxima-nova-regular", "Helvetica", sans-serif;
   line-height: 1.5;
+  background-color: var(--bg);
+  background-image: linear-gradient(
+    180deg,
+    hsl(240deg 14% 4%) 0%,
+    hsl(240deg 17% 5%) 44%,
+    hsl(240deg 11% 5%) 64%,
+    hsl(240deg 13% 6%) 76%,
+    hsl(240deg 9% 6%) 84%,
+    hsl(240deg 9% 7%) 89%,
+    hsl(240deg 11% 7%) 93%,
+    hsl(240deg 7% 8%) 95%,
+    hsl(240deg 9% 9%) 97%,
+    hsl(240deg 6% 9%) 100%
+  );
 }
 
 a,
@@ -81,7 +87,7 @@ a:hover {
 
 .body-img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -93,14 +99,9 @@ a:hover {
   -webkit-animation: fadeIn 3s;
 }
 
-.bdimg-watertown {
-  background-image: url("../images/watertown.jpg");
-}
-
 header {
   margin-top: 80px;
   width: 100%;
-  background-color: #444449;
 }
 
 header a {
@@ -115,9 +116,6 @@ header a {
 
 header a:hover,
 header a:focus {
-  -webkit-transition: font-weight 200ms ease;
-  -moz-transition: font-weight 200ms ease;
-  -o-transition: font-weight 200ms ease;
   transition: font-weight 200ms ease;
   color: #fff;
   font-family: "proxima-nova-regular", Roboto, sans-serif;
@@ -126,14 +124,11 @@ header a:focus {
 }
 
 footer .socialicons a {
-  color: #303033;
+  color: var(--white);
 }
 
 .socialicons a:hover,
 .socialicons a:focus {
-  -webkit-transition: color 200ms ease;
-  -moz-transition: color 200ms ease;
-  -o-transition: color 200ms ease;
   transition: color 200ms ease;
   color: #93939e;
   font-family: "proxima-nova-regular", Roboto, sans-serif;
@@ -216,14 +211,6 @@ ul.socialicons {
   margin-left: 16px;
 }
 
-.socialicons li a:hover,
-.socialicons li a:active {
-  -webkit-transition: color 200ms ease;
-  -moz-transition: color 200ms ease;
-  -o-transition: color 200ms ease;
-  transition: color 200ms ease;
-}
-
 section,
 footer {
   max-width: 960px;
@@ -263,23 +250,24 @@ footer #hand:hover {
 }
 
 footer #heart {
-  transition: transform 150ms ease;
+  display: inline-block;
+  transition: all 150ms ease;
+  transform: rotate(0deg);
 }
 
 footer #heart:hover {
   display: inline-block;
   transform: rotate(-90deg);
   color: #e273d9;
-  transition: color transform 150ms ease;
 }
 
-footer .socialicons li a i.fa-twitter:hover {
+.socialicons li a i.fa-twitter:hover {
   transition: color 200ms ease;
   color: #00aced; /* twitter color! */
 }
 
-footer .socialicons li a i.fa-instagram:hover {
-  transition: color 200ms ease;
+.socialicons li a i.fa-instagram:hover {
+  transition: background-color 200ms ease;
   background: radial-gradient(
     circle at 30% 107%,
     #fdf497 0%,
@@ -288,23 +276,19 @@ footer .socialicons li a i.fa-instagram:hover {
     #d6249f 60%,
     #285aeb 90%
   );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   padding: 2px;
   margin: -2px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-footer .socialicons li a i.fa-github:hover {
+.socialicons li a i.fa-github:hover {
   transition: color 200ms ease;
   color: rgb(125, 125, 125); /* github color! */
 }
 
-footer .socialicons li a i.fa-dribbble:hover {
-  transition: color 200ms ease;
-  color: #f46899; /* dribbble color! */
-}
-
-footer .socialicons li a i.fa-envelope-o:hover {
+.socialicons li a i.fa-envelope-o:hover {
   transition: color 200ms ease;
   color: #94b1f5; /* email color? */
 }
@@ -387,15 +371,32 @@ figcaption {
 }
 
 section#intro {
+  height: 75vh;
   display: flex;
   flex-direction: column;
   line-height: inherit;
   justify-content: center;
-  color: var(--grey);
+  color: var(--white);
 }
 
-section#intro p {
-  text-align: center;
+p.greeting {
+  display: flex;
+  flex-direction: column;
+  font-family: "proxima-nova-bold", Roboto, sans-serif;
+  font-size: 3.75rem;
+  font-size: clamp(3.75rem, 3.1rem + 3.25vw, 7rem);
+  font-weight: 700;
+  line-height: 110%;
+}
+
+p.greeting span {
+  font-size: 24px;
+  line-height: 90%;
+  font-family: "proxima-nova-regular", Roboto, sans-serif;
+}
+
+div#intro {
+  height: 100vh;
 }
 
 section.projects ul {
@@ -543,12 +544,6 @@ div.project {
 
 div.homegreeting {
   margin-top: -10%;
-}
-
-p.greeting {
-  font-family: "proxima-nova-regular", Roboto, sans-serif;
-  font-size: 60px;
-  letter-spacing: 3px;
 }
 
 p.role {

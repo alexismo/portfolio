@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/devices.css" />
     <link rel="shortcut icon" href="images/almo-favicon.ico" />
-    <title>Alexis Morin - Digital Product Designer</title>
+    <title>Alexis Morin - Designer</title>
   </head>
   <body>
     <div class="body-img bdimg-watertown"></div>
     <header>
-      <div class="row topbar">
+      <nav class="row topbar">
         <div class="header-logo">
           <div class="logo">
             <a href="index.html" title="Home">
@@ -76,14 +76,7 @@
                 <i class="fa fa-instagram fa-lg"></i>
               </a>
             </li>
-            <li>
-              <a
-                href="https://dribbble.com/alexismorin"
-                title="alexismorin on Dribbble"
-              >
-                <i class="fa fa-dribbble fa-lg"></i>
-              </a>
-            </li>
+            
             <li>
               <a
                 href="mailto:the.alexis.morin@gmail.com"
@@ -97,19 +90,26 @@
         <!--<div class="mobile-menu-btn">
 
         </div> -->
-      </div>
+      </nav>
     </header>
     <section id="intro">
-      <div class="homegreeting">
-        <p class="greeting">Hello, I'm Alexis!</p>
-        <!-- <span class="hello chinese"><p class="greeting">👋, I'm Alexis!</p> -->
-        <p class="role">Digital Product Designer</p>
-      </div>
+        <p class="greeting">
+          <span>Human-centered</span>
+          Designer
+          </p>
+        <p class="greeting">
+          <span>Multi-faceted</span>
+          Coder
+        </p>
+        <p class="greeting">
+            <span>Kind-hearted</span>
+            Manager
+          </p>
+          <p class="greeting">
+          <span>Pun-filled</span>
+          Dad joker
+        </p>
     </section>
-    <div class="downchevron">
-      <p>See my work</p>
-      <img src="images/downchevron.svg" />
-    </div>
     <div style="clear: both"></div>
     <a name="work"></a>
     <section class="projects">
@@ -284,14 +284,6 @@
         </li>
         <li>
           <a
-            href="https://dribbble.com/alexismorin"
-            title="alexismorin on Dribbble"
-          >
-            <i class="fa fa-dribbble fa-lg"></i>
-          </a>
-        </li>
-        <li>
-          <a
             href="mailto:the.alexis.morin@gmail.com"
             title="Email Alexis Morin"
           >
@@ -300,8 +292,8 @@
         </li>
       </ul>
       <p>
-        This site was coded by&nbsp;&nbsp;<span id="hand">✋</span> with lots of
-        <span id="heart"><3</span>.
+        This site was coded by&nbsp;&nbsp;<span id="hand" aria-label="hand" role="img">✋</span> with lots of
+        <span id="heart" aria-label="love" role="img">&lt;3</span>.
       </p>
     </footer>
     <script
@@ -309,32 +301,6 @@
       type="text/javascript"
       src="js/main.js"
     ></script>
-    <script>
-      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-      // self executing function here
-      (function () {
-        //resize intro section to browser size
-        resizeIntroDiv();
-
-        if (!isMobile) {
-          window.onresize = function (event) {
-            resizeIntroDiv();
-          };
-        } else {
-          sizeBg();
-        }
-
-        //click to scroll to work
-        document
-          .getElementsByClassName("downchevron")[0]
-          .addEventListener("click", function (event) {
-            document
-              .getElementsByClassName("projects")[0]
-              .scrollIntoView({ behavior: "smooth" });
-          });
-      })();
-    </script>
     <script>
       (function (i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;

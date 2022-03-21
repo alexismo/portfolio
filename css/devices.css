@@ -12,6 +12,10 @@
     margin: 0 20px;
   }
 
+  p.greeting {
+    padding: 16px;
+  }
+
   section {
     max-width: 768px;
   }
@@ -41,6 +45,7 @@
 @media only screen and (max-width: 736px) and (min-width: 320px) {
   body {
     font-size: 115%;
+    padding-bottom: 125px;
   }
 
   .body-img {
@@ -49,11 +54,16 @@
 
   header {
     margin-top: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background-color: var(--dark-grey);
   }
 
   .topbar {
     height: 124px;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .topbar > div {
@@ -67,7 +77,6 @@
   .header-logo {
     height: 64px;
     text-align: center;
-    justify-content: flex-end;
   }
 
   .header-2 {
@@ -88,6 +97,10 @@
 
   .topbar .header-social {
     display: none;
+  }
+
+  p.greeting {
+    padding: 16px;
   }
 
   div.project {
@@ -206,6 +219,10 @@
   .topbar {
     height: 84px;
     flex-direction: row;
+  }
+
+  p.greeting {
+    padding: 16px;
   }
 
   .topbar > div {
