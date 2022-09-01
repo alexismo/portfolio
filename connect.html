@@ -98,8 +98,8 @@
             </div>
             <div class="col-12" width="100%">
               <p>
-                Ubisoft Connect is a transversal meta-layer which connects all players and brands under the Ubisoft umbrella. <br />
-                It represents a consolidation of brands into a single unified product, available wherever Ubisoft games are.
+                Ubisoft Connect is a transversal meta-layer which connects all players and brands under the Ubisoft umbrella. <br>
+                By offering players a series of 12 connected micro-apps, it enriches game experiences. <br>
               </p>
             </div>
           </div>
@@ -121,7 +121,7 @@
                  <li>distribute the library of design tokens via an internal Artifactory instance,</li>
                </ul>
               <br />
-              <h2>2. Design of the Challenges feature within Ubisoft Connect</h2>
+              <h2>2. Challenges feature within Ubisoft Connect</h2>
               <ul style="list-style-type:circle; margin-left: 20px;">
                 <li>collaborate with Game Designers to come up with the app's business rules,</li>
                 <li>create flexible UI components to accomodate various challenges provided by game teams,</li>
@@ -141,6 +141,19 @@
             <span class='am-bold'>Status:</span> in production
           </p>
         </div>
+      </section>
+    </div>
+
+    <div class="content">
+      <section>
+          <div class="col-md-12">
+            <figure>
+            <iframe class="connect-youtube-embed" src="https://www.youtube-nocookie.com/embed/2HYVF0JoOPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <figcaption>
+              A video of Ubisoft Connect with Rainbow Six: Siege, on PC.
+            </figcaption>
+          </figure>
+          </div>
       </section>
     </div>
 
@@ -186,168 +199,79 @@
               </figure>
               </div>
             </div>
-            </div>
-            </section>
-            </div>
-            <div class="content">
-              <section>
-                <div class="col-md-12">
-                  <div class="col-12">
-                <h2>The challenges feature</h2>
-                <p>
-                  Developers and designers quickly gained interest in the Design System. All designers were already using the Sketch and Framer libraries
-                  we had created for ultra-fast UI design and prototyping.
-                </p>
-                <p>
-                  Developers from other teams who saw value in this Design System started using it and contributing back to it. This was amazing!
-                  Very quickly, the number of components available to us was growing due to the positive feedback loop that the team had initiated.
-                </p>
-                <p>
-                  In an collaborative decision, the contributors decided to evolve from CSS tokens & shared styles to React.
-                </p>
-                <p>
-                  The move React components empowered designers to bring more types of components to the Design System.
-                </p>
-                <p>
-                  For example, I worked to automate the creation of icons from Sketch-exported SVGs to  
-                  React icon components with customizable 3-tone style.
-                </p>
-                  <figure>
-                    <img width="100%" src="images/projects/flame/flame-icons.svg" 
-                    alt="Sample of the icon set created as React components" />
-                    <figcaption>
-                        Sample of the icon set created as React components
-                    </figcaption>
-                </figure>
-                </p>
-            </div>
-            <div class="col-12">
-              <h3>3. Tabular expansion</h3>
-              <p>Realizing the power the Design System on one hand and some inconsistent pages in our products,
-                I rallied designers from each of the major 3 web products from Lightspeed to collaborate on the 
-                design and conceptualization of a Table component: arguably the most complex component yet.
-              </p>
-              <p>To maximize usefulness for all developers, designer and, customers, 
-                this Table component would have to support many workflows and modalities. I led interface inventories, competitive
-                analyses, and many design workshops with stakeholders in order to get this right.
-              </p>
-              <p>
-                We agreed on a design which supported all of the features the Table should have: 
-                <strong>listing</strong>,
-                <strong>search</strong>,
-                <strong>sorting</strong>,
-                <strong>filtering</strong>,
-                <strong>summarizing</strong>,
-                <strong>paginating</strong>,
-                <strong>and more</strong>.
-              </p>
-              <div class="col-12 center">
-                  <figure>
-                      <img width="100%" src="images/projects/flame/filterTable.jpg" 
-                      srcset="images/projects/flame/filterTable.jpg 1x, images/projects/flame/filterTable@2x.jpg 2x" 
-                      alt="Filter Table from the Flame Design System" />
-                      <figcaption>
-                          Filter Table from the Flame Design System
-                      </figcaption>
-                  </figure>
-              </div>
-              <p>
-                To test out assumptions about how the Table would be understood by its users, I built a total of 9 iterations of interactive prototypes 
-                for the Table's filtering behaviour. This test was massively successful in identifying the wins and flaws of the table.
-              </p>
-              <p>Link to the <a href="https://framer.cloud/KHpwX" target="_blank">Framer Table Filtering Prototype</a></p>
-              <p>
-                As I was building the prototype, I learned how to use anonymous functions with <code>map</code> and <code>filter</code>, 
-                fetch mock data from the network, optmize rendering, and write modular single-resposibility code.
-              </p>
-              <p>I am very pleased that the Table is now an integral part of the Design System and in use by all product teams.</p>
-            </div>
-            <div class="col-12">
-                <h3>4. Birth of a team</h3>
-                <p>
-                  After a year and a half of building the Design System in a distributed way, I wanted to further increase the velocity and quality of the 
-                  Design System. I pitched to key stakeholders the idea that the company should invest in a dedicated team for the Design System.
-                </p>
-                <p>
-                  I put together a presentation outlining the benefits of spending dedicated resources to internal tooling. By attaching a dollar
-                  value to the potential benefit of having a dedicated team, I was able to convince senior management to pull together people from existing
-                  teams and new hires to form the Design System team. We are (at time of writing) 4 developers and 2 designers. I fall into the latter, and also was bestowed
-                  the responsibility of being Product Manager. This has been a huge challenge for me, as I have never received training on how to be a Product Manager.
-                </p>
-                <div class="col-12 center">
-                    <figure>
-                        <img width="100%" src="images/projects/flame/ds-team.jpg" 
-                        srcset="images/projects/flame/ds-team.jpg" 
-                        alt="The Lightspeed Design System team enjoying some Ramen 🍜" />
-                        <figcaption>
-                            The Lightspeed Design System team enjoying some Ramen 🍜
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="col-12">
-                <h3>5. Hardening and evangelizing</h3>
-                <p>
-                  With a newfound team and hopeful hearts, the team transitioned from working on the Design System as an "innovation time" project
-                  to treating it like a product. Our first initiative was to improve the developer experience of using the Design System. This meant
-                  moving from CSS tokens and webpack configs to CSS-in-JS (using styled system) and distributed builds for the React Components. <br />
-                  The improvements were significant.<br />
-                  From a previously difficult-to-navigate experience which might take a mid-level front-end developer 2 hours to set up, we moved to a way of working
-                  that required <i>less than 2 minutes to set up</i>.
-                </p>
-                <p>
-                  The team now offered an easy-to-use solution for installation and usage of our UI components.
-                </p>
-                <p>
-                  Gap analysis showed that our stakeholders (designers, developers, product managers, quality specialists) 
-                  were being provided with very little guidance as to how, when, and why to use each component. This was to be our 
-                  next leap forward as a product. I teamed up with the other designer on the team to design, develop, and launch a comprehensive 
-                  documentation site for the Design System to boost <i>understanding and context</i> of the tools we were providing.
-                </p>
-                <p>After working for about 2 months continuously, the MVP for our site was done. By launch, it contained:
-                  <ul style="list-style-type:circle; margin-left: 20px;">
-                    <li>Getting started guide for design and development,</li>
-                    <li>Atoms documentation (color, spacing, typography, iconography),</li>
-                    <li>Product Content writing guidelines,</li>
-                    <li>Component documentation including example usage, copy guidelines, code playground, and API documentation,</li>
-                    <li>Pattern documentation for high-level components and component compositions.</li>
-                  </ul>
-                </p>
-                <div class="col-12 center">
-                    <figure>
-                        <img width="100%" src="images/projects/flame/design-system-website.jpg"  
-                        alt="Landing page for the Lightspeed Flame Design System" />
-                        <figcaption>
-                            Landing page for the Lightspeed Flame Design System
-                        </figcaption>
-                    </figure>
-                </div>
-                <p>Creating the site was not enough. Lightspeeders needed to know what it was, why it was good for them, and how to access it.
-                  With that in mind, I organized and held 2 "lunch-and-learn" events at Lightspeed offices (in Amsterdam and Montreal) 
-                  to properly launch the Design System Documentation website. This launch resulted in a <i>60% increase in visits to the site</i> week-over-week
-                  from the previous soft-launch initiatives.
-                </p>
-                <div class="col-12 center">
-                    <figure>
-                        <img width="100%" src="images/projects/flame/amsterdam-launch.jpg"  
-                        alt="Launching the Design System in Amsterdam" />
-                        <figcaption>
-                            Launching the Design System in Amsterdam
-                        </figcaption>
-                    </figure>
-                </div>
-                <p>
-                  If you're still reading, I think you deserve a visit <a href="https://ls-design-system.netlify.com/" target="_blank">
-                     to the Design System site</a>. 
-                     The URL from the slide above is for internal use only.
-                </p>
-            </div>
           </div>
+      </section>
+      <section>
+        <div class="col-12">
+          <h2>Distributing tokens for engineers</h2>
+          <p>
+            This project was on a short timeline, as its release needed to match with the launch of the PS5 and Xbox Series X. <br>
+            To support this timeline, engineering teams from various offices were leveraged. 
+            In implementing some of the micro-apps, some of teams used React and others used Vue.js. 
+            This meant that a shared library of React components would not be usable by all engineering teams.
+            Therefore, to best scale the usage of the Design System to engineering teams, I devised a solution which matched the level of abstraction:
+          </p>
+          <h3>A library of centralized design tokens, consummable by both React and Vue.js</h3>
+          <p>To pull this off, here was my process:
+            <ul style="list-style-type:circle; margin-left: 20px;">
+              <li>pitch the idea to PMs, Engineering &amp; Design and get their buy-in on the idea,</li>
+              <li>collaborate with engineers to learn how packages were distributed within Ubisoft,</li>
+              <li>integrate Figma design decisions into the Theme-ui spec,</li>
+              <li>structure overridable color themes within the set of design tokens,</li>
+              <li>create coded component examples using the theme context and design tokens.</li>
+            </ul>
+          </p>
+          <p>
+            My work enabled both React &amp; Vue.js teams to save time on their implementation by not having to worry about styling.<br>
+            Code I wrote now runs on <strong>over 250 million</strong> PC, mac, Android, iOS, Nintendo Switch, Playstation, Xbox devices and even cloud streaming platforms!
+          </p>
+        </div>
+      </section>
+    </div>
+    <div class="content">
+      <section>
+        <div class="col-md-12">
+          <div class="col-12">
+            <h2>The challenges feature</h2>
+            <p>
+              Challenges are in-game prompts which players can complete to earn in-game currency and level-up their Ubisoft Account.
+              There are 2 types of challenges: Core challenges only need to be completed once; and Time-Limited challenges reset every week and can be completed multiple times.
+              Challenges are comparable in nature to Xbox &amp; Steam achievements, Playstation trophies.
+            </p>
+            <p>
+              Developers from other teams who saw value in this Design System started using it and contributing back to it. This was amazing!
+              Very quickly, the number of components available to us was growing due to the positive feedback loop that the team had initiated.
+            </p>
+            <p>
+              In an collaborative decision, the contributors decided to evolve from CSS tokens & shared styles to React.
+            </p>
+            <p>
+              The move React components empowered designers to bring more types of components to the Design System.
+            </p>
+            <p>
+              For example, I worked to automate the creation of icons from Sketch-exported SVGs to  
+              React icon components with customizable 3-tone style.
+            </p>
+              <figure>
+                <img width="100%" src="images/projects/flame/flame-icons.svg" 
+                alt="Sample of the icon set created as React components" />
+                <figcaption>
+                    Sample of the icon set created as React components
+                </figcaption>
+            </figure>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="col-md-12">
+          <div class="col-12">
+            <h2>Ubisoft Connect represents a consolidation of brands into a single unified product, available wherever Ubisoft games are.</h2>
+          </div>
+        </div>
       </section>
   </div>
 
-    
-    
     <footer>
         <p>&copy; Alexis Morin 2022</p>
         <ul class="socialicons">
