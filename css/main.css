@@ -370,7 +370,6 @@ figure {
 
 figcaption {
   margin-top: 12px;
-  margin: 0 auto;
 }
 
 .contribution section {
@@ -407,12 +406,6 @@ div#intro {
   height: calc(100vh - 160px);
 }
 
-@media only screen and (max-width: 736px) and (min-width: 320px) { 
-  div#intro {
-    height: calc(100vh - 124px);
-  }
-}
-
 section.projects ul {
   display: flex;
   flex-direction: column;
@@ -439,10 +432,6 @@ div.project {
   position: relative;
 }
 
-.projectDesc {
-  color: var(--grey);
-}
-
 .projectniceties p {
   margin-top: 10px;
 }
@@ -460,8 +449,12 @@ div.project {
   text-decoration: none;
 }
 
-.viewProject a.white {
-  color: #fff;
+.project a.white {
+  color: var(--white);
+}
+
+.project a.grey {
+  color: var(--grey);
 }
 
 .viewProject a:hover {
@@ -479,10 +472,6 @@ div.project {
 #project-1 .viewProject,
 #project-4 .viewProject {
   color: white;
-}
-
-#project-2 .rightChevron {
-  fill: #303033;
 }
 
 #project-2 .projectHero {
@@ -570,6 +559,24 @@ p.role {
 span.chinese {
   font-family: "Noto Sans SC", sans-serif;
   font-weight: 500;
+}
+
+@media only screen and (max-width: 736px) and (min-width: 320px) { 
+  div#intro {
+    height: calc(100vh - 124px);
+  }
+
+  .mobile-glass {
+    background-color: transparent;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  .project a.white, .project a.grey {
+    color: var(--white);
+  }
 }
 
 @keyframes fadeIn {
