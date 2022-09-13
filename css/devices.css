@@ -48,51 +48,39 @@
     padding-bottom: 125px;
   }
 
+  section#intro {
+    height: 100vh;
+  }
+
   .body-img {
     background-attachment: scroll;
   }
 
   header {
-    margin-top: 0;
+    width: calc(100% - 2rem);
+    margin: 0 1rem 1rem 1rem;
     position: fixed;
     bottom: 0;
     right: 0;
     z-index: 2;
     background-color: var(--dark-grey);
+    border-radius: 100vmax;
   }
 
   .topbar {
-    height: 124px;
-    flex-direction: column-reverse;
+    align-items: center;
   }
 
   .topbar > div {
-    width: 100%;
-  }
-
-  .logo {
-    text-align: center;
-  }
-
-  .header-logo {
-    height: 64px;
-    text-align: center;
-  }
-
-  .header-2 {
-    height: 60px;
+    width: auto;
   }
 
   menu {
-    height: 60px;
+    gap: 1.5rem;    
   }
 
-  menu item {
-    height: 60px;
-  }
-
-  menu item a {
-    line-height: 60px;
+  menu menuitem a {
+    font-size: 1.125rem;
   }
 
   .topbar .header-social {

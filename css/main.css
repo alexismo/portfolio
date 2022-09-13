@@ -1,16 +1,4 @@
 @font-face {
-  font-family: "Noto Sans SC";
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.woff2)
-      format("woff2"),
-    url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.woff)
-      format("woff"),
-    url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.otf)
-      format("opentype");
-}
-
-@font-face {
   font-family: "proxima-nova-regular";
   src: url("../fonts/prxnv-reg.eot");
   src: url("../fonts/prxnv-reg.eot?#iefix") format("embedded-opentype"),
