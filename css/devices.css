@@ -67,12 +67,30 @@
     border-radius: 100vmax;
   }
 
+  div#intro {
+    height: calc(100vh - 124px);
+  }
+
+  .mobile-glass {
+    color: white;
+    background-color: transparent;
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  .project a.white, .project a.grey {
+    color: var(--white);
+  }
+
   .topbar {
     align-items: center;
+    padding: 0 24px 0 32px;
   }
 
   .topbar > div {
-    width: auto;
+    width: 50%;
   }
 
   menu {
