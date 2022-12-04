@@ -48,51 +48,57 @@
     padding-bottom: 125px;
   }
 
+  section#intro {
+    height: 100vh;
+  }
+
   .body-img {
     background-attachment: scroll;
   }
 
   header {
-    margin-top: 0;
+    width: calc(100% - 2rem);
+    margin: 0 1rem 1rem 1rem;
     position: fixed;
     bottom: 0;
     right: 0;
     z-index: 2;
     background-color: var(--dark-grey);
+    border-radius: 100vmax;
+  }
+
+  div#intro {
+    height: calc(100vh - 124px);
+  }
+
+  .mobile-glass {
+    color: white;
+    background-color: transparent;
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  .project a.white, .project a.grey {
+    color: var(--white);
   }
 
   .topbar {
-    height: 124px;
-    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 24px 0 32px;
   }
 
   .topbar > div {
-    width: 100%;
-  }
-
-  .logo {
-    text-align: center;
-  }
-
-  .header-logo {
-    height: 64px;
-    text-align: center;
-  }
-
-  .header-2 {
-    height: 60px;
+    width: 50%;
   }
 
   menu {
-    height: 60px;
+    gap: 1.5rem;    
   }
 
-  menu item {
-    height: 60px;
-  }
-
-  menu item a {
-    line-height: 60px;
+  menu menuitem a {
+    font-size: 1.125rem;
   }
 
   .topbar .header-social {

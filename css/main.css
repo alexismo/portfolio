@@ -1,16 +1,4 @@
 @font-face {
-  font-family: "Noto Sans SC";
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.woff2)
-      format("woff2"),
-    url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.woff)
-      format("woff"),
-    url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.otf)
-      format("opentype");
-}
-
-@font-face {
   font-family: "proxima-nova-regular";
   src: url("../fonts/prxnv-reg.eot");
   src: url("../fonts/prxnv-reg.eot?#iefix") format("embedded-opentype"),
@@ -559,24 +547,6 @@ p.role {
 span.chinese {
   font-family: "Noto Sans SC", sans-serif;
   font-weight: 500;
-}
-
-@media only screen and (max-width: 736px) and (min-width: 320px) { 
-  div#intro {
-    height: calc(100vh - 124px);
-  }
-
-  .mobile-glass {
-    background-color: transparent;
-    background: rgba(0, 0, 0, 0.35);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  }
-
-  .project a.white, .project a.grey {
-    color: var(--white);
-  }
 }
 
 @keyframes fadeIn {
