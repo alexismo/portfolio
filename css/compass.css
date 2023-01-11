@@ -1,0 +1,9 @@
+.bgimg-compass {
+  background-image: url("../images/projects/compass/compass-poster.png");
+  background-position: 50% 0;
+}
+
+#compassintro {
+  background-color: #171717;
+  color: #fff;
+}

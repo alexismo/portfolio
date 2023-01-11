@@ -20,11 +20,18 @@
     max-width: 768px;
   }
 
+  section.projects li {
+    width: calc(100% - 32px);
+    border-radius: 12px;
+    margin-inline: 16px;
+  }
+
   #project-1 .projectHero img,
   #project-2 .projectHero img,
   #project-3 .projectHero img,
-  #project-5 .projectHero img {
-    float: right; /* not all projects focus on the right side */
+  #project-5 .projectHero img,
+  #project-6 .projectHero img {
+    float: right; /* not all projects focus on the left side */
   }
 
   #project-2 .projectHero img {
@@ -115,6 +122,9 @@
 
   section.projects li {
     height: 470px;
+    width: calc(100% - 32px);
+    margin-inline: 16px;
+    border-radius: 12px;
   }
 
   section.projects > div {
@@ -149,8 +159,9 @@
   #project-2 .projectHero img,
   #project-3 .projectHero img,
   #project-4 .projectHero img,
-  #project-5 .projectHero img {
-    float: right; /* not all projects focus on the right side */
+  #project-5 .projectHero img,
+  #project-6 .projectHero img {
+    float: right; /* not all projects focus on the left side */
   }
 
   #project-2 .projectHero img,
