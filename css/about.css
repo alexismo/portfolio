@@ -50,6 +50,10 @@ a.aboutLink:hover {
   text-decoration: underline;
 }
 
+a.aboutLink:focus, a.aboutLink:focus-visible {
+  color: var(--text);
+}
+
 .aboutLink img {
   position: relative;
   margin-left: 17px;
