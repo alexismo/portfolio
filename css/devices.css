@@ -22,7 +22,6 @@
 
   section.projects li {
     width: calc(100% - 32px);
-    border-radius: 12px;
     margin-inline: 16px;
   }
 
@@ -84,10 +83,10 @@
     background: rgba(0, 0, 0, 0.55);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
   }
 
-  .project a.white, .project a.grey {
+  .project a.white,
+  .project a.grey {
     color: var(--white);
   }
 
@@ -101,7 +100,7 @@
   }
 
   menu {
-    gap: 1.5rem;    
+    gap: 1.5rem;
   }
 
   menu menuitem a {
@@ -125,6 +124,7 @@
     width: calc(100% - 32px);
     margin-inline: 16px;
     border-radius: 12px;
+    border-color: rgb(255 255 255 / 0.03);
   }
 
   section.projects > div {
@@ -194,16 +194,6 @@
 
   .projectniceties p {
     margin-bottom: 0;
-  }
-
-  .viewProject {
-    height: auto;
-    width: 100%;
-    margin-top: 0;
-    position: absolute;
-    bottom: 36px;
-    color: #303033;
-    padding: 10px 0;
   }
 
   .projectHero img {

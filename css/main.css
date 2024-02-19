@@ -42,6 +42,8 @@
 html {
   font-size: 1rem;
   line-height: 1.5;
+  outline-style: solid;
+  outline-color: white;
 }
 
 body {
@@ -98,8 +100,9 @@ header a {
 }
 
 .header-logo a {
-  height: auto;
   line-height: normal;
+  display: flex;
+  flex-direction: column;
 }
 
 header a:hover,
@@ -109,6 +112,9 @@ header a:focus {
   font-family: "proxima-nova-regular", Roboto, sans-serif;
   font-weight: bold;
   text-decoration: none;
+  outline-offset: 2px;
+  outline-width: 2px;
+  outline-color: white;
 }
 
 .glass {
@@ -137,9 +143,8 @@ footer .socialicons a {
   justify-content: center;
 }
 
-.header-logo h1 a:hover {
-  font-family: "proxima-nova-bold", Roboto, sans-serif;
-  color: #fff;
+.logo {
+  margin-block: auto;
 }
 
 .topbar {
@@ -190,11 +195,13 @@ menu {
   flex-direction: row;
 }
 
-menu menuitem {
+menu menuitem,
+menu li {
   /* width: 33.3333%; */
   width: 50%;
   height: 80px;
   text-align: center;
+  list-style: none;
 }
 
 ul.socialicons {
@@ -328,7 +335,6 @@ footer #heart:hover {
 }
 
 .content section {
-  /* text-align: center; */
   padding: 20px 0;
   display: flex;
   flex-direction: row;
@@ -407,6 +413,25 @@ section.projects li {
   position: relative;
   overflow: hidden;
   margin-bottom: 40px;
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(255 255 255 / 0.03);
+  transition: scale 250ms ease;
+}
+
+section.projects li:hover {
+  scale: 1.01;
+}
+
+section.projects li:active {
+  scale: 0.99;
+}
+
+section.projects li:has(a:focus-visible) {
+  outline-color: rgb(255 255 255 / 0.85);
+  outline-offset: 3px;
+  outline-style: solid;
 }
 
 div.project {
@@ -432,34 +457,12 @@ div.project {
   position: absolute;
 }
 
-.viewProject a {
-  color: #303033;
-  text-decoration: none;
-}
-
 .project a.white {
   color: var(--white);
 }
 
 .project a.grey {
   color: var(--grey);
-}
-
-.viewProject a:hover {
-  text-decoration: none;
-}
-
-.viewProject a:hover .rightChevron {
-  margin-left: 35px;
-  -webkit-transition: margin 250ms ease;
-  -moz-transition: margin 250ms ease;
-  -o-transition: margin 250ms ease;
-  transition: margin 250ms ease;
-}
-
-#project-1 .viewProject,
-#project-4 .viewProject {
-  color: white;
 }
 
 #project-2 .projectHero {
@@ -493,12 +496,9 @@ div.project {
   position: absolute;
   width: 960px;
   min-height: 400px;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: -webkit-transform 4.5s, opacity 4.5s;
-  transition: transform 4.5s, opacity 4.5s;
+  transform: 1;
+  transition: scale 750ms, opacity 750ms;
   transform-origin: 70% 60%;
-  -webkit-transform-origin: 70% 60%;
 }
 
 .projects li img.overlay {
@@ -506,14 +506,12 @@ div.project {
 }
 
 .projects li:hover img.overlay {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
+  scale: 1.05;
   opacity: 1;
 }
 
 .projects li:hover img.underlay {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
+  scale: 1.05;
 }
 
 .downchevron {
