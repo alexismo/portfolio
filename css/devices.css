@@ -55,7 +55,8 @@
   }
 
   section#intro {
-    height: 100vh;
+    height: 100dvh;
+    padding-bottom: 80px;
   }
 
   .body-img {
