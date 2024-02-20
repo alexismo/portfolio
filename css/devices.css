@@ -55,7 +55,7 @@
   }
 
   section#intro {
-    height: 100dvh;
+    min-height: 100svh;
     padding-bottom: 80px;
   }
 
@@ -72,6 +72,7 @@
     z-index: 2;
     background-color: var(--dark-grey);
     border-radius: 100vmax;
+    border: solid 1px rgb(255 255 255 / 0.08);
   }
 
   div#intro {
