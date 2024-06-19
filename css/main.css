@@ -436,13 +436,12 @@ section.projects li:has(a:focus-visible) {
 
 div.project {
   height: 100%;
-  padding: 36px 50px;
-}
+  display: grid;
+  place-content: center;
 
-.projectniceties {
-  width: 277px;
-  height: 100%;
-  position: relative;
+  > * {
+    grid-area: 1 / 1;
+  }
 }
 
 .projectniceties p {
@@ -484,34 +483,32 @@ div.project {
 
 .projectHero {
   width: 100%;
-  max-width: 960px;
   height: 470px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
 }
 
 .projectHero img {
-  position: absolute;
-  width: 960px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   min-height: 400px;
-  transform: 1;
-  transition: scale 750ms, opacity 750ms;
+  transition: scale 750ms, filter 750ms;
   transform-origin: 70% 60%;
+  filter: grayscale(100%);
 }
 
-.projects li img.overlay {
-  opacity: 0;
-}
-
-.projects li:hover img.overlay {
+.project:hover .projectHero img {
+  filter: grayscale(0%);
   scale: 1.05;
-  opacity: 1;
 }
 
-.projects li:hover img.underlay {
-  scale: 1.05;
+.projectDescription {
+  padding: 36px 50px;
+  transition: scale;
+  scale: 1;
+}
+
+.project:hover .projectDescription {
+  scale: 1;
 }
 
 .downchevron {
