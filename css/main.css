@@ -410,8 +410,7 @@ section.projects li {
   max-width: 960px;
   width: 100%;
   height: 470px;
-  position: relative;
-  overflow: hidden;
+  overflow: clip;
   margin-bottom: 40px;
   border-radius: 12px;
   border-style: solid;
@@ -438,6 +437,8 @@ div.project {
   height: 100%;
   display: grid;
   place-content: center;
+  view-timeline-name: --revealing-image;
+  view-timeline-axis: block;
 
   > * {
     grid-area: 1 / 1;
@@ -486,6 +487,15 @@ div.project {
   height: 470px;
 }
 
+@keyframes greyscale {
+  from {
+    filter: grayscale(100%);
+  }
+  to {
+    filter: grayscale(0%);
+  }
+}
+
 .projectHero img {
   width: 100%;
   height: 100%;
@@ -493,11 +503,13 @@ div.project {
   min-height: 400px;
   transition: scale 750ms, filter 750ms;
   transform-origin: 70% 60%;
-  filter: grayscale(100%);
+
+  animation: linear greyscale both;
+  animation-timeline: --revealing-image;
+  animation-range: entry 25% entry 100%;
 }
 
 .project:hover .projectHero img {
-  filter: grayscale(0%);
   scale: 1.05;
 }
 
