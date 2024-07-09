@@ -488,11 +488,14 @@ div.project {
 }
 
 @keyframes greyscale {
-  from {
-    filter: grayscale(100%);
+  0% {
+    filter: grayscale(100%) saturate(100%);
   }
-  to {
-    filter: grayscale(0%);
+  85% {
+    filter: grayscale(0%) saturate(120%);
+  }
+  100% {
+    filter: grayscale(0%) saturate(100%);
   }
 }
 
@@ -506,7 +509,7 @@ div.project {
 
   animation: linear greyscale both;
   animation-timeline: --revealing-image;
-  animation-range: entry 25% entry 100%;
+  animation-range: entry 25% entry 120%;
 }
 
 .project:hover .projectHero img {
