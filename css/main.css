@@ -419,7 +419,13 @@ section.projects li {
   transition: scale 250ms ease;
 }
 
-section.projects li:hover {
+.projects a:hover:has(.project),
+.projects a:focus-visible:has(.project) {
+  text-decoration: none;
+}
+
+section.projects li:hover,
+section.projects li:focus-visible {
   scale: 1.01;
 }
 
@@ -524,6 +530,18 @@ div.project {
 
 .project:hover .projectDescription {
   scale: 1;
+}
+
+.projectDescription p {
+  margin: 12px 0 0 0;
+}
+
+.projectDescription.ondark {
+  color: white;
+}
+
+.projectDescription.onlight {
+  color: var(--dark-grey);
 }
 
 .downchevron {
