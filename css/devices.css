@@ -120,42 +120,35 @@
 
   div.project {
     padding: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   section.projects li {
-    height: 470px;
     width: calc(100% - 32px);
+    height: auto;
     margin-inline: 16px;
-    border-radius: 12px;
-    border-color: rgb(255 255 255 / 0.03);
-  }
-
-  section.projects > div {
-    height: 470px;
-    overflow: hidden;
-  }
-
-  .projectDesc {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .projectDesc img {
-    height: 105px;
+    border: none;
   }
 
   .projectHero {
     width: 100%;
+    border: solid 1px rgb(255 255 255 / 0.15);
+    height: 20vh;
+    border-radius: 12px;
+    overflow: clip;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .projectDescription {
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 
   .projectHero img {
     position: relative;
-  }
-
-  .projectHero img.overlay {
-    opacity: 1;
-    margin-top: -470px;
   }
 
   #project-1 .projectHero img,
@@ -183,24 +176,6 @@
 
   .projects li img.overlay {
     opacity: 1;
-  }
-
-  .projectniceties {
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-
-  .projectniceties p {
-    margin-bottom: 0;
-  }
-
-  .projectHero img {
-    height: 470px;
   }
 
   h3.about {
