@@ -1,3 +1,10 @@
+/* desktop */
+@media only screen and (min-width: 737px) {
+  .project-title-name h3 {
+    display: none;
+  }
+}
+
 /* tablets in Portrait */
 @media only screen and (min-width: 735px) and (max-width: 1024px) {
   html {
@@ -16,25 +23,8 @@
     padding: 16px;
   }
 
-  section {
-    max-width: 768px;
-  }
-
   section.projects li {
     width: calc(100% - 32px);
-    margin-inline: 16px;
-  }
-
-  #project-1 .projectHero img,
-  #project-2 .projectHero img,
-  #project-3 .projectHero img,
-  #project-5 .projectHero img,
-  #project-6 .projectHero img {
-    float: right; /* not all projects focus on the left side */
-  }
-
-  #project-2 .projectHero img {
-    margin-top: 0;
   }
 
   #teacherteaching {
@@ -118,56 +108,93 @@
     padding: 16px;
   }
 
-  div.project {
+  .project {
     padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
+    grid-template-rows: auto 96px;
 
-  section.projects li {
-    width: calc(100% - 32px);
-    height: auto;
-    margin-inline: 16px;
-    border: none;
-  }
+    .projectHero {
+      width: 100%;
+      border: solid 1px rgb(255 255 255 / 0.15);
+      height: 360px;
+      border-radius: 12px;
+      overflow: clip;
+      grid-row: 1 / -1;
+      img {
+        object-fit: cover;
+      }
+    }
 
-  .projectHero {
-    width: 100%;
-    border: solid 1px rgb(255 255 255 / 0.15);
-    height: 20vh;
-    border-radius: 12px;
-    overflow: clip;
-    img {
-      object-fit: cover;
+    &#project-compass .projectHero img {
+      object-position: 100% -40px;
+    }
+
+    &#project-connect .projectHero img {
+      object-position: 72% -20px;
+    }
+
+    &#project-flame .projectHero img {
+      object-position: 72% 100%;
+    }
+
+    &#project-aop .projectHero img {
+      object-position: 50% 100%;
+    }
+
+    &#project-classroom .projectHero img {
+      object-position: 92% -40px;
+    }
+
+    &#project-englishlive .projectHero img {
+      object-position: 92% -40px;
+    }
+
+    &#project-ampup .projectHero img {
+      object-position: 92% -40px;
+    }
+
+    .projectDescription {
+      grid-row: 2 / 3;
+
+      background-color: rgba(0 0 0 / 0.65);
+      backdrop-filter: blur(4px);
+
+      padding: 8px 12px;
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .projectTitle {
+        background-color: rgba(0, 0, 0, 0.85);
+        border-radius: 8px;
+      }
+
+      .project-title-name {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h3,
+        p {
+          margin: 0;
+        }
+      }
+
+      &.ondark,
+      &.onlight {
+        color: white;
+      }
     }
   }
 
-  .projectDescription {
-    grid-row-start: 1;
-    grid-row-end: 2;
+  section.projects li {
+    width: calc(100% - 16px);
+    height: auto;
+    margin: 0 auto;
   }
 
   .projectHero img {
     position: relative;
-  }
-
-  #project-1 .projectHero img,
-  #project-2 .projectHero img,
-  #project-3 .projectHero img,
-  #project-4 .projectHero img,
-  #project-5 .projectHero img,
-  #project-6 .projectHero img {
-    float: right; /* not all projects focus on the left side */
-  }
-
-  #project-2 .projectHero img,
-  #project-3 .projectHero img,
-  #project-5 .projectHero img {
-    margin-right: -20%;
-  }
-
-  #project-5 .projectHero img {
-    margin-right: -247px;
   }
 
   #project-4 .projectTitle {
