@@ -25,6 +25,14 @@
     url("../fonts/prxnv-lt.svg#webfont") format("svg");
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(:root) {
+  animation-duration: 5s;
+}
+
 :root {
   --dark-grey: #09090c;
   --grey: #161619;
@@ -383,6 +391,7 @@ section#intro {
 p.greeting {
   display: flex;
   flex-direction: column;
+  padding: 16px;
   font-family: "proxima-nova-bold", Roboto, sans-serif;
   font-size: 3.75rem;
   font-size: clamp(3.75rem, 3.1rem + 3.25vw, 7rem);
@@ -402,6 +411,7 @@ div#intro {
 
 section.projects ul {
   display: flex;
+  gap: 40px;
   flex-direction: column;
   justify-content: space-around;
 }
@@ -410,17 +420,21 @@ section.projects li {
   max-width: 960px;
   width: 100%;
   height: 470px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 40px;
+  overflow: clip;
   border-radius: 12px;
   border-style: solid;
   border-width: 1px;
-  border-color: rgb(255 255 255 / 0.03);
+  border-color: rgb(255 255 255 / 0.09);
   transition: scale 250ms ease;
 }
 
-section.projects li:hover {
+.projects a:hover:has(.project),
+.projects a:focus-visible:has(.project) {
+  text-decoration: none;
+}
+
+section.projects li:hover,
+section.projects li:focus-visible {
   scale: 1.01;
 }
 
@@ -434,15 +448,17 @@ section.projects li:has(a:focus-visible) {
   outline-style: solid;
 }
 
-div.project {
+.project {
   height: 100%;
-  padding: 36px 50px;
-}
+  display: grid;
+  place-content: center;
+  view-timeline-name: --revealing-image;
+  view-timeline-axis: block;
 
-.projectniceties {
-  width: 277px;
-  height: 100%;
-  position: relative;
+  .projectHero,
+  .projectDescription {
+    grid-area: 1 / -1;
+  }
 }
 
 .projectniceties p {
@@ -465,12 +481,12 @@ div.project {
   color: var(--grey);
 }
 
-#project-2 .projectHero {
+#project-englishlive .projectHero {
   background: linear-gradient(0deg, #ededed, #e9e9eb);
 }
 
-#project-4 .projectTitle {
-  width: 300px;
+.projectTitle img {
+  max-width: 300px;
 }
 
 .rightChevron {
@@ -484,34 +500,58 @@ div.project {
 
 .projectHero {
   width: 100%;
-  max-width: 960px;
   height: 470px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
+}
+
+@keyframes greyscale {
+  0% {
+    filter: grayscale(100%) saturate(100%);
+  }
+  85% {
+    filter: grayscale(0%) saturate(120%);
+  }
+  100% {
+    filter: grayscale(0%) saturate(100%);
+  }
 }
 
 .projectHero img {
-  position: absolute;
-  width: 960px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   min-height: 400px;
-  transform: 1;
-  transition: scale 750ms, opacity 750ms;
+  transition: scale 750ms, filter 750ms;
   transform-origin: 70% 60%;
+
+  animation: linear greyscale both;
+  animation-timeline: --revealing-image;
+  animation-range: entry 25% entry 120%;
 }
 
-.projects li img.overlay {
-  opacity: 0;
-}
-
-.projects li:hover img.overlay {
+.project:hover .projectHero img {
   scale: 1.05;
-  opacity: 1;
 }
 
-.projects li:hover img.underlay {
-  scale: 1.05;
+.projectDescription {
+  padding: 36px 50px;
+  transition: scale;
+  scale: 1;
+
+  p {
+    margin: 12px 0 0 0;
+  }
+
+  &.ondark {
+    color: white;
+  }
+
+  &.onlight {
+    color: var(--dark-grey);
+  }
+}
+
+.project:hover .projectDescription {
+  scale: 1;
 }
 
 .downchevron {
