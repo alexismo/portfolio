@@ -7,24 +7,13 @@
 
 /* tablets in Portrait */
 @media only screen and (min-width: 735px) and (max-width: 1024px) {
-  html {
-    font-size: 120%;
-  }
-
-  .topbar {
-    max-width: 720px;
-  }
-
   .topbar > div {
     margin: 0 20px;
   }
 
-  p.greeting {
-    padding: 16px;
-  }
-
   section.projects li {
     width: calc(100% - 32px);
+    margin: 0 auto;
   }
 
   #teacherteaching {
@@ -104,17 +93,12 @@
     display: none;
   }
 
-  p.greeting {
-    padding: 16px;
-  }
-
   .project {
     padding: 0;
     grid-template-rows: auto 96px;
 
     .projectHero {
       width: 100%;
-      border: solid 1px rgb(255 255 255 / 0.15);
       height: 360px;
       border-radius: 12px;
       overflow: clip;

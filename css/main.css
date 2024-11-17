@@ -391,6 +391,7 @@ section#intro {
 p.greeting {
   display: flex;
   flex-direction: column;
+  padding: 16px;
   font-family: "proxima-nova-bold", Roboto, sans-serif;
   font-size: 3.75rem;
   font-size: clamp(3.75rem, 3.1rem + 3.25vw, 7rem);
@@ -423,7 +424,7 @@ section.projects li {
   border-radius: 12px;
   border-style: solid;
   border-width: 1px;
-  border-color: rgb(255 255 255 / 0.03);
+  border-color: rgb(255 255 255 / 0.09);
   transition: scale 250ms ease;
 }
 
