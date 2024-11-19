@@ -380,7 +380,7 @@ figcaption {
 }
 
 section#intro {
-  height: 75vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   line-height: inherit;
@@ -392,6 +392,7 @@ p.greeting {
   display: flex;
   flex-direction: column;
   padding: 16px;
+  margin: 0;
   font-family: "proxima-nova-bold", Roboto, sans-serif;
   font-size: 3.75rem;
   font-size: clamp(3.75rem, 3.1rem + 3.25vw, 7rem);
