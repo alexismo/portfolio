@@ -29,10 +29,6 @@
   navigation: auto;
 }
 
-::view-transition-group(:root) {
-  animation-duration: 5s;
-}
-
 :root {
   --dark-grey: #09090c;
   --grey: #161619;
