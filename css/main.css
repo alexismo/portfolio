@@ -46,8 +46,6 @@
 html {
   font-size: 1rem;
   line-height: 1.5;
-  outline-style: solid;
-  outline-color: white;
 }
 
 body {
@@ -166,9 +164,10 @@ footer .socialicons a {
 
 h1,
 h2 {
-  margin: 0;
+  margin-block-start: 8px;
   padding: 0;
   line-height: 1.5;
+  text-wrap: pretty;
 }
 
 header h1,
@@ -182,6 +181,11 @@ header h2 {
   font-size: 18px;
   letter-spacing: 1.12px;
   margin-bottom: 4px;
+}
+
+.header-logo h1,
+.header-logo h2 {
+  margin: 0;
 }
 
 .row .header-logo h2 {
@@ -350,10 +354,15 @@ footer #heart:hover {
 }
 
 .content section p {
-  padding: 10px 0 10px 0;
   font-family: "proxima-nova-regular", Roboto, sans-serif;
 
-  margin: 0 auto;
+  margin-inline: auto;
+}
+
+figure button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
 
 figure * {
@@ -605,5 +614,60 @@ span.chinese {
 
   100% {
     transform: rotate(-15deg) scale(1.3);
+  }
+}
+
+/* user agent styles as important */
+[popover]:not(:popover-open):not(dialog[open]) {
+  display: none !important;
+}
+
+#lightbox {
+  border: none;
+  margin: auto;
+  padding: 0;
+  background: transparent;
+
+  /* popover transition in & out */
+  &,
+  &::backdrop {
+    transition: display 325ms allow-discrete, overlay 325ms allow-discrete,
+      transform 325ms, opacity 325ms;
+    opacity: 0;
+  }
+
+  /* open state */
+  &:popover-open {
+    opacity: 1;
+    transform: scale(1);
+
+    &::backdrop {
+      opacity: 1;
+    }
+  }
+
+  /* offstage styles */
+  @starting-style {
+    &:popover-open,
+    &:popover-open::backdrop {
+      opacity: 0;
+    }
+  }
+
+  /* no motion pref */
+  @media (prefers-reduced-motion: no-preference) {
+    transform: scale(0.95);
+  }
+
+  /* radial vignette for the backdrop */
+  &::backdrop {
+    background-image: radial-gradient(#0003, 25%, #000e);
+  }
+
+  /* lightbox img sizing */
+  > img {
+    display: flex;
+    max-inline-size: 100%;
+    block-size: auto;
   }
 }

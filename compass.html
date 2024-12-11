@@ -105,25 +105,23 @@
     <div class="content" id="compassintro">
       <section>
         <div class="col-md-12">
-          <div class="col-12"></div>
           <div class="col-12" width="100%">
-            <h2>Case study in progress.<br /></h2>
+            <h2>The design system of real estate<br /></h2>
           </div>
         </div>
       </section>
     </div>
-
-    <div class="content contribution">
+    <div class="content">
       <section>
-        <div class="col-xs-12 center">
-          <h2>The design system of real estate</h2>
-
-          <p>My contribution to the project was to:</p>
+        <div class="col-xs-12">
+          <h3>
+            My contribution for components &amp; patterns across Web, iOS &amp;
+            Android
+          </h3>
           <ul style="list-style-type: circle; margin-left: 20px">
             <li>
               design, plan, build, release, announce, test, map dependencies,
-              for new components, patterns, and best practices across Web, iOS
-              &amp; Android,
+              and best practices,
             </li>
             <li>standardize team methodology across designers,</li>
             <li>
@@ -143,7 +141,6 @@
               Mobility Reviews with leadership.
             </li>
           </ul>
-          <br />
           <p>To date, the Compass Design System contains:</p>
           <ul style="list-style-type: circle; margin-left: 20px">
             <li>
@@ -160,11 +157,13 @@
               product content guidelines for writing for the Compass platform,
             </li>
           </ul>
-          At the time of writing, the Compass Design System is in active use at
-          Compass by <strong>all</strong> web front-end, iOS, and Android teams.
-          It powers <strong>600 engineers</strong>,
-          <strong>85 designers</strong>, and <strong>$254M</strong> of real
-          estate transactions yearly.
+          <p>
+            At the time of writing, the Compass Design System is in active use
+            at Compass by <strong>all</strong> web front-end, iOS, and Android
+            teams. It enables <strong>600 engineers</strong>,
+            <strong>85 designers</strong>, and <strong>$254M</strong> of real
+            estate transactions yearly.
+          </p>
           <p>
             <span class="am-bold">Company:</span> Compass Real Estate
             <br />
@@ -183,9 +182,105 @@
           </p>
         </div>
       </section>
+      <section>
+        <div class="col-xs-12">
+          <h2>Case study: Bulk actions pattern</h2>
+          <p>
+            Real estate agents work fast and deal with large amounts of data yet
+            the Compass platform had no single way of enabling agents to perform
+            bulk actions on that data.
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="col-xs-12">
+          <h2>The consumer listing card</h2>
+          <p>
+            The property listing card is the centerpiece of any real estate
+            platform.
+          </p>
+          <p>
+            I was tasked with the Figma construction of the Listing Card for
+            home buyers across Web, iOS &amp; Android.
+          </p>
+          <div class="listing-card--grid">
+            <div>
+              <h3>Web</h3>
+              <figure>
+                <button light-box title="View larger">
+                  <picture>
+                    <img
+                      src="images/projects/compass/web-listing-card.png"
+                      alt="Real estate listing card for the web. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
+                    />
+                  </picture>
+                </button>
+                <figcaption>Web consumer listing card</figcaption>
+              </figure>
+            </div>
+            <div>
+              <h3>iOS</h3>
+              <figure>
+                <img
+                  src="images/projects/compass/ios-listing-card.png"
+                  alt="Real estate listing card for iOS. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
+                />
+                <figcaption>iOS consumer listing card</figcaption>
+              </figure>
+            </div>
+            <div>
+              <h3>Android</h3>
+              <figure>
+                <img
+                  src="images/projects/compass/android-listing-card.png"
+                  alt="Real estate listing card for Android. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
+                />
+                <figcaption>Android consumer listing card</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="col-xs-12">
+          <h2>The agent listing card</h2>
+          <p>
+            As expert users, real estate agents are used to data density. These
+            web listing cards are designed to accomodate more information in
+            less space.
+          </p>
+          <div class="listing-card--grid agent">
+            <div>
+              <h3>Card</h3>
+              <figure>
+                <img
+                  src="images/projects/compass/agent-listing-card.png"
+                  alt=""
+                />
+                <figcaption>
+                  <p>The <strong>Card</strong> appears in data-dense grids.</p>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <h3>Pill</h3>
+              <figure>
+                <img
+                  src="images/projects/compass/agent-listing-card-pill.png"
+                  alt=""
+                />
+                <figcaption>
+                  <p>
+                    The <strong>Pill</strong> appears in data-dense lists
+                    alongside maps.
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-
-    <div class="content"></div>
 
     <footer>
       <p>&copy; Alexis Morin 2024</p>
@@ -231,6 +326,7 @@
         with lots of <span id="heart" aria-label="love" role="img">&lt;3</span>.
       </p>
     </footer>
+    <figure id="lightbox" popover></figure>
     <script
       language="javascript"
       type="text/javascript"

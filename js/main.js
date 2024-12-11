@@ -71,3 +71,24 @@ greetings = [
 function changeGreeting() {
   //for a later time
 }
+
+const pictures = document.querySelectorAll('[light-box]');
+
+const state = { open: false };
+
+pictures.forEach(picture => {
+  picture.addEventListener('click', event => {
+    if (!state.open) {
+      lightboxImage(picture);
+    }
+  })
+})
+
+function lightboxImage(picture) {
+  lightbox.innerHTML = picture.querySelector(':scope img').outerHTML;
+  lightbox.showPopover();
+}
+
+lightbox.addEventListener('toggle', event => {
+  state.open = event.newState === 'open';
+})
