@@ -184,12 +184,145 @@
       </section>
       <section>
         <div class="col-xs-12">
-          <h2>Case study: Bulk actions pattern</h2>
+          <h2>Bulk actions pattern</h2>
           <p>
             Real estate agents work fast and deal with large amounts of data yet
             the Compass platform had no single way of enabling agents to perform
             bulk actions on that data.
           </p>
+          <p>
+            I designed the Bulk actions pattern for web, mobile web, iOS and
+            Android with the additional goal of sticking close to native
+            platform look &amp; feel.
+          </p>
+          <div class="images--grid" style="--max-columns: 1">
+            <article>
+              <h3>Desktop Web</h3>
+              <figure>
+                <button light-box title="View larger">
+                  <picture>
+                    <img
+                      src="images/projects/compass/bulk-actions-web.gif"
+                      alt="Bulk actions for the desktop web. A table shows data about real estate listings. The first listing is selected and a bulk actions bar lists actions which can be taken."
+                    />
+                  </picture>
+                </button>
+                <figcaption>Bulk actions for the desktop web</figcaption>
+              </figure>
+            </article>
+          </div>
+          <div class="images--grid" style="--max-columns: 3">
+            <article>
+              <h3>Mobile Web</h3>
+              <figure>
+                <button light-box title="View larger">
+                  <picture>
+                    <img
+                      src="images/projects/compass/bulk-actions-mobile-web.png"
+                      alt="Bulk actions for mobile web"
+                    />
+                  </picture>
+                </button>
+                <figcaption>Bulk actions for mobile web</figcaption>
+              </figure>
+            </article>
+            <article>
+              <h3>iOS</h3>
+              <figure>
+                <button light-box title="View larger">
+                  <picture>
+                    <img
+                      src="images/projects/compass/bulk-actions-ios.gif"
+                      alt="Bulk actions for iOS"
+                    />
+                  </picture>
+                </button>
+                <figcaption>Bulk actions for iOS</figcaption>
+              </figure>
+            </article>
+            <article>
+              <h3>Android</h3>
+              <figure>
+                <button light-box title="View larger">
+                  <picture>
+                    <img
+                      src="images/projects/compass/bulk-actions-android.gif"
+                      alt="Bulk actions for Android"
+                    />
+                  </picture>
+                </button>
+                <figcaption>Bulk actions for Android</figcaption>
+              </figure>
+            </article>
+          </div>
+          <h3>Bulk actions lifecycle</h3>
+          <p>
+            Performing actions in bulk is inherently a multi-step process. To
+            better support this notion for our community of builders, I
+            documented the steps that take place when Bulk Actions occur.
+          </p>
+          <dl class="images--grid" style="--max-columns: 5">
+            <div class="text-step">
+              <dt>1. Select mode</dt>
+              <dd>
+                <em>Optional</em><br />Not all features offer entity selection
+                at the top-level. It may be necessary to toggle that mode on
+                with a CTA.
+              </dd>
+            </div>
+            <div class="text-step">
+              <dt>2. Selection</dt>
+              <dd>Select the entities which should be acted on.</dd>
+              <dt>2.1 BulkActions appears</dt>
+              <dd>
+                When working with a Table, BulkActions appears from the moment
+                an entity is selected, originating from the top of the Table and
+                animating up. In non-Table scenarios, animate BulkActions from
+                the point where Select mode is initiated.
+              </dd>
+              <dt>2.2 Bulk selection</dt>
+              <dd>
+                <em>Optional</em><br />
+                It may or may not make sense to offer the possibility to "Select
+                all". If so, make use of the "Select All Bar" component. Select
+                the entities on a page before offering to select all entities in
+                a data set.
+              </dd>
+              <dt>2.3 Apply constraints</dt>
+              <dd>
+                BulkActionBar reacts to only allow logically possible actions.
+                <br /><br />
+                A Poptip may show to clarify why an action is disabled.
+              </dd>
+            </div>
+            <div class="text-step">
+              <dt>3. Action</dt>
+              <dd>
+                BulkActions Buttons are an ingress to custom designed
+                user-flows. Clicking an Button may result in the action being
+                performed instantly, or in a modal dialog asking for more
+                information or confimation.
+              </dd>
+            </div>
+            <div class="text-step">
+              <dt>4. Notification</dt>
+              <dd>
+                Notify about the result of their action. This can be done with a
+                Toast. Bonus points if you offer the possibility an Undo button
+                in the confirmation Toast. Inform the user if an action takes
+                longer than 1 second to perform.
+              </dd>
+            </div>
+            <div class="text-step">
+              <dt>5. Resolution</dt>
+              <dd>
+                Once an action has been performed, return to the data list with
+                the same elements selected, unless the action triggered is one
+                which changes the acted-upon entities. (e.g. merge, delete,
+                archive)
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
       <section>
@@ -203,8 +336,8 @@
             I was tasked with the Figma construction of the Listing Card for
             home buyers across Web, iOS &amp; Android.
           </p>
-          <div class="listing-card--grid">
-            <div>
+          <div class="images--grid">
+            <article>
               <h3>Web</h3>
               <figure>
                 <button light-box title="View larger">
@@ -217,27 +350,35 @@
                 </button>
                 <figcaption>Web consumer listing card</figcaption>
               </figure>
-            </div>
-            <div>
+            </article>
+            <article>
               <h3>iOS</h3>
               <figure>
-                <img
-                  src="images/projects/compass/ios-listing-card.png"
-                  alt="Real estate listing card for iOS. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
-                />
+                <button light-box title="View larger">
+                  <picture>
+                    <img
+                      src="images/projects/compass/ios-listing-card.png"
+                      alt="Real estate listing card for iOS. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
+                    />
+                  </picture>
+                </button>
                 <figcaption>iOS consumer listing card</figcaption>
               </figure>
-            </div>
-            <div>
+            </article>
+            <article>
               <h3>Android</h3>
               <figure>
-                <img
-                  src="images/projects/compass/android-listing-card.png"
-                  alt="Real estate listing card for Android. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
-                />
+                <button light-box title="View larger">
+                  <picture>
+                    <img
+                      src="images/projects/compass/android-listing-card.png"
+                      alt="Real estate listing card for Android. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
+                    />
+                  </picture>
+                </button>
                 <figcaption>Android consumer listing card</figcaption>
               </figure>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -249,26 +390,34 @@
             web listing cards are designed to accomodate more information in
             less space.
           </p>
-          <div class="listing-card--grid agent">
-            <div>
+          <div class="images--grid" style="--max-columns: 2">
+            <article>
               <h3>Card</h3>
               <figure>
-                <img
-                  src="images/projects/compass/agent-listing-card.png"
-                  alt=""
-                />
+                <button light-box title="View larger">
+                  <picture>
+                    <img
+                      src="images/projects/compass/agent-listing-card.png"
+                      alt=""
+                    />
+                  </picture>
+                </button>
                 <figcaption>
                   <p>The <strong>Card</strong> appears in data-dense grids.</p>
                 </figcaption>
               </figure>
-            </div>
-            <div>
+            </article>
+            <article>
               <h3>Pill</h3>
               <figure>
-                <img
-                  src="images/projects/compass/agent-listing-card-pill.png"
-                  alt=""
-                />
+                <button light-box title="View larger">
+                  <picture>
+                    <img
+                      src="images/projects/compass/agent-listing-card-pill.png"
+                      alt=""
+                    />
+                  </picture>
+                </button>
                 <figcaption>
                   <p>
                     The <strong>Pill</strong> appears in data-dense lists
@@ -276,7 +425,7 @@
                   </p>
                 </figcaption>
               </figure>
-            </div>
+            </article>
           </div>
         </div>
       </section>

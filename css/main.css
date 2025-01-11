@@ -667,7 +667,7 @@ span.chinese {
   /* lightbox img sizing */
   > img {
     display: flex;
-    max-inline-size: 100%;
+    max-inline-size: 92%;
     block-size: auto;
   }
 }
