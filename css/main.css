@@ -46,8 +46,6 @@
 html {
   font-size: 1rem;
   line-height: 1.5;
-  outline-style: solid;
-  outline-color: white;
 }
 
 body {
@@ -166,9 +164,10 @@ footer .socialicons a {
 
 h1,
 h2 {
-  margin: 0;
+  margin-block-start: 8px;
   padding: 0;
   line-height: 1.5;
+  text-wrap: pretty;
 }
 
 header h1,
@@ -182,6 +181,11 @@ header h2 {
   font-size: 18px;
   letter-spacing: 1.12px;
   margin-bottom: 4px;
+}
+
+.header-logo h1,
+.header-logo h2 {
+  margin: 0;
 }
 
 .row .header-logo h2 {
@@ -350,10 +354,15 @@ footer #heart:hover {
 }
 
 .content section p {
-  padding: 10px 0 10px 0;
   font-family: "proxima-nova-regular", Roboto, sans-serif;
 
-  margin: 0 auto;
+  margin-inline: auto;
+}
+
+figure button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
 
 figure * {
@@ -605,5 +614,47 @@ span.chinese {
 
   100% {
     transform: rotate(-15deg) scale(1.3);
+  }
+}
+
+/* user agent styles as important */
+[popover]:not(:popover-open):not(dialog[open]) {
+  display: none !important;
+}
+
+::view-transition-group(--light-box),
+::view-transition-group(--light-box-backdrop) {
+  z-index: 1;
+}
+
+::view-transition-group(--light-box-img) {
+  z-index: 2;
+}
+
+#lightbox {
+  border: none;
+  margin: auto;
+  padding: 0;
+  background: transparent;
+  max-inline-size: 100%;
+
+  @media screen and (width > 768px) {
+    max-inline-size: 80vw;
+  }
+
+  &::backdrop {
+    backdrop-filter: none;
+    background-image: radial-gradient(#0003, 25%, #000e);
+    view-transition-name: --light-box-backdrop;
+  }
+
+  /* lightbox img sizing */
+  > img {
+    view-transition-name: --light-box-img;
+    block-size: auto;
+    max-inline-size: 100%;
+    object-fit: contain;
+    display: flex;
+    block-size: auto;
   }
 }
