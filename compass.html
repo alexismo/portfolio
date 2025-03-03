@@ -180,6 +180,10 @@
             <br />
             <span class="am-bold">Status:</span> in active use
           </p>
+          <p>
+            Here are two examples of my contributions: bulk actions and the
+            listing card:
+          </p>
         </div>
       </section>
       <section>
@@ -265,28 +269,27 @@
             <div class="text-step">
               <dt>1. Select mode</dt>
               <dd>
-                <em>Optional</em><br />Not all features offer entity selection
-                at the top-level. It may be necessary to toggle that mode on
-                with a CTA.
+                Optional<br />Not all pages offer item selection at the
+                top-level. It may be necessary to toggle that mode on with a
+                CTA.
               </dd>
             </div>
             <div class="text-step">
               <dt>2. Selection</dt>
-              <dd>Select the entities which should be acted on.</dd>
+              <dd>Select what should be acted on.</dd>
               <dt>2.1 BulkActions appears</dt>
               <dd>
-                When working with a Table, BulkActions appears from the moment
-                an entity is selected, originating from the top of the Table and
-                animating up. In non-Table scenarios, animate BulkActions from
-                the point where Select mode is initiated.
+                When working with a Table, BulkActions animates up from the top
+                of the Table when an item is selected. In non-Table scenarios,
+                animate BulkActions from the point where Select mode is
+                initiated.
               </dd>
               <dt>2.2 Bulk selection</dt>
               <dd>
-                <em>Optional</em><br />
-                It may or may not make sense to offer the possibility to "Select
-                all". If so, make use of the "Select All Bar" component. Select
-                the entities on a page before offering to select all entities in
-                a data set.
+                Optional<br />
+                If it makes sense, offer "Select all". If so, make use of the
+                "Select All Bar" component. Select the items on a page before
+                offering to select all items in a data set.
               </dd>
               <dt>2.3 Apply constraints</dt>
               <dd>
@@ -317,8 +320,8 @@
               <dt>5. Resolution</dt>
               <dd>
                 Once an action has been performed, return to the data list with
-                the same elements selected, unless the action triggered is one
-                which changes the acted-upon entities. (e.g. merge, delete,
+                the same items selected, unless the action triggered is one
+                which changes the acted-upon items. (e.g. merge, delete,
                 archive)
               </dd>
             </div>
@@ -327,15 +330,16 @@
       </section>
       <section>
         <div class="col-xs-12">
-          <h2>The consumer listing card</h2>
+          <h2>The listing cards</h2>
           <p>
             The property listing card is the centerpiece of any real estate
             platform.
           </p>
           <p>
             I was tasked with the Figma construction of the Listing Card for
-            home buyers across Web, iOS &amp; Android.
+            real estate agents and home buyers across Web, iOS &amp; Android.
           </p>
+          <h3>Consumer listing card</h3>
           <div class="images--grid">
             <article>
               <h3>Web</h3>
@@ -475,7 +479,7 @@
         with lots of <span id="heart" aria-label="love" role="img">&lt;3</span>.
       </p>
     </footer>
-    <figure id="lightbox" popover></figure>
+    <dialog id="lightbox"></dialog>
     <script
       language="javascript"
       type="text/javascript"

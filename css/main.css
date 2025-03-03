@@ -622,52 +622,39 @@ span.chinese {
   display: none !important;
 }
 
+::view-transition-group(--light-box),
+::view-transition-group(--light-box-backdrop) {
+  z-index: 1;
+}
+
+::view-transition-group(--light-box-img) {
+  z-index: 2;
+}
+
 #lightbox {
   border: none;
   margin: auto;
   padding: 0;
   background: transparent;
+  max-inline-size: 100%;
 
-  /* popover transition in & out */
-  &,
+  @media screen and (width > 768px) {
+    max-inline-size: 80vw;
+  }
+
   &::backdrop {
-    transition: display 325ms allow-discrete, overlay 325ms allow-discrete,
-      transform 325ms, opacity 325ms;
-    opacity: 0;
-  }
-
-  /* open state */
-  &:popover-open {
-    opacity: 1;
-    transform: scale(1);
-
-    &::backdrop {
-      opacity: 1;
-    }
-  }
-
-  /* offstage styles */
-  @starting-style {
-    &:popover-open,
-    &:popover-open::backdrop {
-      opacity: 0;
-    }
-  }
-
-  /* no motion pref */
-  @media (prefers-reduced-motion: no-preference) {
-    transform: scale(0.95);
-  }
-
-  /* radial vignette for the backdrop */
-  &::backdrop {
+    backdrop-filter: none;
     background-image: radial-gradient(#0003, 25%, #000e);
+    view-transition-name: --light-box-backdrop;
   }
 
   /* lightbox img sizing */
   > img {
+    view-transition-name: --light-box-img;
+    block-size: auto;
+    max-inline-size: 100%;
+    object-fit: contain;
     display: flex;
-    max-inline-size: 92%;
     block-size: auto;
   }
 }

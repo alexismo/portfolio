@@ -1,3 +1,7 @@
+html:has(dialog[open]) {
+  overflow: clip;
+}
+
 .bgimg-compass {
   background-image: url("../images/projects/compass/compass-poster.png");
   background-position: 50% 0;
@@ -19,7 +23,7 @@
       1fr
     )
   );
-  gap: 0.5rem;
+  gap: 0.2rem;
   align-items: end;
 
   > * {
@@ -28,14 +32,15 @@
 
   & > article {
     height: 100%;
-    padding-inline: 15px;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
 
-  h3 {
+  h3,
+  h5 {
     align-self: start;
+    text-align: start;
   }
 
   figure {
@@ -47,8 +52,8 @@
   img {
     display: block;
     margin-block-end: auto;
-    width: 100%;
     max-height: calc(100dvh - 200px);
+    max-width: 100%;
   }
 
   figcaption {
@@ -61,8 +66,12 @@ dl.images--grid {
   place-items: start;
   white-space: normal;
 
+  dt {
+    font-size: 1.125rem;
+  }
+
   dd ~ dt {
-    margin-block-start: 0.5rem;
+    margin-block-start: 0.6125rem;
   }
 
   .text-step {
@@ -76,7 +85,7 @@ dl.images--grid {
 
 @media only screen and (max-width: 520px) {
   .images--grid {
-    width: 100vw;
+    width: calc(100vw - 15px);
     padding-inline: 15px;
     transform: translateX(-15px);
     grid-template-columns: repeat(var(--max-columns), 100%);
