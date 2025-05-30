@@ -48,6 +48,20 @@ html {
   line-height: 1.5;
 }
 
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
 body {
   color: var(--text);
   font-family: "proxima-nova-regular", "Helvetica", sans-serif;
@@ -212,14 +226,68 @@ menu li {
   list-style: none;
 }
 
+.header-social {
+  align-content: center;
+}
+
 ul.socialicons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  gap: 16px;
 }
 
-.socialicons li {
-  margin-left: 16px;
+.icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.icon,
+.icon::after {
+  background: var(--white);
+  transition-property: background-color background-image opacity;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+
+.icon-github {
+  mask-image: url("../images/social/github.svg");
+  &:hover {
+    background-color: #93939e;
+  }
+}
+.icon-bluesky {
+  mask-image: url("../images/social/bluesky.svg");
+  &:hover {
+    background-color: #0085ff;
+  }
+}
+.icon-instagram {
+  position: relative;
+  mask-image: url("../images/social/instagram.svg");
+  background-image: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  &:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  &:hover::after {
+    opacity: 0;
+  }
+}
+.icon-email {
+  mask-image: url("../images/social/envelope.svg");
+  &:hover {
+    background-color: #94b1f5;
+  }
 }
 
 section,
@@ -244,10 +312,6 @@ footer .socialicons {
   justify-content: center;
 }
 
-footer .socialicons li {
-  margin: 5px 16px;
-}
-
 footer #hand {
   display: inline-block;
   transform-origin: 30% 60%;
@@ -256,52 +320,19 @@ footer #hand {
 }
 
 footer #hand:hover {
-  animation: handwave 0.8s infinite;
-  transition: transform 200ms ease;
+  animation: handwave 2s infinite;
+  transform-origin: 50% 60%;
 }
 
 footer #heart {
   display: inline-block;
-  transition: all 150ms ease;
+  transition: transform 150ms ease;
   transform: rotate(0deg);
 }
 
 footer #heart:hover {
-  display: inline-block;
   transform: rotate(-90deg);
   color: #e273d9;
-}
-
-.socialicons li a i.fa-twitter:hover {
-  transition: color 200ms ease;
-  color: #00aced; /* twitter color! */
-}
-
-.socialicons li a i.fa-instagram:hover {
-  transition: background-color 200ms ease;
-  background: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
-  padding: 2px;
-  margin: -2px;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.socialicons li a i.fa-github:hover {
-  transition: color 200ms ease;
-  color: rgb(125, 125, 125); /* github color! */
-}
-
-.socialicons li a i.fa-envelope-o:hover {
-  transition: color 200ms ease;
-  color: #94b1f5; /* email color? */
 }
 
 .padding-tb {
@@ -588,11 +619,6 @@ p.role {
   letter-spacing: 1.6px;
 }
 
-span.chinese {
-  font-family: "Noto Sans SC", sans-serif;
-  font-weight: 500;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -605,15 +631,25 @@ span.chinese {
 
 @keyframes handwave {
   0% {
-    transform: rotate(-15deg) scale(1.3);
+    transform: rotate(0deg);
   }
-
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
   50% {
-    transform: rotate(15deg) scale(1.3);
+    transform: rotate(10deg);
   }
-
-  100% {
-    transform: rotate(-15deg) scale(1.3);
+  60% {
+    transform: rotate(0deg);
   }
 }
 
