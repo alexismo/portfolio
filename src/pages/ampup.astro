@@ -1,0 +1,147 @@
+---
+import Base from "../layouts/Base.astro";
+const title = "JBL AmpUp! - Alexis Morin";
+---
+
+<Base title={title}>
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/ampup.css" />
+  </Fragment>
+
+  <div class="body-img bdimg-ampup"></div>
+
+  <div id="intro">
+    <h3 class="tagline mobile-glass">JBL AmpUp! - UX &amp; UI Design</h3>
+  </div>
+
+  <div class="content" id="ampupintro">
+    <section>
+      <h4>Wake up on the rocking side of bed!</h4>
+      <p>
+        What if you could wake up to your own music and make every day the best
+        it could be?
+      </p>
+    </section>
+  </div>
+
+  <div class="content" id="ampupdocked">
+    <section>
+      <div class="col-xs-12 center">
+        <div class="col-xs-12 padding-no center">
+          <h3 style="font-weight: 300">Your Go-To Morning App</h3>
+        </div>
+        <div class="col-md-4 padding-tb">
+          <h4>Morning Dashboard</h4>
+          <p>
+            It has everything you need to start the day: analog and digital
+            clocks, alarm for waking up, weather, calendar, and music.
+          </p>
+        </div>
+        <div class="col-md-4 padding-xs">
+          <div class="iPhone">
+            <img src="/images/iPhone5black.png" class="iPhoneImg" />
+            <div class="iphone5Video">
+              <div class="iPhone5slider">
+                <div>
+                  <video
+                    preload="true"
+                    id="ampupIphoneVideo"
+                    autoplay
+                    loop
+                    poster="/images/projects/ampup/videoPoster.jpg"
+                  >
+                    <source
+                      src="/images/projects/ampup/iPhone5.mp4"
+                      type="video/mp4"
+                    />
+                    <source
+                      src="/images/projects/ampup/iPhone5.webm"
+                      type="video/webm"
+                    />
+                  </video>
+                  <script>
+                    document.getElementById("ampupIphoneVideo").play();
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 padding-tb">
+          <h4>Crafted Design Details</h4>
+          <p>
+            The innovative pager on the iPhone version provides navigation state
+            to the entire application. (This <strong>was</strong> 2011 after all!)
+            <img
+              src="/images/projects/ampup/ampUpPager.gif"
+              style="margin-top: 15px"
+              width="100%"
+            />
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="content" id="iphone5video">
+    <section>
+      <div class="col-xs-12 center">
+        <div class="col-md-4 padding-xs">
+          <h4>Morning Dashboard</h4>
+          <p>
+            It has everything you need to start the day: analog and digital
+            clocks, alarm for waking up, weather, calendar, and music.
+          </p>
+        </div>
+        <div class="col-md-4 padding-xs">
+          <img src="/images/projects/ampup/iPad-docked@2x.jpg" width="100%" />
+        </div>
+        <div class="col-md-4 padding-xs">
+          <h4>Designed with JBL Hardware</h4>
+          <p>
+            Inbuilt presets control the equalizer from the JBL Rize docking
+            speaker.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="content contribution" id="ampupContribution">
+    <section>
+      <div class="col-xs-12 center">
+        <p>
+          JBL is a ubiquitous brand in many countries. Alongside Industrial and
+          UI designers, I worked within the Industrial Design team at Harman
+          International in Shenzhen China to take a first stab at the app
+          landscape relevant for a brand like JBL. Over the course of 4 months,
+          I designed 2 applications (the second is no longer maintained). I
+          coached 2 visual designers into crafting modern (at the time) visuals.
+        </p>
+        <p>
+          <span class="am-bold">Team:</span> Industrial Design @ Harman International
+          (Shenzhen, China)<br />
+          <span class="am-bold">Role:</span> Interaction Design Intern
+        </p>
+        <p>
+          JBL AmpUp was available on the Apple App Store in 2011. It has since
+          been discontinued.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    (function () {
+      resizeIntroDiv();
+      if (!isMobile) {
+        window.onresize = function () {
+          resizeIntroDiv();
+        };
+      } else {
+        sizeBg();
+      }
+    })();
+  </script>
+</Base>

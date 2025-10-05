@@ -1,0 +1,9 @@
+.bdimg-flame {
+  background-image: url("../images/projects/flame/flamePoster.jpg");
+  background-position: 50% 0;
+}
+
+#flameintro {
+  background-color: #ed5153;
+  color: #fff;
+}

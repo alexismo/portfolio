@@ -1,0 +1,278 @@
+---
+import Base from "../layouts/Base.astro";
+const title = "Lightspeed Flame Design System - Alexis Morin";
+---
+
+<Base title={title}>
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/flame.css" />
+  </Fragment>
+
+  <div id="intro">
+    <h3 class="tagline mobile-glass">Lightspeed Flame Design System</h3>
+    <div class="body-img bdimg-flame"></div>
+  </div>
+
+  <div class="content" id="flameintro">
+    <section>
+      <div class="col-md-12">
+        <div class="col-12">
+          <h2>A Design System for a diverse suite of products</h2>
+        </div>
+        <div class="col-12" width="100%">
+          <p>
+            With a company history rich with acquisitions from the world over,
+            Lightspeed was ripe for a way to harmonize the divergent styles
+            presented in its products.
+          </p>
+          <p>
+            The Flame design system is a collaborative living set of
+            multidisciplinary tools that helps Lightspeeders create unified
+            experiences for its customers.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="content contribution">
+    <section>
+      <div class="col-xs-12 center">
+        <p>
+          My contribution to the project was to:
+          <ul style="list-style-type:circle; margin-left: 20px;">
+            <li>produce and evolve the team Sketch shared library,</li>
+            <li>
+              use an innersource model to facilitate contributions and
+              discussions between siloed teams of &gt;20 front-end and
+              designers,
+            </li>
+            <li>
+              build an ultimately successful business case to management for a
+              dedicated Design Systems team,
+            </li>
+            <li>
+              develop the roadmap for the Design System and present it as OKRs
+              to management,
+            </li>
+            <li>
+              design, write, publish, and evangelize a Design System
+              Documentation website.
+            </li>
+            <li>
+              correctly identify, design, include new components, patterns, and
+              best practices into the Design System,
+            </li>
+          </ul>
+          <br />
+          To date, the Lightspeed Flame Design System contains:
+          <ul style="list-style-type:circle; margin-left: 20px;">
+            <li>
+              an Abstract-versionned Sketch library of shared components and
+              styles,
+            </li>
+            <li>
+              &gt; 30 components written in React and <a
+                href="https://www.npmjs.com/package/@lightspeed/cirrus"
+                target="_blank">published to NPM</a
+              >
+            </li>
+            <li>
+              Product Content guidelines for writing within Lightspeed products,
+            </li>
+            <li>
+              a website of 51 pages documenting all components, best practices,
+              code samples, and APIs for all atoms, components and patterns
+            </li>
+            <li>
+              Framer Classic and FramerX libraries for high-fidelity interactive
+              prototyping using the Design System components
+            </li>
+          </ul>
+          At the time of writing, Flame is in active use at Lightspeed by <strong
+            >all</strong
+          > web front-end teams. It powers <strong>10 teams</strong>,
+          <strong>5 products</strong>, and <strong>30 Lightspeeders</strong> to deliver
+          value to our customers.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <div class="col-md-12">
+        <div class="col-12">
+          <h2>How did this happen? What was my process?</h2>
+          <h3>1. Humble beginnings (CSS)</h3>
+          <p>
+            Starting in 2016, I noticed that most design work at Lightspeed was
+            inconsistent at many levels. Having worked on a Design System
+            previously at EF, I understood how to this problem could be
+            remedied. My first step was to find allies among the Front-end
+            development guild. Together, we explored the idea of building a
+            Design System, and how this might benefit UX Design and Front-end
+            development.
+          </p>
+          <p>
+            The first few components were made of CSS classes. We decided to
+            leverage a small project as a proof-of-concept. Getting buy-in from
+            PMs and other developers across the organization was critical: a
+            small time investment up-front in exchange for more quality, speed,
+            and consistency in the future.
+          </p>
+        </div>
+        <div class="col-12 center">
+          <figure>
+            <img
+              width="100%"
+              src="/images/projects/flame/early-cirrus.jpg"
+              srcset="/images/projects/flame/early-cirrus.jpg 1x, /images/projects/flame/early-cirrus@2x.jpg 2x"
+              alt="UI design for the Design System proof-of-concept"
+              style="max-width: 680px;"
+            />
+            <figcaption>
+              UI design for the Design System proof-of-concept (currently in
+              production)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <div class="col-12">
+        <h3>2. Growth & team buy-in (contributions & React)</h3>
+        <p>
+          Developers and designers quickly gained interest in the Design System.
+          All designers were already using the Sketch and Framer libraries we
+          had created for ultra-fast UI design and prototyping.
+        </p>
+        <p>
+          Developers from other teams who saw value in this Design System
+          started using it and contributing back to it. This was amazing! Very
+          quickly, the number of components available to us was growing due to
+          the positive feedback loop that the team had initiated.
+        </p>
+        <p>
+          In a collaborative decision, the contributors decided to evolve from
+          CSS tokens & shared styles to React.
+        </p>
+        <p>
+          The move to React components empowered designers to bring more types
+          of components to the Design System.
+        </p>
+        <figure>
+          <img
+            width="100%"
+            src="/images/projects/flame/flame-icons.svg"
+            alt="Sample of the icon set created as React components"
+          />
+          <figcaption>
+            Sample of the icon set created as React components
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <div class="col-12">
+        <h3>3. Tabular expansion</h3>
+        <p>
+          Realizing the power of the Design System on one hand and some
+          inconsistent pages in our products, I rallied designers from each of
+          the major 3 web products from Lightspeed to collaborate on the design
+          and conceptualization of a Table component: arguably the most complex
+          component yet.
+        </p>
+        <p>
+          To maximize usefulness for all developers, designers, and customers,
+          this Table component would have to support many workflows and
+          modalities. I led interface inventories, competitive analyses, and
+          many design workshops with stakeholders in order to get this right.
+        </p>
+        <div class="col-12 center">
+          <figure>
+            <img
+              width="100%"
+              src="/images/projects/flame/filterTable.jpg"
+              srcset="/images/projects/flame/filterTable.jpg 1x, /images/projects/flame/filterTable@2x.jpg 2x"
+              alt="Filter Table from the Flame Design System"
+            />
+            <figcaption>Filter Table from the Flame Design System</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <div class="col-12">
+        <h3>4. Birth of a team</h3>
+        <p>
+          After a year and a half of building the Design System in a distributed
+          way, I wanted to further increase the velocity and quality of the
+          Design System. I pitched to key stakeholders the idea that the company
+          should invest in a dedicated team for the Design System.
+        </p>
+        <div class="col-12 center">
+          <figure>
+            <img
+              width="100%"
+              src="/images/projects/flame/ds-team.jpg"
+              alt="The Lightspeed Design System team enjoying some Ramen 🍜"
+            />
+            <figcaption>
+              The Lightspeed Design System team enjoying some Ramen 🍜
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <div class="col-12">
+        <h3>5. Hardening and evangelizing</h3>
+        <p>
+          With a newfound team and hopeful hearts, the team transitioned from
+          working on the Design System as an "innovation time" project to
+          treating it like a product. Our first initiative was to improve the
+          developer experience of using the Design System.
+        </p>
+        <div class="col-12 center">
+          <figure>
+            <img
+              width="100%"
+              src="/images/projects/flame/design-system-website.jpg"
+              alt="Landing page for the Lightspeed Flame Design System"
+            />
+            <figcaption>
+              Landing page for the Lightspeed Flame Design System
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    (function () {
+      resizeIntroDiv();
+      if (!isMobile) {
+        window.onresize = function () {
+          resizeIntroDiv();
+        };
+      } else {
+        sizeBg();
+      }
+    })();
+  </script>
+</Base>

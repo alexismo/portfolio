@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="20px" viewBox="0 0 12 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>rightChevronGrey</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="wide-projects-normal" sketch:type="MSArtboardGroup" transform="translate(-298.000000, -1312.000000)" fill="#303033">
+            <g id="EF-English-Live" sketch:type="MSLayerGroup" transform="translate(0.000000, 940.000000)">
+                <g id="CTA" transform="translate(80.000000, 371.000000)" sketch:type="MSShapeGroup">
+                    <path d="M232.371603,5.37206174 L233.622062,6.6227963 L223.625,16.6220617 L213.627938,6.6227963 L214.878397,5.37206174 L223.625,14.1205926 L232.371603,5.37206174 Z" id="rightChevronGrey" transform="translate(223.625000, 10.997062) rotate(-90.000000) translate(-223.625000, -10.997062) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

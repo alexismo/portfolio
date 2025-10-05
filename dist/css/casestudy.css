@@ -1,0 +1,16 @@
+.bdimg-classroom{
+    background-image: url('../images/projects/classroom-casestudy/casestudy-hero.jpg');
+    background-position: 50% 0;
+}
+
+#casestudyintro{
+    color:#fff;
+    background: -moz-linear-gradient(top, #37dcb9 0%, #1da787 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #37dcb9 0%,#1da787 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #37dcb9 0%,#1da787 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#casestudyouttro{
+	color: white;
+	background: #dd0083;
+}
