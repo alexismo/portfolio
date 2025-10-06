@@ -1,6 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
-const title = 'EF Classroom - Alexis Morin';
+import Base from "../layouts/Base.astro";
+const title = "EF Classroom - Alexis Morin";
 ---
 
 <Base title={title}>
@@ -20,8 +20,10 @@ const title = 'EF Classroom - Alexis Morin';
         <div class="col-xs-12">
           <h3 style="font-weight:300;">Classroom churn was terrible</h3>
         </div>
-        <div class="col-xs-12" width="100%">
-          <p>Before I started on redesigning the EF Classroom, It had a problem:</p>
+        <div class="col-xs-12">
+          <p>
+            Before I started on redesigning the EF Classroom, It had a problem:
+          </p>
           <p>15% percent of students never made it into the classroom!</p>
         </div>
       </div>
@@ -32,50 +34,95 @@ const title = 'EF Classroom - Alexis Morin';
     <section>
       <div class="col-xs-12 center">
         <p>
-          <strong>Context: </strong> Group Lessons and Private lessons are an opportunity for English students to apply what they have learned during self-study with other students and with a certified EF English teacher.
+          <strong>Context: </strong> Group Lessons and Private lessons are an opportunity
+          for English students to apply what they have learned during self-study
+          with other students and with a certified EF English teacher.
           <br />
-          In order to take an online English Group Lesson, students had to go through four main steps:
+          In order to take an online English Group Lesson, students had to go through
+          four main steps:
         </p>
         <ol style="list-style-type:decimal;">
-          <li>Pre-class "Tech Check": verifying that they have proper audio setup and Adobe Flash.</li>
-          <li>Backend check with Adobe that a virtual Adobe Connect room is available (according to our license).</li>
-          <li>Queue for a teacher: waiting for a teacher to mark themselves as available to teach a session.</li>
+          <li>
+            Pre-class "Tech Check": verifying that they have proper audio setup
+            and Adobe Flash.
+          </li>
+          <li>
+            Backend check with Adobe that a virtual Adobe Connect room is
+            available (according to our license).
+          </li>
+          <li>
+            Queue for a teacher: waiting for a teacher to mark themselves as
+            available to teach a session.
+          </li>
         </ol>
         <p>
-          <strong>The problem:</strong> when students were lined-up to enter the classroom (queued for a teacher), not all of them were able to enter the classroom right away. With a wait time of up to 10 minutes, <strong>15% of all the students churned during this wait!</strong>
+          <strong>The problem:</strong> when students were lined-up to enter the
+          classroom (queued for a teacher), not all of them were able to enter the
+          classroom right away. With a wait time of up to 10 minutes, <strong
+            >15% of all the students churned during this wait!</strong
+          >
           <br />
-          Why is this a problem? Not only are Group Lessons very beneficial to student's English education, but EF also makes a fair share of their money from having students complete Group (and Private) Lessons.
+          Why is this a problem? Not only are Group Lessons very beneficial to student's
+          English education, but EF also makes a fair share of their money from having
+          students complete Group (and Private) Lessons.
         </p>
         <p>
-          <strong>The hypothesis:</strong> students might churn less if we were more honest with them about what they were waiting for.
+          <strong>The hypothesis:</strong> students might churn less if we were more
+          honest with them about what they were waiting for.
         </p>
         <p>
-          <strong>The execution:</strong> what needed to happen is a cross-team effort in order to:
+          <strong>The execution:</strong> what needed to happen is a cross-team effort
+          in order to:
           <ul style="list-style-type: decimal;">
-            <li>Better understand the steps we take in the background in order for student and teacher to meet.</li>
-            <li>Decide how we can safely expose these steps to the students.</li>
-            <li>Build an experience that effectively communicates these steps.</li>
+            <li>
+              Better understand the steps we take in the background in order for
+              student and teacher to meet.
+            </li>
+            <li>
+              Decide how we can safely expose these steps to the students.
+            </li>
+            <li>
+              Build an experience that effectively communicates these steps.
+            </li>
             <li>A/B test the idea to see if it works.</li>
           </ul>
         </p>
         <p>
-          After going over a few interactions in Sketch, I built a prototype in Framer in order to give the developers an idea of what I had in mind. In the spirit of speed, not all states were built into the prototype.
+          After going over a few interactions in Sketch, I built a prototype in
+          Framer in order to give the developers an idea of what I had in mind.
+          In the spirit of speed, not all states were built into the prototype.
         </p>
-<iframe src="/prototypes/classroom-casestudy.framer/index.html" width="1122" height="593" style="width: 1122px; height: 593px; position: relative; left: -25%;" name="classroom-casestudy-proto"></iframe>
+        <iframe
+          src="/prototypes/classroom-casestudy.framer/index.html"
+          width="1122"
+          height="593"
+          style="width: 1122px; height: 593px; position: relative; left: -25%;"
+          name="classroom-casestudy-proto"></iframe>
         <p>
-          By showing a progress indicator like this, we were able to increase transparency with our students. The four backend steps required for students to make it into the classroom were now clear to them; they knew why they were waiting:
+          By showing a progress indicator like this, we were able to increase
+          transparency with our students. The four backend steps required for
+          students to make it into the classroom were now clear to them; they
+          knew why they were waiting:
           <ul style="list-style-type: decimal;">
             <li>Entering the student queue (and determining their position)</li>
             <li>Generating the link for the Adobe Connect virtual classroom</li>
-            <li>Waiting for the teacher to make themselves available to the class.</li>
+            <li>
+              Waiting for the teacher to make themselves available to the class.
+            </li>
             <li>Entering the classroom</li>
           </ul>
         </p>
         <p>
-          We A/B tested this idea by measuring student cohorts' "seat given" KPI before and after the change.
+          We A/B tested this idea by measuring student cohorts' "seat given" KPI
+          before and after the change.
         </p>
         <p>
-          Check out the EF English Live classroom at: <a href="http://englishlive.ef.com/en-wws/" title="EF English Live" rel="noreferrer" target="_blank">englishlive.ef.com</a>
+          Check out the EF English Live classroom at: <a
+            href="http://englishlive.ef.com/en-wws/"
+            title="EF English Live"
+            rel="noreferrer"
+            target="_blank">englishlive.ef.com</a
+          >
         </p>
       </div>
     </section>
@@ -87,7 +134,7 @@ const title = 'EF Classroom - Alexis Morin';
         <div class="col-xs-12">
           <h3 style="font-weight:300;">Churn was down to 1% !</h3>
         </div>
-        <div class="col-xs-12" width="100%">
+        <div class="col-xs-12">
           <p>In a single sprint, we had reduced classroom churn by 14%.</p>
         </div>
       </div>
@@ -98,7 +145,8 @@ const title = 'EF Classroom - Alexis Morin';
     <section>
       <div class="col-xs-12 center">
         <p>
-          <strong>Team:</strong> User Experience &amp; Design @ EF Education First (Shanghai, China)
+          <strong>Team:</strong> User Experience &amp; Design @ EF Education First
+          (Shanghai, China)
           <br />
           <strong>Role:</strong> User Experience Designer
         </p>
@@ -120,4 +168,3 @@ const title = 'EF Classroom - Alexis Morin';
     })();
   </script>
 </Base>
-

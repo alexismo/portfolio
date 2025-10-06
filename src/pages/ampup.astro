@@ -60,7 +60,11 @@ const title = "JBL AmpUp! - Alexis Morin";
                     />
                   </video>
                   <script>
-                    document.getElementById("ampupIphoneVideo").play();
+                    (
+                      document.getElementById(
+                        "ampupIphoneVideo"
+                      ) as HTMLVideoElement
+                    )?.play();
                   </script>
                 </div>
               </div>
