@@ -1,0 +1,42 @@
+.bdimg-aop {
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+header {
+  z-index: 1;
+  @media only screen and (min-width: 737px) {
+    position: relative;
+  }
+}
+
+.bdimg-aop video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensure clicks pass through the hero video */
+  pointer-events: none;
+}
+
+#aopintro {
+  background-color: #9e1b32;
+  color: #fff;
+}
+
+.tagline {
+  background-color: rgba(255, 255, 255, 0.8);
+  @media only screen and (min-width: 737px) {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.aop-3up {
+  margin: 0 auto;
+}
+
+.aop-3up img {
+  width: 100%;
+}

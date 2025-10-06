@@ -1,0 +1,226 @@
+---
+import Base from '../layouts/Base.astro';
+const title = 'Ubisoft Connect - Alexis Morin';
+---
+
+<Base title={title}>
+  <link slot="head" rel="stylesheet" href="/css/connect.css" />
+
+  <div id="intro">
+    <h3 class="tagline mobile-glass">Ubisoft Connect</h3>
+    <div class="body-img bdimg-connect"></div>
+  </div>
+
+  <div class="content gradient-teal-blue">
+    <section>
+      <div class="col-md-12">
+        <div class="col-12">
+          <h2>A network for all players</h2>
+        </div>
+        <div class="col-12" width="100%">
+          <p>
+            Ubisoft Connect is a transversal meta-layer which connects all players and brands under the Ubisoft umbrella. <br />
+            By offering players a series of 12 connected micro-apps, it enriches game experiences. <br />
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="content contribution gradient-pink">
+    <section>
+      <div class="col-xs-12 center">
+        <p>
+          My contributions to this project were split into two parts.
+          <h2>1. Multi-platform, multi-theme design system</h2>
+            <ul class="legible-list">
+              <li>craft many of the team's Figma components for the shared library,</li>
+              <li>ensure accessibility compliance and localization of UI components,</li>
+              <li>devise solutions for storing design tokens in a single source,</li>
+              <li>implement a single shared library for design tokens, including light &amp; dark themes,</li>
+              <li>code engineering demos of how design tokens might be used in production code,</li>
+              <li>distribute the library of design tokens via an internal Artifactory instance,</li>
+            </ul>
+           <br />
+           <h2>2. Challenges feature within Ubisoft Connect</h2>
+           <ul class="legible-list">
+             <li>collaborate with Game Designers to come up with the app's business rules,</li>
+             <li>create flexible UI components to accomodate various challenges provided by game teams,</li>
+             <li>carefully integrate the Challenges feature within the Ubisoft Connect overlay shell,</li>
+           </ul>
+           Ubisoft Connect brings together over <strong>250M</strong> players from across the world on PC, Xbox, Playstation, Switch, Stadia, iOS and Android.
+       </p>
+       <p>
+         <span class='am-bold'>Company:</span> Ubisoft
+       <br />
+         <span class='am-bold'>Team:</span> Ghina El-Chemali, Letícia Zancan, Maria Rundqvist, Émile Bergeron, Basile Fecourt, Roxanne Angers
+       <br />
+         <span class='am-bold'>Role:</span> Product Designer, Front-End Developer
+         <br />
+         <span class='am-bold'>Timeline:</span> 2019-2020
+         <br />
+         <span class='am-bold'>Status:</span> in production
+       </p>
+     </div>
+   </section>
+  </div>
+
+  <div class="content gradient-orange">
+    <section>
+      <div class="col-md-12">
+        <figure>
+          <iframe class="connect-youtube-embed" src="https://www.youtube-nocookie.com/embed/2HYVF0JoOPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <figcaption>
+            A video of Ubisoft Connect with Rainbow Six: Siege, on PC.
+          </figcaption>
+        </figure>
+        <div class="connect-ds-constraints">
+          <figure>
+            <img width="100%" src="/images/projects/connect/connectHome.png" 
+            alt="App screenshot of Ubisoft Connect, showing a level 20 user, a carousel of Top News, and a carousel of Friends." />
+            <figcaption>
+              The Home tab of Ubisoft Connect on iOS
+            </figcaption>
+          </figure>
+          <figure>
+            <img width="100%" src="/images/projects/connect/connectProfile.png" 
+            alt="App screenshot of Ubisoft Connect showcasing the user siestable. The profile photo is a pointy-eared dog. An Overview tab is highlighted. Stats show 11 games played, 14 friends, and 12 years with Ubisoft. Wowee!" />
+            <figcaption>
+              The Profile tab of Ubisoft Connect on iOS
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="content gradient-teal">
+    <section>
+        <div class="col-md-12">
+          <div class="col-12">
+            <h2>A Design Sytem for all devices</h2>
+            <p>
+              Name an electronic device. Someone probably tried to run a game on it. Games are ubiquitous - an idea which Ubisoft epitomizes. 
+              Upon starting this project, it was clear that most current &amp; next-gen devices needed to be supported by this Design System.
+              As most games are now played on mobile devices, light &amp; dark modes would need to be included.
+              Controller modalities also had to be taken into consideration, meaning that both focus-based navigation 
+              (common with game consoles or keyboards) and mouse/touch navigation had to be supported.
+            </p>
+          </div>
+          <div class="col-12 connect-ds-constraints">
+              <figure>
+                <img width="100%" src="/images/projects/connect/cross-platform.png" 
+                alt="Icons showing devices types: TV, Mobile, PC, Playstation, Nintendo Switch, Xbox, and Stadia" />
+                <figcaption>
+                  Support for many device types
+                </figcaption>
+            </figure>
+              <figure>
+                <img width="100%" src="/images/projects/connect/light-dark.jpg" 
+                alt="Rows of color chips from the Ubisoft color palette, shown for both the dark and light themes." />
+                <figcaption>
+                  Light &amp; dark modes
+                </figcaption>
+            </figure>
+              <figure>
+                <img width="100%" src="/images/projects/connect/cursor-focus.jpg" 
+                alt="Illustrated demonstration of the difference between cursor and focus-based navigation." />
+                <figcaption>
+                  Cursor &amp; focus-based navigation
+                </figcaption>
+            </figure>
+          </div>
+        </div>
+    </section>
+    <section>
+      <div class="col-md-12">
+        <h2>Distributing tokens for engineers</h2>
+        <p>
+          This project was on a short timeline, as its release needed to match with the launch of the PS5 and Xbox Series X. <br />
+          To support this timeline, engineering teams from various offices were leveraged. 
+          In implementing some of the micro-apps, some of teams used React and others used Vue.js. 
+          This meant that a shared library of React components would not be usable by all engineering teams.
+          Therefore, to best scale the usage of the Design System to engineering teams, I devised a solution which matched the level of abstraction:
+        </p>
+        <h3>A library of centralized design tokens, consummable by both React and Vue.js</h3>
+        <p>To pull this off, here was my process:
+          <ul style="list-style-type:circle; margin-left: 20px;">
+            <li>pitch the idea to PMs, Engineering &amp; Design and get their buy-in on the idea,</li>
+            <li>collaborate with engineers to learn how packages were distributed within Ubisoft,</li>
+            <li>integrate Figma design decisions into the Theme-ui spec,</li>
+            <li>structure overridable color themes within the set of design tokens,</li>
+            <li>create coded component examples using the theme context and design tokens.</li>
+          </ul>
+        </p>
+        <p>
+          My work enabled both React &amp; Vue.js teams to save time on their implementation by not having to worry about styling.<br />
+          Code I wrote now runs on <strong>over 250 million</strong> PC, mac, Android, iOS, Nintendo Switch, Playstation, Xbox devices and even cloud streaming platforms!
+        </p>
+        <figure>
+          <img width="100%" src="/images/projects/connect/tokens-to-connect.png" 
+          alt="Diagram showing Design tokens written with the ThemeUI spec, being consumed by React and Vue.js applications and running on Ubisoft Connect." />
+          <figcaption>
+            System diagram of the path taken by the design tokens library
+          </figcaption>
+      </figure>
+      </div>
+    </section>
+  </div>
+
+  <div class="content gradient-teal-blue">
+    <section>
+      <div class="col-md-12">
+        <div class="col-12">
+          <h2>The challenges feature</h2>
+          <p>
+            Challenges are in-game prompts which players can complete to earn in-game currency and level-up their Ubisoft Account.
+            There are 2 types of challenges: Core challenges only need to be completed once; and Time-Limited challenges reset every week and can be completed multiple times.
+            Challenges are comparable in nature to Xbox &amp; Steam achievements, Playstation trophies.
+          </p>
+          <p>
+            Together with a Game Designer responsible for designing wider system economics and gameplay loops, and a Product Owner responsible to matching business requirements, 
+            I designed UX &amp; UI of the Ubisoft Connect Challenges feature. 
+          </p>
+          <p>
+            The core of the Challenges feature is a list of Core and Time-Limited Challenges. Each challenge has criteria which need to be completed in-game by players. <br />
+            Individual challenges are represented by a Card component within a list. Many variables can compound and create lots of complexity within individual challenges:
+            <ul class="legible-list">
+              <li>One-time challenges,</li>
+              <li>Partial progress challenges,</li>
+              <li>Community challenges</li>
+              <li>Multi-tiered challenges</li>
+              <li>Completed challenges</li>
+            </ul>
+          </p>
+          <p>
+            This is what Challenges look like in the mobile app:
+          </p>
+          <div class="col-12 connect-ds-constraints">
+            <figure>
+              <img width="100%" src="/images/projects/connect/challengesCore.png" 
+              alt="App screenshot of a list of Core Challenges for Assassin's Creed Valhalla." />
+              <figcaption>
+                Core challenges
+              </figcaption>
+            </figure>
+            <figure>
+              <img width="100%" src="/images/projects/connect/challengesTimeLimited.png" 
+              alt="App screenshot of a list of Time-Limited Challenges for Rainbow Six: Siege." />
+              <figcaption>
+                Time-Limited challenges
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="col-md-12">
+        <div class="col-12">
+          <h2>Ubisoft Connect represents a consolidation of brands into a single unified product. Check it out at <a href="https://ubisoftconnect.com/" target="_blank">ubisoftconnect.com</a>.
+          </h2>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>
