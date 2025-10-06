@@ -1,28 +1,19 @@
 @font-face {
   font-family: "proxima-nova-regular";
-  src: url("../fonts/prxnv-reg.eot");
-  src: url("../fonts/prxnv-reg.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/prxnv-reg.woff") format("woff"),
-    url("../fonts/prxnv-reg.ttf") format("truetype"),
-    url("../fonts/prxnv-reg.svg#webfont") format("svg");
+  src: url("../fonts/prxnv-reg.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "proxima-nova-bold";
-  src: url("../fonts/prxnv-bld.eot");
-  src: url("../fonts/prxnv-bld.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/prxnv-bld.woff") format("woff"),
-    url("../fonts/prxnv-bld.ttf") format("truetype"),
-    url("../fonts/prxnv-bld.svg#webfont") format("svg");
+  src: url("../fonts/prxnv-bld.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "proxima-nova-light";
-  src: url("../fonts/prxnv-lt.eot");
-  src: url("../fonts/prxnv-lt.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/prxnv-lt.woff") format("woff"),
-    url("../fonts/prxnv-lt.ttf") format("truetype"),
-    url("../fonts/prxnv-lt.svg#webfont") format("svg");
+  src: url("../fonts/prxnv-lt.woff2") format("woff2");
+  font-display: swap;
 }
 
 @view-transition {
