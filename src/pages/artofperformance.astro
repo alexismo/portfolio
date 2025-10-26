@@ -113,16 +113,25 @@ const title = "The Art of Performance Tour - Alexis Morin";
     <section>
       <div class="col-md-12 center">
         <div class="col-sm-4">
-          <h3>1. World Record Cam</h3>
-          <img src="/images/projects/aop/photo-booth.jpg" />
+          <h3 id="wrc-booth">1. World Record Cam</h3>
+          <img
+            src="/images/projects/aop/photo-booth.jpg"
+            alt="A photo booth and poster background for the world record cam"
+          />
         </div>
         <div class="col-sm-4">
           <h3>2. Reactive Wall</h3>
-          <img src="/images/projects/aop/particle-wall.jpg" />
+          <img
+            src="/images/projects/aop/particle-wall.jpg"
+            alt="A woman standing in from of 3 TV showing red particles in the shape of a Jaguar"
+          />
         </div>
         <div class="col-sm-4">
           <h3>3. Paint Studio</h3>
-          <img src="/images/projects/aop/paint-a-jaguar.jpg" />
+          <img
+            src="/images/projects/aop/paint-a-jaguar.jpg"
+            alt="A woman adding color to a sketch of a Jaguar car"
+          />
         </div>
       </div>
     </section>
@@ -201,12 +210,12 @@ const title = "The Art of Performance Tour - Alexis Morin";
                 "
               >
                 <iframe
-                  src="https://giphy.com/embed/SXfKkYjOlC9tUCmXIL"
-                  width="100%"
-                  height="100%"
-                  style="position: absolute"
-                  frameborder="0"
-                  class="giphy-embed"
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/38q9PDCVsTA?si=48c6xsekuhV0ibiC"
+                  title="Early prototype of a tablet-controlled camera rig."
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
                   allowfullscreen></iframe>
               </div>
               <figcaption>
@@ -256,10 +265,10 @@ const title = "The Art of Performance Tour - Alexis Morin";
             width="100%"
             height="506"
             src="https://www.youtube.com/embed/_INVFX7-pB0"
-            frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            aria-labelledby="reactive-wall-effects-video"
             allowfullscreen></iframe>
-          <figcaption>
+          <figcaption id="reactive-wall-effects-video">
             Video compilation of the effects available on the reactive wall.
             <br />
             Large spots of particles indicate a person passing by.
@@ -277,10 +286,10 @@ const title = "The Art of Performance Tour - Alexis Morin";
             width="100%"
             height="506"
             src="https://www.youtube.com/embed/R4mehM33hzU"
-            frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            aria-labelledby="reactive-wall-development-video"
             allowfullscreen></iframe>
-          <figcaption>
+          <figcaption id="reactive-wall-development-video">
             Progress video of the Reactive Wall still in development, <br />
             with some explanations from the Producer on the project.
           </figcaption>
