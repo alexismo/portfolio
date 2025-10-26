@@ -1,17 +1,17 @@
 .bdimg-classroom {
-  background-image: url('../images/projects/englishlive/englishLiveHero.jpg');
+  background-image: url("../images/projects/englishlive/englishLiveHero.jpg");
   background-position: 50% 0;
 }
 
 #englishliveintro {
-  color: #fff;
+  color: #10211c;
   background-color: #38ddb9;
 }
 
 #teacherteaching {
   height: 550px;
   color: #fff;
-  background-image: url('../images/projects/classroom/teacherteaching.jpg');
+  background-image: url("../images/projects/classroom/teacherteaching.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -19,7 +19,7 @@
 #classroom-isometric {
   height: 684px;
   color: #fff;
-  background-image: url('../images/projects/classroom/classroom-isometric.jpg');
+  background-image: url("../images/projects/classroom/classroom-isometric.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }

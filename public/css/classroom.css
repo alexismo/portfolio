@@ -1,17 +1,17 @@
 .bdimg-classroom {
-  background-image: url('../images/projects/classroom/classroom-hero.jpg');
+  background-image: url("../images/projects/classroom/classroom-hero.jpg");
   background-position: 50% 0;
 }
 
 #classroomintro {
   color: #fff;
-  background-color: #1a7fff;
+  background-color: #1772ea;
 }
 
 #teacherteaching {
   height: 550px;
   color: #fff;
-  background-image: url('../images/projects/classroom/teacherteaching.jpg');
+  background-image: url("../images/projects/classroom/teacherteaching.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -19,7 +19,7 @@
 #classroom-isometric {
   height: 684px;
   color: #fff;
-  background-image: url('../images/projects/classroom/classroom-isometric.jpg');
+  background-image: url("../images/projects/classroom/classroom-isometric.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }

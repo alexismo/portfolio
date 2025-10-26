@@ -1,48 +1,48 @@
-.bdimg-ampup{
-    background-image: url('../images/projects/ampup/ampup-bdimg.jpg');
-    background-position: 50% 0;
+.bdimg-ampup {
+  background-image: url("../images/projects/ampup/ampup-bdimg.jpg");
+  background-position: 50% 0;
 }
 
-#ampupintro{
-    color:#fff;
-    background-color: #f60;
+#ampupintro {
+  color: rgb(28, 11, 0);
+  background-color: #f60;
 }
 
-#ampupdocked section{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
+#ampupdocked section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.iPhone video{
-    width: 100%;
-    height: 100%;
+.iPhone video {
+  width: 100%;
+  height: 100%;
 }
 
-.iPhone{
-    position: relative;
-    width: auto;
+.iPhone {
+  position: relative;
+  width: auto;
 }
 
-.iPhone5slider{
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
+.iPhone5slider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
 }
 
-.iPhoneImg{
-    width: 100%;
-    position: relative;
+.iPhoneImg {
+  width: 100%;
+  position: relative;
 }
 
-.iphone5Video{
-    position: absolute;
-    overflow: hidden;
-    height: 70.91%;
-    top:14.7%;
-    left:8.51%;
-    right: 7.6%;
+.iphone5Video {
+  position: absolute;
+  overflow: hidden;
+  height: 70.91%;
+  top: 14.7%;
+  left: 8.51%;
+  right: 7.6%;
 }
