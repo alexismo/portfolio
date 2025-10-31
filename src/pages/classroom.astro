@@ -221,18 +221,4 @@ const title = "EF Classroom - Alexis Morin";
       <h4>Fully featured, even on touch devices!</h4>
     </section>
   </div>
-
-  <script>
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    (function () {
-      resizeIntroDiv();
-      if (!isMobile) {
-        window.onresize = function () {
-          resizeIntroDiv();
-        };
-      } else {
-        sizeBg();
-      }
-    })();
-  </script>
 </Base>

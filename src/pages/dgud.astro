@@ -1,6 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
-const title = 'Alexis Morin - EF DGUD';
+import Base from "../layouts/Base.astro";
+const title = "Alexis Morin - EF DGUD";
 ---
 
 <Base title={title}>
@@ -20,7 +20,10 @@ const title = 'Alexis Morin - EF DGUD';
         </div>
         <div class="col-xs-12">
           <p>
-            An acronym for "Digital Grand Unified Design", DGUD is a Design System powering Education First's online identity for its English Live Product offering: Web, Classroom, iPad, iOS Mobile &amp; Android.
+            An acronym for "Digital Grand Unified Design", DGUD is a Design
+            System powering Education First's online identity for its English
+            Live Product offering: Web, Classroom, iPad, iOS Mobile &amp;
+            Android.
           </p>
         </div>
       </div>
@@ -32,7 +35,14 @@ const title = 'Alexis Morin - EF DGUD';
       <div class="col-xs-12">
         <h3 style="font-weight: 300">DGUD Manifesto</h3>
         <p>
-          The dGUD style guide is meant to help designers build great interfaces reducing the time spent on exploration or conceptualization of a visual identity. While we understand certain areas of the school deserve more prominence and visual/functional identity, we believe it's in good effort to offer other designers across the company a set of assets and components that have been carefully crafted, with rigorous emphasis on simplicity, hierarchy, typography, spacing and color.
+          The dGUD style guide is meant to help designers build great interfaces
+          reducing the time spent on exploration or conceptualization of a
+          visual identity. While we understand certain areas of the school
+          deserve more prominence and visual/functional identity, we believe
+          it's in good effort to offer other designers across the company a set
+          of assets and components that have been carefully crafted, with
+          rigorous emphasis on simplicity, hierarchy, typography, spacing and
+          color.
         </p>
       </div>
     </section>
@@ -42,18 +52,38 @@ const title = 'Alexis Morin - EF DGUD';
     <section>
       <div class="col-xs-12">
         <p>
-          <img src="/images/projects/dgud/awards.jpg" title="dGUD on 3 platforms" />
+          <img
+            src="/images/projects/dgud/awards.jpg"
+            title="dGUD on 3 platforms"
+          />
         </p>
         <h3 style="font-weight: 300">Structure</h3>
         <p>
-          To better suit a mobile form factor and the context of our students, our team devised ways to break down existing web content into smaller, bite-sized morcels of learning.
+          To better suit a mobile form factor and the context of our students,
+          our team devised ways to break down existing web content into smaller,
+          bite-sized morcels of learning.
         </p>
         <div class="col-12">
-          <img src="/images/projects/englishlive/structure-1.jpg" width="100%" />
-          <img src="/images/projects/englishlive/structure-2.jpg" width="100%" />
-          <img src="/images/projects/englishlive/structure-3.jpg" width="100%" />
-          <img src="/images/projects/englishlive/structure-4.jpg" width="100%" />
-          <img src="/images/projects/englishlive/structure-5.jpg" width="100%" />
+          <img
+            src="/images/projects/englishlive/structure-1.jpg"
+            width="100%"
+          />
+          <img
+            src="/images/projects/englishlive/structure-2.jpg"
+            width="100%"
+          />
+          <img
+            src="/images/projects/englishlive/structure-3.jpg"
+            width="100%"
+          />
+          <img
+            src="/images/projects/englishlive/structure-4.jpg"
+            width="100%"
+          />
+          <img
+            src="/images/projects/englishlive/structure-5.jpg"
+            width="100%"
+          />
         </div>
       </div>
     </section>
@@ -63,41 +93,42 @@ const title = 'Alexis Morin - EF DGUD';
     <section>
       <div class="col-xs-12">
         <p>
-          The goal of this project was to leverage the existing English Live platform on desktop Web and rethink the design and interaction patterns of the e-learning templates in a way better suited to mobile platforms.
+          The goal of this project was to leverage the existing English Live
+          platform on desktop Web and rethink the design and interaction
+          patterns of the e-learning templates in a way better suited to mobile
+          platforms.
         </p>
         <p>
-          <strong>My involvement</strong> was to rethink these interactions and create wireframes and interactive prototypes for more than 10 activity templates. Expanding beyond the original scope of the project, I also designed some activity templates unique to mobile.
+          <strong>My involvement</strong> was to rethink these interactions and create
+          wireframes and interactive prototypes for more than 10 activity templates.
+          Expanding beyond the original scope of the project, I also designed some
+          activity templates unique to mobile.
         </p>
         <p>
-          <span class="am-bold">Team:</span> User Experience &amp; Design @ EF Education First (Shanghai, China)<br />
+          <span class="am-bold">Team:</span> User Experience &amp; Design @ EF Education
+          First (Shanghai, China)<br />
           <span class="am-bold">Role:</span> User Experience Designer
         </p>
         <p>
-          EF English Live is available on Google Play and the Apple App Store.<br />
-          <a href="https://play.google.com/store/apps/details?id=com.ef.core.engage.englishtown" target="_blank" rel="noreferrer">
+          EF English Live is available on Google Play and the Apple App Store.<br
+          />
+          <a
+            href="https://play.google.com/store/apps/details?id=com.ef.core.engage.englishtown"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="/images/googlePlay.png" width="151" />
           </a>
           &nbsp;&nbsp;&nbsp;
-          <a href="https://itunes.apple.com/ca/app/ef-english-live-for-iphone/id961304373?mt=8" target="_blank" rel="noreferrer">
+          <a
+            href="https://itunes.apple.com/ca/app/ef-english-live-for-iphone/id961304373?mt=8"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="/images/appStore.png" width="151" />
           </a>
         </p>
       </div>
     </section>
   </div>
-
-  <script>
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    (function () {
-      resizeIntroDiv();
-      if (!isMobile) {
-        window.onresize = function () {
-          resizeIntroDiv();
-        };
-      } else {
-        sizeBg();
-      }
-    })();
-  </script>
 </Base>
-

@@ -9,14 +9,7 @@ const title = "The Art of Performance Tour - Alexis Morin";
   </Fragment>
 
   <div class="body-img bdimg-aop">
-    <video
-      class="share-video"
-      id="hero-share-video"
-      poster="https://thumbs.gfycat.com/SingleLateAmazondolphin-poster.jpg"
-      autoplay
-      muted
-      loop
-    >
+    <video class="share-video" id="hero-share-video" autoplay muted loop>
       <source
         id="webmSource"
         src="/images/projects/aop/SingleLateAmazondolphin.webm"
@@ -210,8 +203,8 @@ const title = "The Art of Performance Tour - Alexis Morin";
                 "
               >
                 <iframe
-                  width="560"
-                  height="315"
+                  width="100%"
+                  style="aspect-ratio: 16/9;"
                   src="https://www.youtube.com/embed/38q9PDCVsTA?si=48c6xsekuhV0ibiC"
                   title="Early prototype of a tablet-controlled camera rig."
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -259,15 +252,24 @@ const title = "The Art of Performance Tour - Alexis Morin";
 
   <div class="content">
     <section>
-      <div class="col-md-12">
+      <div class="col-xs-12">
         <figure>
-          <iframe
-            width="100%"
-            height="506"
-            src="https://www.youtube.com/embed/_INVFX7-pB0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            aria-labelledby="reactive-wall-effects-video"
-            allowfullscreen></iframe>
+          <div
+            style="
+              width: 100%;
+              height: 0;
+              padding-bottom: 56%;
+              position: relative;
+            "
+          >
+            <iframe
+              width="100%"
+              style="aspect-ratio: 16/9;"
+              src="https://www.youtube.com/embed/_INVFX7-pB0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              aria-labelledby="reactive-wall-effects-video"
+              allowfullscreen></iframe>
+          </div>
           <figcaption id="reactive-wall-effects-video">
             Video compilation of the effects available on the reactive wall.
             <br />
@@ -280,11 +282,11 @@ const title = "The Art of Performance Tour - Alexis Morin";
 
   <div class="content">
     <section>
-      <div class="col-md-12">
+      <div class="col-xs-12">
         <figure>
           <iframe
             width="100%"
-            height="506"
+            style="aspect-ratio: 16/9;"
             src="https://www.youtube.com/embed/R4mehM33hzU"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             aria-labelledby="reactive-wall-development-video"
@@ -360,18 +362,4 @@ const title = "The Art of Performance Tour - Alexis Morin";
       </div>
     </section>
   </div>
-
-  <script>
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    (function () {
-      resizeIntroDiv();
-      if (!isMobile) {
-        window.onresize = function () {
-          resizeIntroDiv();
-        };
-      } else {
-        sizeBg();
-      }
-    })();
-  </script>
 </Base>
