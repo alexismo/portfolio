@@ -5,6 +5,7 @@ html:has(dialog[open]) {
 .bgimg-compass {
   background-image: url("../images/projects/compass/compass-poster.png");
   background-position: 50% 0;
+  view-transition-name: --project-compass;
 }
 
 #compassintro {

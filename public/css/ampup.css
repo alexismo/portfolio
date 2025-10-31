@@ -1,6 +1,7 @@
 .bdimg-ampup {
   background-image: url("../images/projects/ampup/ampup-bdimg.jpg");
   background-position: 50% 0;
+  view-transition-name: --project-ampup;
 }
 
 #ampupintro {

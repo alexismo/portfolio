@@ -1,6 +1,7 @@
 .bdimg-flame {
   background-image: url("../images/projects/flame/flamePoster.jpg");
   background-position: 50% 0;
+  view-transition-name: --project-flame;
 }
 
 #flameintro {
