@@ -20,14 +20,21 @@ pictures.forEach((picture, i) => {
 
 function lightboxImage(picture) {
   modalPic = picture.querySelector('img');
+  const transitionName = modalPic.style.getPropertyValue('view-transition-name');
 
   function mutate() {
     // Add z-index rule to make transitioning element appear on top
     document.styleSheets[0].insertRule(
-      `::view-transition-group(${modalPic.style.getPropertyValue('view-transition-name')}) { z-index: 3; }`
+      `::view-transition-group(${transitionName}) { z-index: 3; }`
     );
 
     lightbox.innerHTML = picture.querySelector(':scope img').outerHTML;
+    
+    // Ensure the lightbox image has the same viewTransitionName as the original
+    const lightboxImg = lightbox.querySelector('img');
+    if (lightboxImg) {
+      lightboxImg.style.viewTransitionName = transitionName;
+    }
 
     placeholder = placeholdImage(modalPic);
     modalPic.parentElement.appendChild(placeholder);
