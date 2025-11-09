@@ -9,7 +9,7 @@ pictures.forEach((picture, i) => {
   if (img) {
     img.style.viewTransitionName = `--light-box-img-${i}`;
   }
-  
+
   picture.addEventListener('click', event => {
     if (!state.open) {
       lightboxImage(picture);
@@ -35,7 +35,7 @@ function lightboxImage(picture) {
 
     lightbox.showModal();
   }
-  
+
   if (document.startViewTransition) {
     document.startViewTransition(mutate);
   } else {
@@ -46,7 +46,9 @@ function lightboxImage(picture) {
 async function hideLightbox() {
   function mutate() {
     // Restore element visibility first
-    modalPic.style.display = null;
+    if (modalPic) {
+      modalPic.style.display = null;
+    }
     if (placeholder && placeholder.parentElement) {
       placeholder.parentElement.removeChild(placeholder);
     }
