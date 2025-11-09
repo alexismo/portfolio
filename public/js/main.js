@@ -2,7 +2,14 @@ const pictures = document.querySelectorAll('[light-box]');
 const state = { open: false };
 let modalPic = null;
 let placeholder = null;
-pictures.forEach(picture => {
+
+// Set unique viewTransitionName for each image
+pictures.forEach((picture, i) => {
+  const img = picture.querySelector('img');
+  if (img) {
+    img.style.viewTransitionName = `--light-box-img-${i}`;
+  }
+  
   picture.addEventListener('click', event => {
     if (!state.open) {
       lightboxImage(picture);
@@ -13,9 +20,13 @@ pictures.forEach(picture => {
 
 function lightboxImage(picture) {
   modalPic = picture.querySelector('img');
-  modalPic.style.viewTransitionName = '--light-box-img';
 
   function mutate() {
+    // Add z-index rule to make transitioning element appear on top
+    document.styleSheets[0].insertRule(
+      `::view-transition-group(${modalPic.style.getPropertyValue('view-transition-name')}) { z-index: 3; }`
+    );
+
     lightbox.innerHTML = picture.querySelector(':scope img').outerHTML;
 
     placeholder = placeholdImage(modalPic);
@@ -34,11 +45,15 @@ function lightboxImage(picture) {
 
 async function hideLightbox() {
   function mutate() {
-    lightbox.close();
-    modalPic.parentElement.removeChild(placeholder);
+    // Restore element visibility first
     modalPic.style.display = null;
+    if (placeholder && placeholder.parentElement) {
+      placeholder.parentElement.removeChild(placeholder);
+    }
 
+    // Then close and clear
     lightbox.innerHTML = '';
+    lightbox.close();
   }
 
   if (document.startViewTransition) {
@@ -47,7 +62,11 @@ async function hideLightbox() {
     mutate();
   }
 
-  modalPic.style.viewTransitionName = null;
+  // Clean up the z-index rule
+  if (document.styleSheets[0].cssRules.length > 0) {
+    document.styleSheets[0].deleteRule(0);
+  }
+
   modalPic = null;
   placeholder = null;
 }
