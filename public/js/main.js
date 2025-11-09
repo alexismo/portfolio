@@ -24,7 +24,12 @@ function lightboxImage(picture) {
 
     lightbox.showModal();
   }
-  document.startViewTransition(mutate);
+  
+  if (document.startViewTransition) {
+    document.startViewTransition(mutate);
+  } else {
+    mutate();
+  }
 }
 
 async function hideLightbox() {
@@ -33,13 +38,16 @@ async function hideLightbox() {
     modalPic.parentElement.removeChild(placeholder);
     modalPic.style.display = null;
 
-    modalPic.style.viewTransitionName = null;
     lightbox.innerHTML = '';
   }
 
-  await document.startViewTransition(mutate).updateCallbackDone;
+  if (document.startViewTransition) {
+    await document.startViewTransition(mutate).updateCallbackDone;
+  } else {
+    mutate();
+  }
 
-
+  modalPic.style.viewTransitionName = null;
   modalPic = null;
   placeholder = null;
 }
