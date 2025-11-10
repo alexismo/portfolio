@@ -644,6 +644,11 @@ p.role {
   }
 }
 
+html:has(dialog[open]) {
+  overflow: clip;
+  scrollbar-gutter: stable;
+}
+
 /* user agent styles as important */
 [popover]:not(:popover-open):not(dialog[open]) {
   display: none !important;
@@ -654,11 +659,22 @@ p.role {
   z-index: 1;
 }
 
-::view-transition-group(--light-box-img) {
-  z-index: 2;
-}
+dialog#lightbox {
+  opacity: 0;
 
-#lightbox {
+  transition: opacity, display, overlay;
+  transition-behavior: allow-discrete;
+  transition-duration: 0.3s;
+
+  &[open] {
+    opacity: 1;
+    display: block;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
   border: none;
   margin: auto;
   padding: 0;
@@ -673,11 +689,13 @@ p.role {
     backdrop-filter: none;
     background-image: radial-gradient(#0003, 25%, #000e);
     view-transition-name: --light-box-backdrop;
+    transition: opacity, overlay;
+    transition-behavior: allow-discrete;
+    transition-duration: 0.3s;
   }
 
   /* lightbox img sizing */
   > img {
-    view-transition-name: --light-box-img;
     block-size: auto;
     max-inline-size: 100%;
     object-fit: contain;
