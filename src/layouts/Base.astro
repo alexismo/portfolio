@@ -7,6 +7,7 @@ export interface Props {
 }
 const { title = "Alexis Morin - Portfolio" } = Astro.props as Props;
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -25,19 +26,24 @@ const { title = "Alexis Morin - Portfolio" } = Astro.props as Props;
     <slot name="head" />
 
     {/* Google Analytics (only in production) */}
-    {import.meta.env.PROD && (
-      <>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-338P9KBK61"></script>
-        <script>
-          {`
+    {
+      import.meta.env.PROD && (
+        <>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-338P9KBK61"
+          />
+          <script>
+            {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);} 
             gtag('js', new Date());
             gtag('config', 'G-338P9KBK61');
           `}
-        </script>
-      </>
-    )}
+          </script>
+        </>
+      )
+    }
   </head>
   <body>
     <Header />
@@ -45,10 +51,9 @@ const { title = "Alexis Morin - Portfolio" } = Astro.props as Props;
     <Footer />
 
     {/* Shared lightbox dialog so js/main.js can bind once globally */}
-    <dialog id="lightbox"></dialog>
+    <dialog id="lightbox" closedby="any"></dialog>
 
     {/* Shared scripts from public/ */}
     <script src="/js/main.js" defer></script>
   </body>
 </html>
-

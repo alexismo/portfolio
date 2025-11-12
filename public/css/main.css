@@ -679,7 +679,7 @@ dialog#lightbox {
   margin: auto;
   padding: 0;
   background: transparent;
-  max-inline-size: 100%;
+  max-inline-size: 100dvw;
 
   @media screen and (width > 768px) {
     max-inline-size: 80vw;
@@ -697,9 +697,8 @@ dialog#lightbox {
   /* lightbox img sizing */
   > img {
     block-size: auto;
-    max-inline-size: 100%;
+    max-inline-size: 100dvw;
+    max-block-size: 100dvh;
     object-fit: contain;
-    display: flex;
-    block-size: auto;
   }
 }
