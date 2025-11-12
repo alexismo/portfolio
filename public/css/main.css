@@ -681,10 +681,6 @@ dialog#lightbox {
   background: transparent;
   max-inline-size: 100dvw;
 
-  @media screen and (width > 768px) {
-    max-inline-size: 80vw;
-  }
-
   &::backdrop {
     backdrop-filter: none;
     background-image: radial-gradient(#0003, 25%, #000e);
