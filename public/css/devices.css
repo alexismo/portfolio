@@ -35,7 +35,7 @@
 
   section#intro {
     min-height: 80svh;
-    padding-bottom: 80px;
+    padding-block: 40px;
   }
 
   .body-img {
