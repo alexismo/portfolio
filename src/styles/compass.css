@@ -13,13 +13,9 @@
   --max-columns: 3;
   --min-column-width: calc((770px - 32px) / var(--max-columns));
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(
-      max(var(--min-column-width), 100% / calc(var(--max-columns) + 1)),
-      1fr
-    )
-  );
+  grid-auto-flow: column;
+  grid-auto-columns: max(var(--min-column-width), 1fr);
+  overflow-x: auto;
   gap: 0.2rem;
   align-items: end;
 
@@ -76,13 +72,12 @@ dl.images--grid {
     border: solid 1px #194187;
     border-radius: 4px;
     padding: 0.25rem;
-    max-width: 100%;
   }
 }
 
 @media only screen and (max-width: 520px) {
   .images--grid {
-    width: calc(100vw - 15px);
+    width: calc(100vw - 16px);
     padding-inline: 15px;
     transform: translateX(-15px);
     grid-template-columns: repeat(var(--max-columns), 100%);

@@ -283,6 +283,7 @@ ul.socialicons {
 
 section,
 footer {
+  width: 100%;
   max-width: 960px;
   margin: 0 auto;
 }
@@ -365,7 +366,8 @@ footer #heart:hover {
 }
 
 .content section {
-  padding: 20px 0;
+  padding-block: 20px;
+  padding-inline: max(0px, min(16px, calc((976px - 100vw) * 9999)));
 }
 
 .content i {
