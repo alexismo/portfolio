@@ -101,13 +101,6 @@ header {
 
 header a {
   color: #fff;
-  line-height: 80px;
-}
-
-.header-logo a {
-  line-height: normal;
-  display: flex;
-  flex-direction: column;
 }
 
 header a:hover,
@@ -149,12 +142,6 @@ footer .socialicons a {
   text-decoration: none;
 }
 
-.header-logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .logo {
   margin-block: auto;
 }
@@ -163,13 +150,10 @@ footer .socialicons a {
   max-width: 960px;
   height: 80px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   color: #fff;
-}
-
-.topbar>div {
-  width: 33.333333%;
 }
 
 h1,
@@ -195,31 +179,30 @@ header h2 {
 
 .header-logo h1,
 .header-logo h2 {
-  margin: 0;
+  display: inline-block;
 }
 
-.row .header-logo h2 {
-  font-family: "proxima-nova-light", Roboto, sans-serif;
-  font-size: 18px;
-  letter-spacing: 7.42px;
-  color: #fff;
-}
+nav {
+  .header-logo h1 span {
+    font-family: "proxima-nova-light", Roboto, sans-serif;
+    font-size: 18px;
+    letter-spacing: 7.42px;
+    color: #fff;
+  }
 
-menu {
-  height: 80px;
-  font-family: "proxima-nova-light", Roboto, sans-serif;
-  font-size: 16px;
-  display: flex;
-  flex-direction: row;
-}
+  ul {
+    padding: 0;
+    font-family: "proxima-nova-light", Roboto, sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7.5rem;
+  }
 
-menu menuitem,
-menu li {
-  /* width: 33.3333%; */
-  width: 50%;
-  height: 80px;
-  text-align: center;
-  list-style: none;
+  a {
+    text-decoration: none;
+  }
 }
 
 .header-social {
@@ -227,10 +210,15 @@ menu li {
 }
 
 ul.socialicons {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-auto-flow: column;
   justify-content: flex-end;
   gap: 16px;
+
+  li {
+    width: auto;
+    align-content: center;
+  }
 }
 
 .icon {
@@ -242,7 +230,7 @@ ul.socialicons {
 .icon,
 .icon::after {
   background: var(--white);
-  transition-property: background-color background-image opacity;
+  transition-property: background-color, background-image, opacity;
   transition-duration: 200ms;
   transition-timing-function: ease;
 }

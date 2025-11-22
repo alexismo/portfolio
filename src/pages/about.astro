@@ -65,27 +65,22 @@ const title = "Alexis Morin - About";
 
   <div class="content">
     <section>
-      <div class="col-md-12">
-        <div class="col-md-12">
-          <div class="row">
-            <h2>How I work</h2>
-          </div>
-        </div>
-        <div class="row">
-          <img
-            src="/images/about/my-design-process.jpg"
-            width="100%"
-            alt="Diagram of a design process with four quadrants: understand, experiment, build, release. A circle overlaid with the quadrants shows that the process is continuous."
-          />
-        </div>
-      </div>
+      <h2>How I work</h2>
+      <img
+        src="/images/about/my-design-process.jpg"
+        width="100%"
+        alt="Diagram of a design process with four quadrants: understand, experiment, build, release. A circle overlaid with the quadrants shows that the process is continuous."
+      />
     </section>
   </div>
 
   <div class="content" id="brandsworkedwith">
     <section aria-labelledby="companies-i-worked-with">
       <h2 id="companies-i-worked-with">Companies I've worked with</h2>
-      <div class="brandsgrid">
+      <div
+        class="brandsgrid multi-col"
+        style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))"
+      >
         <img src="/images/about/arduino.svg" alt="Arduino" />
         <img src="/images/about/audi.svg" alt="Audi " />
         <img src="/images/about/autodesk.svg" alt="Autodesk " />
