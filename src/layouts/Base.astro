@@ -2,6 +2,8 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+import "../styles/reset-2.css";
+
 export interface Props {
   title?: string;
 }
@@ -17,7 +19,6 @@ const { title = "Alexis Morin - Portfolio" } = Astro.props as Props;
     <link rel="shortcut icon" href="/images/almo-favicon.ico" />
 
     {/* Global CSS from public/ */}
-    <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/devices.css" />
