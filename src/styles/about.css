@@ -1,10 +1,9 @@
-#portrait {
-  border-radius: 12px;
+#about-intro {
+  font-size: 113%;
 }
 
-h3.about {
-  height: 100%;
-  line-height: 130%;
+#portrait {
+  border-radius: 12px;
 }
 
 #about_facts_h {
@@ -16,6 +15,7 @@ h3.about {
   color: #fff;
   text-decoration: underline;
 }
+
 #about_facts_h a:hover {
   color: #fff;
   text-decoration: none;
@@ -49,14 +49,19 @@ h3.about {
   height: 100%;
 }
 
+#contact-buttons {
+  margin: 1rem 0;
+}
+
 .aboutLink {
-  display: block;
+  display: inline-flex;
   color: var(--text);
   padding: 15px 35px;
   border: solid var(--text) 2px;
-  margin: 15px 0;
   border-radius: 100vh;
   scale: 1;
+  text-decoration: none;
+  justify-content: space-between;
   transition: 50ms ease;
 }
 
@@ -78,4 +83,19 @@ a.aboutLink:focus-visible {
 .aboutLink img {
   position: relative;
   margin-left: 17px;
+}
+
+#about-intro>div {
+  width: 100%;
+
+  h3,
+  p {
+    text-box-trim: trim-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .multi-col {
+    grid-template-columns: 1fr;
+  }
 }
