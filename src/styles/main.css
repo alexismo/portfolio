@@ -454,6 +454,7 @@ section.projects li {
   transition: scale 250ms ease;
 }
 
+.projects a:has(.project),
 .projects a:hover:has(.project),
 .projects a:focus-visible:has(.project) {
   text-decoration: none;
@@ -559,6 +560,8 @@ section.projects li:has(a:focus-visible) {
 .project:hover .projectHero img {
   scale: 1.05;
 }
+
+
 
 .projectDescription {
   padding: 36px 50px;
