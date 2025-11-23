@@ -7,6 +7,10 @@
 #compassintro {
   background-color: #171717;
   color: #fff;
+
+  h2 {
+    margin-block: 1rem;
+  }
 }
 
 .images--grid {
@@ -19,11 +23,11 @@
   gap: 0.2rem;
   align-items: end;
 
-  > * {
+  >* {
     scroll-snap-align: center;
   }
 
-  & > article {
+  &>article {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -63,7 +67,7 @@ dl.images--grid {
     font-size: 1.125rem;
   }
 
-  dd ~ dt {
+  dd~dt {
     margin-block-start: 0.6125rem;
   }
 
