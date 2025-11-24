@@ -703,7 +703,7 @@ dialog#lightbox {
   >img {
     block-size: auto;
     max-inline-size: 100dvw;
-    max-block-size: 100dvh;
+    max-block-size: 90dvh;
     object-fit: contain;
   }
 }
