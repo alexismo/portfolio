@@ -77,7 +77,8 @@
     padding: 0 24px 0 32px;
 
     ul {
-      gap: 5rem;
+      gap: 2rem;
+      justify-content: end;
     }
   }
 
@@ -118,7 +119,7 @@
     }
 
     &#project-flame .projectHero img {
-      object-position: 72% 100%;
+      object-position: 63% 100%;
     }
 
     &#project-aop .projectHero img {
