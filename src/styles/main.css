@@ -386,10 +386,15 @@ footer #heart:hover {
   margin-inline: auto;
 }
 
+figure div:has(iframe) {
+  width: 100%;
+}
+
 figure button {
   background-color: transparent;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 figure * {

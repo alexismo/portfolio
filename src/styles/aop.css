@@ -7,6 +7,7 @@
 
 header {
   z-index: 1;
+
   @media only screen and (min-width: 737px) {
     position: relative;
   }
@@ -28,10 +29,7 @@ header {
 }
 
 .tagline {
-  background-color: rgba(255, 255, 255, 0.8);
-  @media only screen and (min-width: 737px) {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .aop-3up {

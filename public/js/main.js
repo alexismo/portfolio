@@ -23,7 +23,10 @@ function lightboxImage(picture) {
       ::view-transition-group(${modalPic.style.viewTransitionName}) {z-index: 2;}
     `);
 
-    lightbox.innerHTML = picture.querySelector(':scope img').outerHTML;
+    const clone = picture.querySelector(':scope img').cloneNode(true);
+    clone.sizes = "100vw";
+    lightbox.innerHTML = '';
+    lightbox.appendChild(clone);
 
     placeholder = placeholdImage(modalPic);
     modalPic.parentElement.appendChild(placeholder);
