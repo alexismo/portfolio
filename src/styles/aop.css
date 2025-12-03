@@ -1,8 +1,14 @@
 .bdimg-aop {
-  height: 100vh;
+  height: calc(100dvh - 10rem);
   overflow: hidden;
   z-index: 0;
   view-transition-name: --project-aop;
+}
+
+@media only screen and (min-width: 737px) {
+  .bdimg-aop {
+    height: 100dvh;
+  }
 }
 
 header {
@@ -30,6 +36,17 @@ header {
 
 .tagline {
   background-color: rgba(0, 0, 0, 0.8);
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  form label {
+    display: inline-flex;
+    align-content: center;
+    gap: 8px;
+    accent-color: #9e1b32;
+  }
 }
 
 .aop-3up {

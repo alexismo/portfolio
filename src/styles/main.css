@@ -129,8 +129,6 @@ header a:focus {
   gap: var(--gap, 1em);
   align-items: start;
 
-
-
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -355,9 +353,12 @@ footer #heart:hover {
   background-color: var(--white);
   text-align: center;
   padding: 25px;
-  font-size: 300%;
   position: relative;
-  top: 40%;
+}
+
+#intro h2 {
+  font-size: 300%;
+  font-weight: 400;
 }
 
 .content {
@@ -444,7 +445,8 @@ p.greeting span {
 }
 
 div#intro {
-  height: calc(100vh - 160px);
+  height: calc(100dvh - 10rem);
+  place-content: center;
 }
 
 section.projects ul {

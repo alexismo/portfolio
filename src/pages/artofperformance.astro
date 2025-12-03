@@ -29,9 +29,33 @@ const title = "The Art of Performance Tour - Alexis Morin";
   </div>
 
   <div id="intro">
-    <h2 class="tagline mobile-glass" style="color: white;">
-      Jaguar Art of Performance Tour
-    </h2>
+    <div class="tagline mobile-glass" style="color: white;">
+      <h2>Jaguar Art of Performance Tour</h2>
+      <form>
+        <label for="reducemotion">
+          <input type="checkbox" id="reducemotion" />Reduce motion
+        </label>
+      </form>
+    </div>
+    <script>
+      const video = document.getElementById(
+        "hero-share-video",
+      ) as HTMLVideoElement;
+      const checkbox = document.getElementById(
+        "reducemotion",
+      ) as HTMLInputElement;
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      prefersReducedMotion && video.pause();
+      checkbox.checked = prefersReducedMotion;
+
+      document
+        .getElementById("reducemotion")
+        ?.addEventListener("change", (e: Event) => {
+          e?.target?.checked ? video.pause() : video.play();
+        });
+    </script>
   </div>
 
   <div class="content" id="aopintro">
@@ -106,7 +130,7 @@ const title = "The Art of Performance Tour - Alexis Morin";
           <button light-box title="View larger">
             <img
               srcset="/images/projects/aop/photo-booth-600.avif 600w, /images/projects/aop/photo-booth-2000.avif 2000w"
-              sizes="33vw"
+              sizes="100vw, (width >= 768px) 33vw"
               alt="A photo booth and poster background for the world record cam"
             />
           </button>
@@ -117,7 +141,7 @@ const title = "The Art of Performance Tour - Alexis Morin";
             <img
               src="/images/projects/aop/particle-wall-600.jpg"
               srcset="/images/projects/aop/particle-wall-600.avif 600w, /images/projects/aop/particle-wall-2000.avif 2000w"
-              sizes="33vw"
+              sizes="100vw, (width >= 768px) 33vw"
               alt="A woman standing in from of 3 TV showing red particles in the shape of a Jaguar"
             />
           </button>
@@ -127,7 +151,7 @@ const title = "The Art of Performance Tour - Alexis Morin";
           <button light-box title="View larger">
             <img
               srcset="/images/projects/aop/paint-a-jaguar-600.avif 600w, /images/projects/aop/paint-a-jaguar-2000.avif 2000w"
-              sizes="33vw"
+              sizes="100vw, (width >= 768px) 33vw"
               alt="A woman adding color to a sketch of a Jaguar car"
             />
           </button>
@@ -161,7 +185,7 @@ const title = "The Art of Performance Tour - Alexis Morin";
             <button light-box title="View larger">
               <img
                 srcset="/images/projects/aop/photo_booth_1-600.avif 600w, /images/projects/aop/photo_booth_1-2000.avif 2000w"
-                sizes="33vw"
+                sizes="100vw, (width >= 768px) 33vw"
                 alt="Jaguar-themed backdrop for taking the motion-photo"
                 width="100%"
               />
@@ -232,14 +256,12 @@ const title = "The Art of Performance Tour - Alexis Morin";
         <article>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/aop/reactive_wall_1.jpg"
-                  title="Reactive Wall Setup for Suzhou, Jiangsu province"
-                  alt="Reactive Wall Setup for Suzhou, Jiangsu province"
-                  width="100%"
-                />
-              </picture>
+              <img
+                src="/images/projects/aop/reactive_wall_1.jpg"
+                title="Reactive Wall Setup for Suzhou, Jiangsu province"
+                alt="Reactive Wall Setup for Suzhou, Jiangsu province"
+                width="100%"
+              />
             </button>
             <figcaption>
               Reactive Wall Setup for Suzhou, Jiangsu province
@@ -302,14 +324,12 @@ const title = "The Art of Performance Tour - Alexis Morin";
       <div class="multi-col" style="--gtc: repeat(2, 1fr);">
         <figure>
           <button light-box title="View larger">
-            <picture>
-              <img
-                srcset="/images/projects/aop/paint_studio_1-600.avif 600w, /images/projects/aop/paint_studio_1-2000.avif 2000w"
-                sizes="33vw"
-                alt="A younger participant, choosing a color palette."
-                width="100%"
-              />
-            </picture>
+            <img
+              srcset="/images/projects/aop/paint_studio_1-600.avif 600w, /images/projects/aop/paint_studio_1-2000.avif 2000w"
+              sizes="100vw, (width >= 768px) 50vw"
+              alt="A younger participant, choosing a color palette."
+              width="100%"
+            />
           </button>
           <figcaption>
             A younger participant, choosing a color palette.
