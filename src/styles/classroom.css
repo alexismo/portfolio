@@ -25,14 +25,14 @@
   background-repeat: no-repeat;
 }
 
-.teacherfeatures {
-  text-align: left;
-}
-
 .teacherfeatures li {
+  display: flex;
+  align-items: center;
   margin: 10px 0;
-}
+  gap: 1rem;
 
-.teacherfeatures img {
-  width: 60px;
+  img {
+
+    width: 60px;
+  }
 }

@@ -1,13 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
+import "../styles/classroom.css";
 const title = "EF Classroom - Alexis Morin";
 ---
 
 <Base title={title}>
-  <Fragment slot="head">
-    <link rel="stylesheet" href="/css/classroom.css" />
-  </Fragment>
-
   <div class="body-img bdimg-classroom"></div>
 
   <div id="intro">
@@ -16,138 +13,122 @@ const title = "EF Classroom - Alexis Morin";
 
   <div class="content" id="classroomintro">
     <section>
-      <div class="col-md-12 center">
-        <div class="col-xs-12">
-          <h3 style="font-weight:300;">The EF Classroom</h3>
-        </div>
-        <div class="col-xs-12">
-          <p>
-            EF prides itself in bringing real teachers into the English-language
-            education of students all over the world. A cornerstone of this
-            experience is the Online Classroom.
-          </p>
-          <p>
-            Already deeply involved with a generic Adobe Connect&trade; and its
-            proprietary Flash technology, EF needed to make a change. In a bold
-            move, EF decided to build and deploy its own multi-user interactive
-            classroom, including the voice and video communication.
-          </p>
-        </div>
-      </div>
+      <h2 style="font-weight:300;">The EF Classroom</h2>
+      <p>
+        EF prides itself in bringing real teachers into the English-language
+        education of students all over the world. A cornerstone of this
+        experience is the Online Classroom.
+      </p>
+      <p>
+        Already deeply involved with a generic Adobe Connect&trade; and its
+        proprietary Flash technology, EF needed to make a change. In a bold
+        move, EF decided to build and deploy its own multi-user interactive
+        classroom, including the voice and video communication.
+      </p>
     </section>
   </div>
 
   <div class="content contribution">
     <section>
-      <div class="col-xs-12 center">
-        <p>
-          My contribution to the project was to:
-          <ul style="list-style-type:circle; margin-left: 20px;">
-            <li>
-              plan the project lifecycle (scope, strategy, design, development,
-              testing, rollout, launch),
-            </li>
-            <li>initial definition of problem-space and user research,</li>
-            <li>
-              design the students' UX for 3 platforms (web, tablet, mobile),
-            </li>
-            <li>design the teachers' UX for web,</li>
-            <li>build interactive prototypes aimed at user-research,</li>
-            <li>perform user research and design validation in Mandarin,</li>
-          </ul>
-        </p>
-        <p>
-          <span class="am-bold">Company:</span> EF Education First (Shanghai, China)<br
+      <p>
+        My contribution to the project was to:
+        <ul style="list-style-type:circle; margin-left: 20px;">
+          <li>
+            plan the project lifecycle (scope, strategy, design, development,
+            testing, rollout, launch),
+          </li>
+          <li>initial definition of problem-space and user research,</li>
+          <li>
+            design the students' UX for 3 platforms (web, tablet, mobile),
+          </li>
+          <li>design the teachers' UX for web,</li>
+          <li>build interactive prototypes aimed at user-research,</li>
+          <li>perform user research and design validation in Mandarin,</li>
+        </ul>
+      </p>
+      <p>
+        <span class="am-bold">Company:</span> EF Education First (Shanghai, China)<br
+        />
+        <span class="am-bold">Team:</span> Lilith Lin, Chriest Yu, Chris Chen<br
+        />
+        <span class="am-bold">Role:</span> User Experience Designer<br />
+        <span class="am-bold">Timeline:</span> October 2014 to July 2015<br />
+        <span class="am-bold">Status:</span> EF Classroom is available on Google
+        Play and the Apple App Store.
+      </p>
+      <p>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.ef.evc2015"
+          target="_blank"
+          rel="noreferrer"
+          style="display: inline-block; margin-right: 10px;"
+        >
+          <img
+            src="/images/googlePlay.png"
+            width="151"
+            alt="EF Classroom on Google Play"
           />
-          <span class="am-bold">Team:</span> Lilith Lin, Chriest Yu, Chris Chen<br
+        </a>
+        <a
+          href="https://apps.apple.com/us/app/ef-english-live/id961304373"
+          target="_blank"
+          rel="noreferrer"
+          style="display: inline-block;"
+        >
+          <img
+            src="/images/appStore.png"
+            width="151"
+            alt="EF Classroom on the App Store"
           />
-          <span class="am-bold">Role:</span> User Experience Designer<br />
-          <span class="am-bold">Timeline:</span> October 2014 to July 2015<br />
-          <span class="am-bold">Status:</span> EF Classroom is available on Google
-          Play and the Apple App Store.
-        </p>
-        <p>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.ef.evc2015"
-            target="_blank"
-            rel="noreferrer"
-            style="display: inline-block; margin-right: 10px;"
-          >
-            <img
-              src="/images/googlePlay.png"
-              width="151"
-              alt="EF Classroom on Google Play"
-            />
-          </a>
-          <a
-            href="https://itunes.apple.com/us/app/ef-classroom/id1062473985?mt=8"
-            target="_blank"
-            rel="noreferrer"
-            style="display: inline-block;"
-          >
-            <img
-              src="/images/appStore.png"
-              width="151"
-              alt="EF Classroom on the App Store"
-            />
-          </a>
-        </p>
-        <p>
-          <a href="/classroom-casestudy"
-            >View the case-study of a project on student churn of the previous
-            EF Classroom.</a
-          >
-        </p>
+        </a>
+      </p>
+      <p>
+        <a href="/classroom-casestudy"
+          >View the case-study of a project on student churn of the previous EF
+          Classroom.</a
+        >
+      </p>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <div class="multi-col" style="--gtc: 1fr 1fr;">
+        <img
+          src="/images/projects/classroom/ipad-notes.jpg"
+          width="100%"
+          alt="Notes allows students to record notes during class"
+        />
+        <img
+          src="/images/projects/classroom/ipad-chat.jpg"
+          width="100%"
+          alt="Chat allows text communication between students and the teacher"
+        />
       </div>
     </section>
   </div>
 
   <div class="content">
     <section>
-      <div class="col-12 center">
-        <div class="col-md-6">
-          <img
-            src="/images/projects/classroom/ipad-notes.jpg"
-            width="100%"
-            alt="Notes allows students to record notes during class"
-          />
-        </div>
-        <div class="col-md-6">
-          <img
-            src="/images/projects/classroom/ipad-chat.jpg"
-            width="100%"
-            alt="Chat allows text communication between students and the teacher"
-          />
-        </div>
+      <div class="multi-col" style="--gtc: 1fr 1fr;">
+        <img
+          src="/images/projects/classroom/ipad-attendees.jpg"
+          width="100%"
+          alt="Attendees panel shows who is in the class"
+        />
+        <img
+          src="/images/projects/classroom/ipad-info.jpg"
+          width="100%"
+          alt="Info displays metadata about the class"
+        />
       </div>
     </section>
   </div>
 
   <div class="content">
     <section>
-      <div class="col-12 center">
-        <div class="col-md-6">
-          <img
-            src="/images/projects/classroom/ipad-attendees.jpg"
-            width="100%"
-            alt="Attendees panel shows who is in the class"
-          />
-        </div>
-        <div class="col-md-6">
-          <img
-            src="/images/projects/classroom/ipad-info.jpg"
-            width="100%"
-            alt="Info displays metadata about the class"
-          />
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="content">
-    <section>
-      <div class="col-xs-12 center">
-        <div class="col-md-6 padding-xs">
+      <div class="multi-col" style="--gtc: 1fr 1fr;">
+        <div>
           <h4>Teacher Observation</h4>
           <p>
             <img
@@ -157,9 +138,9 @@ const title = "EF Classroom - Alexis Morin";
             />
           </p>
         </div>
-        <div class="col-md-6 padding-xs">
+        <div>
           <h4>Bespoke Features</h4>
-          <ul class="teacherfeatures">
+          <ul class="teacherfeatures" role="list">
             <li>
               <img
                 src="/images/projects/classroom/raisehand.png"
@@ -189,34 +170,27 @@ const title = "EF Classroom - Alexis Morin";
 
   <div class="content" id="teacherteaching">
     <section>
-      <h4>Students can learn anywhere, at their convenience.</h4>
+      <h2>Students can learn anywhere, at their convenience.</h2>
     </section>
   </div>
 
   <div class="content">
     <section>
-      <div class="col-xs-12 center">
-        <div class="col-xs-12 padding-no center">
-          <h3 style="font-weight:300;">Consistent Across The Board</h3>
-        </div>
-        <div class="col-md-2">
-          <h4>Icons</h4>
-          <p>Unique, tailor-made, cross-device, and readable.</p>
-        </div>
-        <div class="col-md-10">
-          <img
-            src="/images/projects/classroom/classroom-icons@2x.jpg"
-            alt="12 stylish icons which were designed for the EF Classroom"
-            style="width:100%;"
-          />
-        </div>
+      <h2>Consistent Across The Board</h2>
+      <div class="multi-col" style="--gtc: 1fr 4fr;">
+        <p>Tailor-made icons: cross-device, and highly legible.</p>
+        <img
+          src="/images/projects/classroom/classroom-icons@2x.jpg"
+          alt="12 stylish icons which were designed for the EF Classroom"
+          style="width:100%;"
+        />
       </div>
     </section>
   </div>
 
   <div class="content" id="classroom-isometric">
     <section>
-      <h4>Fully featured, even on touch devices!</h4>
+      <h2>Fully featured, even on touch devices!</h2>
     </section>
   </div>
 </Base>

@@ -53,7 +53,7 @@ const title = "The Art of Performance Tour - Alexis Morin";
       document
         .getElementById("reducemotion")
         ?.addEventListener("change", (e: Event) => {
-          e?.target?.checked ? video.pause() : video.play();
+          (e.target as HTMLInputElement).checked ? video.pause() : video.play();
         });
     </script>
   </div>
