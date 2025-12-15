@@ -1,9 +1,21 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import "../styles/englishlive.css";
 const title = "EF English Live - Alexis Morin";
 const metaD =
   "EF English Live, a UX design project by Alexis Morin. Adapting a legacy web-based English learning platform for modern mobile experiences on iOS and Android.";
+
+import googlePlay from "../images/googlePlay.svg";
+import appStore from "../images/appStore.svg";
+import forSinceWeb from "../images/projects/englishlive/for-since-web@2x.png";
+import forSinceAndroid from "../images/projects/englishlive/for-since-mobile-android@2x.png";
+import forSinceIos from "../images/projects/englishlive/for-since-mobile-ios@2x.png";
+import structure1 from "../images/projects/englishlive/structure-1.jpg";
+import structure2 from "../images/projects/englishlive/structure-2.jpg";
+import structure3 from "../images/projects/englishlive/structure-3.jpg";
+import structure4 from "../images/projects/englishlive/structure-4.jpg";
+import structure5 from "../images/projects/englishlive/structure-5.jpg";
 ---
 
 <Base title={title} metaD={metaD}>
@@ -48,9 +60,9 @@ const metaD =
           rel="noreferrer"
           style="display: inline-block;"
         >
-          <img
-            src="/images/googlePlay.svg"
-            height="50"
+          <Image
+            src={googlePlay}
+            height={50}
             alt="English Live on Google Play"
             style="display: inline;"
           />
@@ -60,9 +72,9 @@ const metaD =
           rel="noreferrer"
           style="display: inline-block;"
         >
-          <img
-            src="/images/appStore.svg"
-            height="50"
+          <Image
+            src={appStore}
+            height={50}
             alt="English Live on the App Store"
             style="display: inline;"
           />
@@ -79,24 +91,22 @@ const metaD =
       </p>
       <div class="col-xs-12 center">
         <h3 style="font-weight: 300">From this</h3>
-        <img
-          src="/images/projects/englishlive/for-since-web@2x.png"
-          width="100%"
+        <Image
+          src={forSinceWeb}
+          style="width: 100%"
           alt="A dated-looking website explains English verb tenses"
         />
       </div>
       <div class="col-xs-12 padding-no center">
         <h3 style="font-weight: 300">To this</h3>
-        <img
-          src="/images/projects/englishlive/for-since-mobile-android@2x.png"
-          width="50%"
-          style="float: left"
+        <Image
+          src={forSinceAndroid}
+          style="width: 50%; float: left;"
           alt="A modern iOS app explains English verb tenses"
         />
-        <img
-          src="/images/projects/englishlive/for-since-mobile-ios@2x.png"
-          width="50%"
-          style="float: left"
+        <Image
+          src={forSinceIos}
+          style="width: 50%; float: left;"
           alt="A modern Android app explains English verb tenses"
         />
       </div>
@@ -113,29 +123,29 @@ const metaD =
           bite-sized morcels of learning. Here is an overview of the learning
           flow of the app, organised in these shorter bursts of learning.
         </p>
-        <img
-          src="/images/projects/englishlive/structure-1.jpg"
-          width="100%"
+        <Image
+          src={structure1}
+          style="width: 100%"
           alt="app screens for Login, Course Overview, Lesson Overview"
         />
-        <img
-          src="/images/projects/englishlive/structure-2.jpg"
-          width="100%"
+        <Image
+          src={structure2}
+          style="width: 100%"
           alt="app screens for Module Introduction, Video Vocabulary"
         />
-        <img
-          src="/images/projects/englishlive/structure-3.jpg"
-          width="100%"
+        <Image
+          src={structure3}
+          style="width: 100%"
           alt="app screens for Video Vocabulary, Vocuabulary review"
         />
-        <img
-          src="/images/projects/englishlive/structure-4.jpg"
-          width="100%"
+        <Image
+          src={structure4}
+          style="width: 100%"
           alt="app screens for Reading activity, Audio multiple choice"
         />
-        <img
-          src="/images/projects/englishlive/structure-5.jpg"
-          width="100%"
+        <Image
+          src={structure5}
+          style="width: 100%"
           alt="app screens for Multiple choice, Step complete, Lesson complete"
         />
       </div>
@@ -152,8 +162,8 @@ const metaD =
       <p>
         <strong>My involvement</strong> was to rethink these interactions and create
         wireframes and interactive prototypes for more than 10 activity templates.
-        Expanding beyond the original scope of the project, I also designed some
-        activity templates unique to mobile.
+        Expanding beyond the original scope of the project, I also designed some activity
+        templates unique to mobile.
       </p>
       <p>
         Framing this work, our team also took into consideration our target

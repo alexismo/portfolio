@@ -1,9 +1,22 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import "../styles/classroom.css";
 const title = "EF Classroom - Alexis Morin";
 const metaD =
   "EF Classroom, a UX/UI design project by Alexis Morin. A multi-platform interactive online classroom for EF Education First, facilitating English learning for students worldwide.";
+
+import googlePlay from "../images/googlePlay.svg";
+import appStore from "../images/appStore.svg";
+import ipadNotes from "../images/projects/classroom/ipad-notes.jpg";
+import ipadChat from "../images/projects/classroom/ipad-chat.jpg";
+import ipadAttendees from "../images/projects/classroom/ipad-attendees.jpg";
+import ipadInfo from "../images/projects/classroom/ipad-info.jpg";
+import teacherObservation from "../images/projects/classroom/teacher-observation.jpg";
+import raiseHand from "../images/projects/classroom/raisehand.png";
+import slides from "../images/projects/classroom/slides.png";
+import mutedMic from "../images/projects/classroom/mutedmic.png";
+import classroomIcons from "../images/projects/classroom/classroom-icons@2x.jpg";
 ---
 
 <Base title={title} metaD={metaD}>
@@ -55,8 +68,8 @@ const metaD =
         />
         <span class="am-bold">Role:</span> User Experience Designer<br />
         <span class="am-bold">Timeline:</span> October 2014 to July 2015<br />
-        <span class="am-bold">Status:</span> EF Classroom is available on Google
-        Play and the Apple App Store.
+        <span class="am-bold">Status:</span> EF Classroom is available on Google Play
+        and the Apple App Store.
       </p>
       <p>
         <a
@@ -65,9 +78,9 @@ const metaD =
           rel="noreferrer"
           style="display: inline-block; margin-right: 10px;"
         >
-          <img
-            src="/images/googlePlay.svg"
-            height="50"
+          <Image
+            src={googlePlay}
+            height={50}
             alt="EF Classroom on Google Play"
           />
         </a>
@@ -77,9 +90,9 @@ const metaD =
           rel="noreferrer"
           style="display: inline-block;"
         >
-          <img
-            src="/images/appStore.svg"
-            height="50"
+          <Image
+            src={appStore}
+            height={50}
             alt="EF Classroom on the App Store"
           />
         </a>
@@ -96,14 +109,14 @@ const metaD =
   <div class="content">
     <section>
       <div class="multi-col" style="--gtc: 1fr 1fr;">
-        <img
-          src="/images/projects/classroom/ipad-notes.jpg"
-          width="100%"
+        <Image
+          src={ipadNotes}
+          style="width: 100%"
           alt="Notes allows students to record notes during class"
         />
-        <img
-          src="/images/projects/classroom/ipad-chat.jpg"
-          width="100%"
+        <Image
+          src={ipadChat}
+          style="width: 100%"
           alt="Chat allows text communication between students and the teacher"
         />
       </div>
@@ -113,14 +126,14 @@ const metaD =
   <div class="content">
     <section>
       <div class="multi-col" style="--gtc: 1fr 1fr;">
-        <img
-          src="/images/projects/classroom/ipad-attendees.jpg"
-          width="100%"
+        <Image
+          src={ipadAttendees}
+          style="width: 100%"
           alt="Attendees panel shows who is in the class"
         />
-        <img
-          src="/images/projects/classroom/ipad-info.jpg"
-          width="100%"
+        <Image
+          src={ipadInfo}
+          style="width: 100%"
           alt="Info displays metadata about the class"
         />
       </div>
@@ -133,9 +146,9 @@ const metaD =
         <div>
           <h4>Teacher Observation</h4>
           <p>
-            <img
-              src="/images/projects/classroom/teacher-observation.jpg"
-              width="100%"
+            <Image
+              src={teacherObservation}
+              style="width: 100%"
               alt="Photo of an EF teacher teaching from a teaching center in Shanghai, China"
             />
           </p>
@@ -144,24 +157,15 @@ const metaD =
           <h4>Bespoke Features</h4>
           <ul class="teacherfeatures" role="list">
             <li>
-              <img
-                src="/images/projects/classroom/raisehand.png"
-                alt="icon for raising your hand"
-              />
+              <Image src={raiseHand} alt="icon for raising your hand" />
               Class Management
             </li>
             <li>
-              <img
-                src="/images/projects/classroom/slides.png"
-                alt="icon for class slides"
-              />
+              <Image src={slides} alt="icon for class slides" />
               Tailored Teaching Content
             </li>
             <li>
-              <img
-                src="/images/projects/classroom/mutedmic.png"
-                alt="icon for a muted microphone"
-              />
+              <Image src={mutedMic} alt="icon for a muted microphone" />
               Microphone Rights Control
             </li>
           </ul>
@@ -181,8 +185,8 @@ const metaD =
       <h2>Consistent Across The Board</h2>
       <div class="multi-col" style="--gtc: 1fr 4fr;">
         <p>Tailor-made icons: cross-device, and highly legible.</p>
-        <img
-          src="/images/projects/classroom/classroom-icons@2x.jpg"
+        <Image
+          src={classroomIcons}
           alt="12 stylish icons which were designed for the EF Classroom"
           style="width:100%;"
         />

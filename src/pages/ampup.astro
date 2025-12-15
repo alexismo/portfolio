@@ -1,9 +1,17 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import "../styles/ampup.css";
+
 const title = "JBL AmpUp! - Alexis Morin";
 const metaD =
   "JBL AmpUp!, a UX/UI design project by Alexis Morin at Harman International. An app designed for iPad & iPhone for JBL's music alarm experience.";
+
+import iPhone5Black from "../images/projects/ampup/iPhone5black.avif";
+import videoPoster from "../images/projects/ampup/videoPoster.jpg";
+import iphone5Video from "../images/projects/ampup/iPhone5.webm";
+
+import ipadDocked from "../images/projects/ampup/iPad-docked@2x.avif";
 ---
 
 <Base title={title} metaD={metaD}>
@@ -60,8 +68,8 @@ const metaD =
         </div>
         <div>
           <div class="iPhone">
-            <img
-              src="/images/projects/ampup/iPhone5black.avif"
+            <Image
+              src={iPhone5Black}
               class="iPhoneImg"
               alt="AmpUp app showing a music player and clock atop a starry night sky"
             />
@@ -72,12 +80,9 @@ const metaD =
                 autoplay
                 muted
                 loop
-                poster="/images/projects/ampup/videoPoster.jpg"
+                poster={videoPoster.src}
               >
-                <source
-                  src="/images/projects/ampup/iPhone5.webm"
-                  type="video/webm"
-                />
+                <source src={iphone5Video} type="video/webm" />
               </video>
             </div>
           </div>
@@ -87,12 +92,16 @@ const metaD =
           <p>
             The innovative pager on the iPhone version provides navigation state
             to the entire application. (This <strong>was</strong> 2011 after all!)
-            <img
-              src="/images/projects/ampup/ampUpPager.gif"
-              style="margin-top: 15px"
-              width="100%"
-              alt="Design detail of the iOS pager where the first dot is a moon, and the last dot is a settings cog"
-            />
+            <p>
+              The innovative pager on the iPhone version provides navigation
+              state to the entire application. (This <strong>was</strong> 2011 after
+              all!)
+              <img
+                src="/images/projects/ampup/ampUpPager.gif"
+                style="margin-top: 15px; width: 100%;"
+                alt="Design detail of the iOS pager where the first dot is a moon, and the last dot is a settings cog"
+              />
+            </p>
           </p>
         </div>
       </div>
@@ -109,7 +118,7 @@ const metaD =
             </p>
           </div>
           <img
-            src="/images/projects/ampup/iPad-docked@2x.avif"
+            src={ipadDocked.src}
             alt="iPad showing the AmpUp! app, docked on a JBL loudspeaker dock"
           />
           <div>

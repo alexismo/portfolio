@@ -1,9 +1,19 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import "../styles/dgud.css";
 const title = "EF DGUD - Alexis Morin";
 const metaD =
   "EF DGUD (Digital Grand Unified Design), a design system project by Alexis Morin. Establishing the visual identity and interaction patterns for EF English Live across web and mobile platforms.";
+
+import awards from "../images/projects/dgud/awards.jpg";
+import googlePlay from "../images/googlePlay.svg";
+import appStore from "../images/appStore.svg";
+import structure1 from "../images/projects/englishlive/structure-1.jpg";
+import structure2 from "../images/projects/englishlive/structure-2.jpg";
+import structure3 from "../images/projects/englishlive/structure-3.jpg";
+import structure4 from "../images/projects/englishlive/structure-4.jpg";
+import structure5 from "../images/projects/englishlive/structure-5.jpg";
 ---
 
 <Base title={title} metaD={metaD}>
@@ -40,9 +50,10 @@ const metaD =
   <div class="content">
     <section>
       <p>
-        <img
-          src="/images/projects/dgud/awards.jpg"
+        <Image
+          src={awards}
           title="dGUD on 3 platforms"
+          alt="dGUD on 3 platforms"
         />
       </p>
       <h3 style="font-weight: 300">Structure</h3>
@@ -51,29 +62,29 @@ const metaD =
         team devised ways to break down existing web content into smaller,
         bite-sized morcels of learning.
       </p>
-      <img
-        src="/images/projects/englishlive/structure-1.jpg"
-        width="100%"
+      <Image
+        src={structure1}
+        style="width: 100%"
         alt="app screens for Login, Course Overview, Lesson Overview"
       />
-      <img
-        src="/images/projects/englishlive/structure-2.jpg"
-        width="100%"
+      <Image
+        src={structure2}
+        style="width: 100%"
         alt="app screens for Module Introduction, Video Vocabulary"
       />
-      <img
-        src="/images/projects/englishlive/structure-3.jpg"
-        width="100%"
+      <Image
+        src={structure3}
+        style="width: 100%"
         alt="app screens for Video Vocabulary, Vocuabulary review"
       />
-      <img
-        src="/images/projects/englishlive/structure-4.jpg"
-        width="100%"
+      <Image
+        src={structure4}
+        style="width: 100%"
         alt="app screens for Reading activity, Audio multiple choice"
       />
-      <img
-        src="/images/projects/englishlive/structure-5.jpg"
-        width="100%"
+      <Image
+        src={structure5}
+        style="width: 100%"
         alt="app screens for Multiple choice, Step complete, Lesson complete"
       />
     </section>
@@ -89,8 +100,8 @@ const metaD =
       <p>
         <strong>My involvement</strong> was to rethink these interactions and create
         wireframes and interactive prototypes for more than 10 activity templates.
-        Expanding beyond the original scope of the project, I also designed some
-        activity templates unique to mobile.
+        Expanding beyond the original scope of the project, I also designed some activity
+        templates unique to mobile.
       </p>
       <p>
         <span class="am-bold">Team:</span> User Experience &amp; Design @ EF Education
@@ -107,7 +118,7 @@ const metaD =
           rel="noreferrer"
           style="display: inline-block;"
         >
-          <img src="/images/googlePlay.svg" height="50" />
+          <Image src={googlePlay} height={50} alt="Google Play" />
         </a>
         &nbsp;&nbsp;&nbsp;
         <a
@@ -116,7 +127,7 @@ const metaD =
           rel="noreferrer"
           style="display: inline-block;"
         >
-          <img src="/images/appStore.svg" height="50" />
+          <Image src={appStore} height={50} alt="App Store" />
         </a>
       </p>
     </section>

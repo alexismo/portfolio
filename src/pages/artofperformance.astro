@@ -5,6 +5,22 @@ import "../styles/images-grid.css";
 const title = "The Art of Performance Tour - Alexis Morin";
 const metaD =
   "Jaguar Art of Performance Tour, an experiential design project by Alexis Morin. Digital installations including a reactive wall and photo booth for Jaguar Land Rover's touring exhibition in China.";
+
+import { Image } from "astro:assets";
+import singleLateWebm from "../images/projects/aop/SingleLateAmazondolphin.webm";
+import singleLateMp4 from "../images/projects/aop/SingleLateAmazondolphin.mp4";
+import photoBooth from "../images/projects/aop/photo-booth-2000.jpg";
+import particleWall from "../images/projects/aop/particle-wall-2000.jpg";
+import paintAJaguar from "../images/projects/aop/paint-a-jaguar-2000.jpg";
+import photoBooth1 from "../images/projects/aop/photo_booth_1.jpg";
+import sloMoWebm from "../images/projects/aop/slo-mo-capture.webm";
+import sloMoMp4 from "../images/projects/aop/slo-mo-capture.mp4";
+import sloMoPoster from "../images/projects/aop/slo-mo-capture.jpg";
+import reactiveWall1 from "../images/projects/aop/reactive_wall_1.jpg";
+import paintStudio1 from "../images/projects/aop/paint_studio_1.jpg";
+import paintWallWebm from "../images/projects/aop/paint-wall-video.webm";
+import paintWallMp4 from "../images/projects/aop/paint-wall-video.mp4";
+import paintWallPoster from "../images/projects/aop/paint-wall-video-poster.jpg";
 ---
 
 <Base title={title} metaD={metaD}>
@@ -17,16 +33,8 @@ const metaD =
       loop
       role="presentation"
     >
-      <source
-        id="webmSource"
-        src="/images/projects/aop/SingleLateAmazondolphin.webm"
-        type="video/webm"
-      />
-      <source
-        id="mp4Source"
-        src="/images/projects/aop/SingleLateAmazondolphin.mp4"
-        type="video/mp4"
-      />
+      <source id="webmSource" src={singleLateWebm} type="video/webm" />
+      <source id="mp4Source" src={singleLateMp4} type="video/mp4" />
     </video>
   </div>
 
@@ -130,8 +138,9 @@ const metaD =
       <div class="multi-col" style="--gtc: repeat(3, 1fr);">
         <figure>
           <button light-box title="View larger">
-            <img
-              srcset="/images/projects/aop/photo-booth-600.avif 600w, /images/projects/aop/photo-booth-2000.avif 2000w"
+            <Image
+              src={photoBooth}
+              widths={[600, 2000]}
               sizes="100vw, (width >= 768px) 33vw"
               alt="A photo booth and poster background for the world record cam"
             />
@@ -140,9 +149,9 @@ const metaD =
         </figure>
         <figure>
           <button light-box title="View larger">
-            <img
-              src="/images/projects/aop/particle-wall-600.jpg"
-              srcset="/images/projects/aop/particle-wall-600.avif 600w, /images/projects/aop/particle-wall-2000.avif 2000w"
+            <Image
+              src={particleWall}
+              widths={[600, 2000]}
               sizes="100vw, (width >= 768px) 33vw"
               alt="A woman standing in from of 3 TV showing red particles in the shape of a Jaguar"
             />
@@ -151,8 +160,9 @@ const metaD =
         </figure>
         <figure>
           <button light-box title="View larger">
-            <img
-              srcset="/images/projects/aop/paint-a-jaguar-600.avif 600w, /images/projects/aop/paint-a-jaguar-2000.avif 2000w"
+            <Image
+              src={paintAJaguar}
+              widths={[600, 2000]}
               sizes="100vw, (width >= 768px) 33vw"
               alt="A woman adding color to a sketch of a Jaguar car"
             />
@@ -185,11 +195,12 @@ const metaD =
         <div>
           <figure>
             <button light-box title="View larger">
-              <img
-                srcset="/images/projects/aop/photo_booth_1-600.avif 600w, /images/projects/aop/photo_booth_1-2000.avif 2000w"
+              <Image
+                src={photoBooth1}
+                widths={[600, 2000]}
                 sizes="100vw, (width >= 768px) 33vw"
                 alt="Jaguar-themed backdrop for taking the motion-photo"
-                width="100%"
+                style="width: 100%;"
               />
             </button>
             <figcaption>
@@ -202,25 +213,18 @@ const metaD =
             <video
               class="share-video"
               preload="none"
-              poster="/images/projects/aop/slo-mo-capture.jpg"
+              poster={sloMoPoster.src}
               controls
               muted
               height="450"
               onclick="this.paused?this.play():this.pause();"
             >
-              <source
-                id="webmSource"
-                src="/images/projects/aop/slo-mo-capture.webm"
-                type="video/webm"
-              />
-              <source
-                id="mp4Source"
-                src="/images/projects/aop/slo-mo-capture.mp4"
-                type="video/mp4"
-              />
-              <img
+              <source id="webmSource" src={sloMoWebm} type="video/webm" />
+              <source id="mp4Source" src={sloMoMp4} type="video/mp4" />
+              <Image
                 title="Sorry, your browser doesn't support HTML5 video."
-                src="/images/projects/aop/slo-mo-capture.jpg"
+                src={sloMoPoster}
+                alt="Video poster"
               />
             </video>
             <figcaption>Slo-mo souvenir, shareable on WeChat</figcaption>
@@ -258,11 +262,11 @@ const metaD =
         <article>
           <figure>
             <button light-box title="View larger">
-              <img
-                src="/images/projects/aop/reactive_wall_1.jpg"
+              <Image
+                src={reactiveWall1}
                 title="Reactive Wall Setup for Suzhou, Jiangsu province"
                 alt="Reactive Wall Setup for Suzhou, Jiangsu province"
-                width="100%"
+                style="width: 100%;"
               />
             </button>
             <figcaption>
@@ -326,11 +330,12 @@ const metaD =
       <div class="multi-col" style="--gtc: repeat(2, 1fr);">
         <figure>
           <button light-box title="View larger">
-            <img
-              srcset="/images/projects/aop/paint_studio_1-600.avif 600w, /images/projects/aop/paint_studio_1-2000.avif 2000w"
+            <Image
+              src={paintStudio1}
+              widths={[600, 2000]}
               sizes="100vw, (width >= 768px) 50vw"
               alt="A younger participant, choosing a color palette."
-              width="100%"
+              style="width: 100%;"
             />
           </button>
           <figcaption>
@@ -341,25 +346,18 @@ const metaD =
           <video
             class="share-video"
             preload="none"
-            poster="/images/projects/aop/paint-wall-video-poster.jpg"
+            poster={paintWallPoster.src}
             controls
             muted
             onclick="this.paused?this.play():this.pause();"
             width="100%"
           >
-            <source
-              id="webmSource"
-              src="/images/projects/aop/paint-wall-video.webm"
-              type="video/webm"
-            />
-            <source
-              id="mp4Source"
-              src="/images/projects/aop/paint-wall-video.mp4"
-              type="video/mp4"
-            />
-            <img
+            <source id="webmSource" src={paintWallWebm} type="video/webm" />
+            <source id="mp4Source" src={paintWallMp4} type="video/mp4" />
+            <Image
               title="Sorry, your browser doesn't support HTML5 video."
-              src="/images/projects/aop/paint-wall-video-poster.jpg"
+              src={paintWallPoster}
+              alt="Video poster"
             />
           </video>
           <figcaption>

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import "../styles/connect.css";
 import "../styles/images-grid.css";
@@ -6,6 +7,15 @@ import "../styles/images-grid.css";
 const title = "Ubisoft Connect - Alexis Morin";
 const metaD =
   "Ubisoft Connect, a product design and front-end development project by Alexis Morin. Building a multi-platform design system and challenges feature for Ubisoft's gaming network.";
+
+import connectHome from "../images/projects/connect/connectHome.png";
+import connectProfile from "../images/projects/connect/connectProfile.png";
+import crossPlatform from "../images/projects/connect/cross-platform.png";
+import lightDark from "../images/projects/connect/light-dark.jpg";
+import cursorFocus from "../images/projects/connect/cursor-focus.jpg";
+import tokensToConnect from "../images/projects/connect/tokens-to-connect.png";
+import challengesCore from "../images/projects/connect/challengesCore.png";
+import challengesTimeLimited from "../images/projects/connect/challengesTimeLimited.png";
 ---
 
 <Base title={title} metaD={metaD}>
@@ -104,12 +114,10 @@ const metaD =
         <article>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/connect/connectHome.png"
-                  alt="App screenshot of Ubisoft Connect, showing a level 20 user, a carousel of Top News, and a carousel of Friends."
-                />
-              </picture>
+              <Image
+                src={connectHome}
+                alt="App screenshot of Ubisoft Connect, showing a level 20 user, a carousel of Top News, and a carousel of Friends."
+              />
             </button>
             <figcaption>The Home tab of Ubisoft Connect on iOS</figcaption>
           </figure>
@@ -117,12 +125,10 @@ const metaD =
         <article>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/connect/connectProfile.png"
-                  alt="App screenshot of Ubisoft Connect showcasing the user siestable. The profile photo is a pointy-eared dog. An Overview tab is highlighted. Stats show 11 games played, 14 friends, and 12 years with Ubisoft. Wowee!"
-                />
-              </picture>
+              <Image
+                src={connectProfile}
+                alt="App screenshot of Ubisoft Connect showcasing the user siestable. The profile photo is a pointy-eared dog. An Overview tab is highlighted. Stats show 11 games played, 14 friends, and 12 years with Ubisoft. Wowee!"
+              />
             </button>
             <figcaption>The Profile tab of Ubisoft Connect on iOS</figcaption>
           </figure>
@@ -148,12 +154,10 @@ const metaD =
         <article>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/connect/cross-platform.png"
-                  alt="Icons showing devices types: TV, Mobile, PC, Playstation, Nintendo Switch, Xbox, and Stadia"
-                />
-              </picture>
+              <Image
+                src={crossPlatform}
+                alt="Icons showing devices types: TV, Mobile, PC, Playstation, Nintendo Switch, Xbox, and Stadia"
+              />
             </button>
             <figcaption>Support for many device types</figcaption>
           </figure>
@@ -161,12 +165,10 @@ const metaD =
         <article>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/connect/light-dark.jpg"
-                  alt="Rows of color chips from the Ubisoft color palette, shown for both the dark and light themes."
-                />
-              </picture>
+              <Image
+                src={lightDark}
+                alt="Rows of color chips from the Ubisoft color palette, shown for both the dark and light themes."
+              />
             </button>
             <figcaption>Light &amp; dark modes</figcaption>
           </figure>
@@ -174,12 +176,10 @@ const metaD =
         <article>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/connect/cursor-focus.jpg"
-                  alt="Illustrated demonstration of the difference between cursor and focus-based navigation."
-                />
-              </picture>
+              <Image
+                src={cursorFocus}
+                alt="Illustrated demonstration of the difference between cursor and focus-based navigation."
+              />
             </button>
             <figcaption>Cursor &amp; focus-based navigation</figcaption>
           </figure>
@@ -227,17 +227,14 @@ const metaD =
         My work enabled both React &amp; Vue.js teams to save time on their
         implementation by not having to worry about styling.<br />
         Code I wrote now runs on <strong>over 250 million</strong> PC, mac, Android,
-        iOS, Nintendo Switch, Playstation, Xbox devices and even cloud streaming
-        platforms!
+        iOS, Nintendo Switch, Playstation, Xbox devices and even cloud streaming platforms!
       </p>
       <figure>
         <button light-box title="View larger">
-          <picture>
-            <img
-              src="/images/projects/connect/tokens-to-connect.png"
-              alt="Diagram showing Design tokens written with the ThemeUI spec, being consumed by React and Vue.js applications and running on Ubisoft Connect."
-            />
-          </picture>
+          <Image
+            src={tokensToConnect}
+            alt="Diagram showing Design tokens written with the ThemeUI spec, being consumed by React and Vue.js applications and running on Ubisoft Connect."
+          />
         </button>
         <figcaption>
           System diagram of the path taken by the design tokens library
@@ -267,9 +264,8 @@ const metaD =
         The core of the Challenges feature is a list of Core and Time-Limited
         Challenges. Each challenge has criteria which need to be completed
         in-game by players. <br />
-        Individual challenges are represented by a Card component within a list.
-        Many variables can compound and create lots of complexity within individual
-        challenges:
+        Individual challenges are represented by a Card component within a list. Many
+        variables can compound and create lots of complexity within individual challenges:
         <ul class="legible-list">
           <li>One-time challenges,</li>
           <li>Partial progress challenges,</li>
@@ -283,12 +279,10 @@ const metaD =
         <article>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/connect/challengesCore.png"
-                  alt="App screenshot of a list of Core Challenges for Assassin's Creed Valhalla."
-                />
-              </picture>
+              <Image
+                src={challengesCore}
+                alt="App screenshot of a list of Core Challenges for Assassin's Creed Valhalla."
+              />
             </button>
             <figcaption>Core challenges</figcaption>
           </figure>
@@ -296,12 +290,10 @@ const metaD =
         <article>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/connect/challengesTimeLimited.png"
-                  alt="App screenshot of a list of Time-Limited Challenges for Rainbow Six: Siege."
-                />
-              </picture>
+              <Image
+                src={challengesTimeLimited}
+                alt="App screenshot of a list of Time-Limited Challenges for Rainbow Six: Siege."
+              />
             </button>
             <figcaption>Time-Limited challenges</figcaption>
           </figure>

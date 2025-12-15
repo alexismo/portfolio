@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import "../styles/flame.css";
 import "../styles/images-grid.css";
@@ -6,6 +7,12 @@ import "../styles/images-grid.css";
 const title = "Lightspeed Flame Design System - Alexis Morin";
 const metaD =
   "Lightspeed Flame, a design system project by Alexis Morin. Building and scaling a unified design system for Lightspeed's diverse suite of point-of-sale and e-commerce products.";
+
+import earlyCirrus from "../images/projects/flame/early-cirrus@2x.jpg";
+import flameIcons from "../images/projects/flame/flame-icons.svg";
+import filterTable from "../images/projects/flame/filterTable@2x.jpg";
+import dsTeam from "../images/projects/flame/ds-team.jpg";
+import designSystemWebsite from "../images/projects/flame/design-system-website.jpg";
 ---
 
 <Base title={title} metaD={metaD}>
@@ -115,9 +122,8 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/flame/early-cirrus.jpg"
-                  srcset="/images/projects/flame/early-cirrus.jpg 1x, /images/projects/flame/early-cirrus@2x.jpg 2x"
+                <Image
+                  src={earlyCirrus}
                   alt="UI design for the Design System proof-of-concept"
                 />
               </picture>
@@ -159,8 +165,8 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/flame/flame-icons.svg"
+                <Image
+                  src={flameIcons}
                   alt="Sample of the icon set created as React components"
                 />
               </picture>
@@ -195,9 +201,8 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/flame/filterTable.jpg"
-                  srcset="/images/projects/flame/filterTable.jpg 1x, /images/projects/flame/filterTable@2x.jpg 2x"
+                <Image
+                  src={filterTable}
                   alt="Filter Table from the Flame Design System"
                 />
               </picture>
@@ -223,8 +228,8 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/flame/ds-team.jpg"
+                <Image
+                  src={dsTeam}
                   alt="The Lightspeed Design System team enjoying some Ramen 🍜"
                 />
               </picture>
@@ -252,8 +257,8 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/flame/design-system-website.jpg"
+                <Image
+                  src={designSystemWebsite}
                   alt="Landing page for the Lightspeed Flame Design System"
                 />
               </picture>

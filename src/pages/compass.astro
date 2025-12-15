@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import "../styles/compass.css";
 import "../styles/images-grid.css";
@@ -6,6 +7,13 @@ import "../styles/images-grid.css";
 const title = "Compass Design System - Alexis Morin";
 const metaD =
   "Compass Design System, a design systems project by Alexis Morin. Creating shared components and patterns for Web, iOS, and Android to support Compass's real estate platform.";
+
+import bulkActionsMobileWeb from "../images/projects/compass/bulk-actions-mobile-web.png";
+import webListingCard from "../images/projects/compass/web-listing-card.png";
+import iosListingCard from "../images/projects/compass/ios-listing-card.png";
+import androidListingCard from "../images/projects/compass/android-listing-card.png";
+import agentListingCard from "../images/projects/compass/agent-listing-card.png";
+import agentListingCardPill from "../images/projects/compass/agent-listing-card-pill.png";
 ---
 
 <Base title={title} metaD={metaD}>
@@ -67,8 +75,8 @@ const metaD =
         At the time of writing, the Compass Design System is in active use at
         Compass by <strong>all</strong> web front-end, iOS, and Android teams. It
         enables <strong>600 engineers</strong>,
-        <strong>85 designers</strong>, and <strong>$254M</strong> of real estate
-        transactions yearly.
+        <strong>85 designers</strong>, and <strong>$254M</strong> of real estate transactions
+        yearly.
       </p>
       <p>
         <span class="am-bold">Company:</span> Compass Real Estate
@@ -107,12 +115,11 @@ const metaD =
           <h3>Desktop Web</h3>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/compass/bulk-actions-web.gif"
-                  alt="Bulk actions for the desktop web. A table shows data about real estate listings. The first listing is selected and a bulk actions bar lists actions which can be taken."
-                />
-              </picture>
+              <img
+                src="/images/projects/compass/bulk-actions-web.gif"
+                style="width: 100%"
+                alt="Bulk actions for the desktop web. A table shows data about real estate listings. The first listing is selected and a bulk actions bar lists actions which can be taken."
+              />
             </button>
             <figcaption>Bulk actions for the desktop web</figcaption>
           </figure>
@@ -124,8 +131,8 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/compass/bulk-actions-mobile-web.png"
+                <Image
+                  src={bulkActionsMobileWeb}
                   alt="Bulk actions for mobile web"
                 />
               </picture>
@@ -137,12 +144,11 @@ const metaD =
           <h3>iOS</h3>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/compass/bulk-actions-ios.gif"
-                  alt="Bulk actions for iOS"
-                />
-              </picture>
+              <img
+                src="/images/projects/compass/bulk-actions-ios.gif"
+                style="width: 100%"
+                alt="Bulk actions for the iOS app. A user swipes on a listing to select it, and a bulk actions bar appears."
+              />
             </button>
             <figcaption>iOS consumer listing card</figcaption>
           </figure>
@@ -151,12 +157,11 @@ const metaD =
           <h3>Android</h3>
           <figure>
             <button light-box title="View larger">
-              <picture>
-                <img
-                  src="/images/projects/compass/bulk-actions-android.gif"
-                  alt="Bulk actions for Android"
-                />
-              </picture>
+              <img
+                src="/images/projects/compass/bulk-actions-android.gif"
+                style="width: 100%"
+                alt="Bulk actions for the Android app. A user long presses on a listing to select it, and a bulk actions bar appears."
+              />
             </button>
             <figcaption>Bulk actions for Android</figcaption>
           </figure>
@@ -234,8 +239,8 @@ const metaD =
         platform.
       </p>
       <p>
-        I was tasked with the Figma construction of the Listing Card for real
-        estate agents and home buyers across Web, iOS &amp; Android.
+        I was tasked with the Listing Card construction for real estate agents
+        and home buyers across Web, iOS &amp; Android.
       </p>
       <h3>Consumer listing card</h3>
       <div class="images--grid">
@@ -244,8 +249,8 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/compass/web-listing-card.png"
+                <Image
+                  src={webListingCard}
                   alt="Real estate listing card for the web. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
                 />
               </picture>
@@ -258,8 +263,8 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/compass/ios-listing-card.png"
+                <Image
+                  src={iosListingCard}
                   alt="Real estate listing card for iOS. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
                 />
               </picture>
@@ -272,8 +277,8 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/compass/android-listing-card.png"
+                <Image
+                  src={androidListingCard}
                   alt="Real estate listing card for Android. It shows an image gallery of the listing, status badges, price, dislike and star buttons, stats, buttons for request a tour and comment."
                 />
               </picture>
@@ -295,10 +300,7 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/compass/agent-listing-card.png"
-                  alt=""
-                />
+                <Image src={agentListingCard} alt="" />
               </picture>
             </button>
             <figcaption>
@@ -311,10 +313,7 @@ const metaD =
           <figure>
             <button light-box title="View larger">
               <picture>
-                <img
-                  src="/images/projects/compass/agent-listing-card-pill.png"
-                  alt=""
-                />
+                <Image src={agentListingCardPill} alt="" />
               </picture>
             </button>
             <figcaption>
