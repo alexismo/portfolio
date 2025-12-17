@@ -2,25 +2,28 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+import "../styles/reset-2.css";
+import "../styles/main.css";
+import "../styles/devices.css";
+
 export interface Props {
   title?: string;
+  metaD?: string;
 }
-const { title = "Alexis Morin - Portfolio" } = Astro.props as Props;
+const {
+  title = "Alexis Morin - Portfolio",
+  metaD = "Portfolio website for Alexis Morin: digital product designer, design engineer, design systems and accessibility specialist.",
+} = Astro.props as Props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
     <meta name="theme-color" content="#444449" />
+    <meta name="description" content={metaD} />
+    <title>{title}</title>
     <link rel="shortcut icon" href="/images/almo-favicon.ico" />
-
-    {/* Global CSS from public/ */}
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/devices.css" />
 
     {/* Per-page head slot (e.g., page-specific CSS) */}
     <slot name="head" />

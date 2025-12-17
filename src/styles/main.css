@@ -58,19 +58,17 @@ body {
   font-family: "proxima-nova-regular", "Helvetica", sans-serif;
   line-height: 1.5;
   background-color: var(--bg);
-  background-image: linear-gradient(
-    180deg,
-    hsl(240deg 14% 4%) 0%,
-    hsl(240deg 17% 5%) 44%,
-    hsl(240deg 11% 5%) 64%,
-    hsl(240deg 13% 6%) 76%,
-    hsl(240deg 9% 6%) 84%,
-    hsl(240deg 9% 7%) 89%,
-    hsl(240deg 11% 7%) 93%,
-    hsl(240deg 7% 8%) 95%,
-    hsl(240deg 9% 9%) 97%,
-    hsl(240deg 6% 9%) 100%
-  );
+  background-image: linear-gradient(180deg,
+      hsl(240deg 14% 4%) 0%,
+      hsl(240deg 17% 5%) 44%,
+      hsl(240deg 11% 5%) 64%,
+      hsl(240deg 13% 6%) 76%,
+      hsl(240deg 9% 6%) 84%,
+      hsl(240deg 9% 7%) 89%,
+      hsl(240deg 11% 7%) 93%,
+      hsl(240deg 7% 8%) 95%,
+      hsl(240deg 9% 9%) 97%,
+      hsl(240deg 6% 9%) 100%);
 }
 
 a,
@@ -103,13 +101,6 @@ header {
 
 header a {
   color: #fff;
-  line-height: 80px;
-}
-
-.header-logo a {
-  line-height: normal;
-  display: flex;
-  flex-direction: column;
 }
 
 header a:hover,
@@ -132,6 +123,18 @@ header a:focus {
   -webkit-backdrop-filter: blur(5px);
 }
 
+.multi-col {
+  display: grid;
+  grid-template-columns: var(--gtc, 1fr);
+  gap: var(--gap, 1em);
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 footer .socialicons a {
   color: var(--white);
 }
@@ -144,12 +147,6 @@ footer .socialicons a {
   text-decoration: none;
 }
 
-.header-logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .logo {
   margin-block: auto;
 }
@@ -158,13 +155,10 @@ footer .socialicons a {
   max-width: 960px;
   height: 80px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   color: #fff;
-}
-
-.topbar > div {
-  width: 33.333333%;
 }
 
 h1,
@@ -190,31 +184,30 @@ header h2 {
 
 .header-logo h1,
 .header-logo h2 {
-  margin: 0;
+  display: inline-block;
 }
 
-.row .header-logo h2 {
-  font-family: "proxima-nova-light", Roboto, sans-serif;
-  font-size: 18px;
-  letter-spacing: 7.42px;
-  color: #fff;
-}
+nav {
+  .header-logo h1 span {
+    font-family: "proxima-nova-light", Roboto, sans-serif;
+    font-size: 18px;
+    letter-spacing: 7.42px;
+    color: #fff;
+  }
 
-menu {
-  height: 80px;
-  font-family: "proxima-nova-light", Roboto, sans-serif;
-  font-size: 16px;
-  display: flex;
-  flex-direction: row;
-}
+  ul {
+    padding: 0;
+    font-family: "proxima-nova-light", Roboto, sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7.5rem;
+  }
 
-menu menuitem,
-menu li {
-  /* width: 33.3333%; */
-  width: 50%;
-  height: 80px;
-  text-align: center;
-  list-style: none;
+  a {
+    text-decoration: none;
+  }
 }
 
 .header-social {
@@ -222,10 +215,15 @@ menu li {
 }
 
 ul.socialicons {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-auto-flow: column;
   justify-content: flex-end;
   gap: 16px;
+
+  li {
+    width: auto;
+    align-content: center;
+  }
 }
 
 .icon {
@@ -237,45 +235,51 @@ ul.socialicons {
 .icon,
 .icon::after {
   background: var(--white);
-  transition-property: background-color background-image opacity;
+  transition-property: background-color, background-image, opacity;
   transition-duration: 200ms;
   transition-timing-function: ease;
 }
 
 .icon-github {
   mask-image: url("../images/social/github.svg");
+
   &:hover {
     background-color: #93939e;
   }
 }
+
 .icon-bluesky {
   mask-image: url("../images/social/bluesky.svg");
+
   &:hover {
     background-color: #0085ff;
   }
 }
+
 .icon-instagram {
   position: relative;
   mask-image: url("../images/social/instagram.svg");
-  background-image: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
+  background-image: radial-gradient(circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%);
+
   &:after {
     content: "";
     position: absolute;
     inset: 0;
   }
+
   &:hover::after {
     opacity: 0;
   }
 }
+
 .icon-email {
   mask-image: url("../images/social/envelope.svg");
+
   &:hover {
     background-color: #94b1f5;
   }
@@ -283,6 +287,7 @@ ul.socialicons {
 
 section,
 footer {
+  width: 100%;
   max-width: 960px;
   margin: 0 auto;
 }
@@ -348,9 +353,12 @@ footer #heart:hover {
   background-color: var(--white);
   text-align: center;
   padding: 25px;
-  font-size: 300%;
   position: relative;
-  top: 40%;
+}
+
+#intro h2 {
+  font-size: 300%;
+  font-weight: 400;
 }
 
 .content {
@@ -365,10 +373,8 @@ footer #heart:hover {
 }
 
 .content section {
-  padding: 20px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  padding-block: 20px;
+  padding-inline: max(0px, min(16px, calc((976px - 100vw) * 9999)));
 }
 
 .content i {
@@ -381,10 +387,15 @@ footer #heart:hover {
   margin-inline: auto;
 }
 
+figure div:has(iframe) {
+  width: 100%;
+}
+
 figure button {
   background-color: transparent;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 figure * {
@@ -434,7 +445,8 @@ p.greeting span {
 }
 
 div#intro {
-  height: calc(100vh - 160px);
+  height: calc(100dvh - 10rem);
+  place-content: center;
 }
 
 section.projects ul {
@@ -456,6 +468,7 @@ section.projects li {
   transition: scale 250ms ease;
 }
 
+.projects a:has(.project),
 .projects a:hover:has(.project),
 .projects a:focus-visible:has(.project) {
   text-decoration: none;
@@ -535,9 +548,11 @@ section.projects li:has(a:focus-visible) {
   0% {
     filter: grayscale(100%) saturate(100%);
   }
+
   85% {
     filter: grayscale(0%) saturate(120%);
   }
+
   100% {
     filter: grayscale(0%) saturate(100%);
   }
@@ -559,6 +574,8 @@ section.projects li:has(a:focus-visible) {
 .project:hover .projectHero img {
   scale: 1.05;
 }
+
+
 
 .projectDescription {
   padding: 36px 50px;
@@ -624,21 +641,27 @@ p.role {
   0% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(14deg);
   }
+
   20% {
     transform: rotate(-8deg);
   }
+
   30% {
     transform: rotate(14deg);
   }
+
   40% {
     transform: rotate(-4deg);
   }
+
   50% {
     transform: rotate(10deg);
   }
+
   60% {
     transform: rotate(0deg);
   }
@@ -691,10 +714,10 @@ dialog#lightbox {
   }
 
   /* lightbox img sizing */
-  > img {
+  >img {
     block-size: auto;
     max-inline-size: 100dvw;
-    max-block-size: 100dvh;
+    max-block-size: 90dvh;
     object-fit: contain;
   }
 }

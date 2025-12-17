@@ -1,176 +1,165 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
+import "../styles/englishlive.css";
 const title = "EF English Live - Alexis Morin";
+const metaD =
+  "EF English Live, a UX design project by Alexis Morin. Adapting a legacy web-based English learning platform for modern mobile experiences on iOS and Android.";
+
+import googlePlay from "../images/googlePlay.svg";
+import appStore from "../images/appStore.svg";
+import forSinceWeb from "../images/projects/englishlive/for-since-web@2x.png";
+import forSinceAndroid from "../images/projects/englishlive/for-since-mobile-android@2x.png";
+import forSinceIos from "../images/projects/englishlive/for-since-mobile-ios@2x.png";
+import structure1 from "../images/projects/englishlive/structure-1.jpg";
+import structure2 from "../images/projects/englishlive/structure-2.jpg";
+import structure3 from "../images/projects/englishlive/structure-3.jpg";
+import structure4 from "../images/projects/englishlive/structure-4.jpg";
+import structure5 from "../images/projects/englishlive/structure-5.jpg";
 ---
 
-<Base title={title}>
-  <Fragment slot="head">
-    <link rel="stylesheet" href="/css/englishlive.css" />
-  </Fragment>
-
+<Base title={title} metaD={metaD}>
   <div class="body-img bdimg-classroom"></div>
 
-  <div id="intro"></div>
+  <div id="intro"><h2 class="visually-hidden">EF English Live</h2></div>
 
   <div class="content" id="englishliveintro">
     <section>
-      <h4>An app 20 years in the making</h4>
+      <h2>An app 20 years in the making</h2>
       <p>
-        Founded in 1996, EF has 1 000 000 paying subscribers studying and hires
-        over 2 000 teachers.
+        Founded in 1996, EF teaches English to 1 000 000 paying subscribers
+        studying and hires over 2 000 teachers.
       </p>
     </section>
   </div>
 
   <div class="content contribution">
     <section>
-      <div class="col-xs-12 center">
+      <p>
         My contribution to the project was to:
-        <ul style="list-style-type: circle; margin-left: 20px">
+        <ul>
           <li>Adapt desktop interactions of English lessons for mobile,</li>
           <li>Build mobile interactive prototypes of lesson ideas,</li>
           <li>Design activity templates unique to mobile,</li>
           <li>Create UX designs to be used in 17 languages,</li>
         </ul>
-        <p>
-          <span class="am-bold">Compay:</span> EF Education First (Shanghai, China)<br
+      </p>
+      <p>
+        <span class="am-bold">Compay:</span> EF Education First (Shanghai, China)<br
+        />
+        <span class="am-bold">Team:</span> User Experience &amp; Design<br />
+        <span class="am-bold">Role:</span> UX Designer, Prototyper<br />
+        <span class="am-bold">Timeline:</span> April - October 2014<br />
+        <span class="am-bold">Status:</span> EF English Live is available on Google
+        Play and the Apple App Store.
+      </p>
+      <p>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.ef.core.engage.englishtown"
+          target="_blank"
+          rel="noreferrer"
+          style="display: inline-block;"
+        >
+          <Image
+            src={googlePlay}
+            height={50}
+            alt="English Live on Google Play"
+            style="display: inline;"
           />
-          <span class="am-bold">Team:</span> User Experience &amp; Design<br />
-          <span class="am-bold">Role:</span> UX Designer, Prototyper<br />
-          <span class="am-bold">Timeline:</span> April - October 2014<br />
-          <span class="am-bold">Status:</span> EF English Live is available on Google
-          Play and the Apple App Store.
-        </p>
-        <p>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.ef.core.engage.englishtown"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src="/images/googlePlay.png"
-              width="151"
-              alt="English Live on Google Play"
-            />
-          </a>
-          &nbsp;&nbsp;&nbsp;
-          <a
-            href="https://itunes.apple.com/ca/app/ef-english-live-for-iphone/id961304373?mt=8"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src="/images/appStore.png"
-              width="151"
-              alt="English Live on the App Store"
-            />
-          </a>
-        </p>
+        </a>&nbsp;&nbsp;&nbsp;<a
+          href="https://itunes.apple.com/ca/app/ef-english-live-for-iphone/id961304373?mt=8"
+          target="_blank"
+          rel="noreferrer"
+          style="display: inline-block;"
+        >
+          <Image
+            src={appStore}
+            height={50}
+            alt="English Live on the App Store"
+            style="display: inline;"
+          />
+        </a>
+      </p>
+    </section>
+  </div>
+  <div class="content">
+    <section>
+      <h3>The challenge</h3>
+      <p>
+        To expand a successful (but legacy) English learning web product to
+        mobile, across platforms, while maintaining educational value.
+      </p>
+      <h3>From this</h3>
+      <Image
+        src={forSinceWeb}
+        alt="A dated-looking website explains English verb tenses"
+      />
+      <h3>To this</h3>
+      <div class="multi-col" style="--gtc: 1fr 1fr;">
+        <Image
+          src={forSinceAndroid}
+          alt="A modern iOS app explains English verb tenses"
+        />
+        <Image
+          src={forSinceIos}
+          alt="A modern Android app explains English verb tenses"
+        />
       </div>
     </section>
   </div>
 
   <div class="content">
     <section>
-      <div class="col-xs-12 center">
-        <div class="col-xs-12 padding-no center">
-          <h3 style="font-weight: 300">The challenge</h3>
-          <p>
-            To expand a successful (but legacy) English learning web product to
-            mobile, across platforms, while maintaining educational value.
-          </p>
-        </div>
-        <div class="col-xs-12 center">
-          <h3 style="font-weight: 300">From this</h3>
-          <img
-            src="/images/projects/englishlive/for-since-web@2x.png"
-            width="100%"
-            alt="A dated-looking website explains English verb tenses"
-          />
-        </div>
-        <div class="col-xs-12 padding-no center">
-          <h3 style="font-weight: 300">To this</h3>
-          <img
-            src="/images/projects/englishlive/for-since-mobile-android@2x.png"
-            width="50%"
-            style="float: left"
-            alt="A modern iOS app explains English verb tenses"
-          />
-          <img
-            src="/images/projects/englishlive/for-since-mobile-ios@2x.png"
-            width="50%"
-            style="float: left"
-            alt="A modern Android app explains English verb tenses"
-          />
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="content">
-    <section>
-      <div class="col-xs-12">
-        <h3 style="font-weight: 300">Structure</h3>
-        <p>
-          To better suit a mobile form factor and the context of our students,
-          our team devised ways to break down existing web content into smaller,
-          bite-sized morcels of learning. Here is an overview of the learning
-          flow of the app, organised in these shorter bursts of learning.
-        </p>
-        <div class="col-12">
-          <img
-            src="/images/projects/englishlive/structure-1.jpg"
-            width="100%"
-            alt="app screens for Login, Course Overview, Lesson Overview"
-          />
-          <img
-            src="/images/projects/englishlive/structure-2.jpg"
-            width="100%"
-            alt="app screens for Module Introduction, Video Vocabulary"
-          />
-          <img
-            src="/images/projects/englishlive/structure-3.jpg"
-            width="100%"
-            alt="app screens for Video Vocabulary, Vocuabulary review"
-          />
-          <img
-            src="/images/projects/englishlive/structure-4.jpg"
-            width="100%"
-            alt="app screens for Reading activity, Audio multiple choice"
-          />
-          <img
-            src="/images/projects/englishlive/structure-5.jpg"
-            width="100%"
-            alt="app screens for Multiple choice, Step complete, Lesson complete"
-          />
-        </div>
-      </div>
+      <h3>Structure</h3>
+      <p>
+        To better suit a mobile form factor and the context of our students, our
+        team devised ways to break down existing web content into smaller,
+        bite-sized morcels of learning. Here is an overview of the learning flow
+        of the app, organised in these shorter bursts of learning.
+      </p>
+      <Image
+        src={structure1}
+        alt="app screens for Login, Course Overview, Lesson Overview"
+      />
+      <Image
+        src={structure2}
+        alt="app screens for Module Introduction, Video Vocabulary"
+      />
+      <Image
+        src={structure3}
+        alt="app screens for Video Vocabulary, Vocuabulary review"
+      />
+      <Image
+        src={structure4}
+        alt="app screens for Reading activity, Audio multiple choice"
+      />
+      <Image
+        src={structure5}
+        alt="app screens for Multiple choice, Step complete, Lesson complete"
+      />
     </section>
   </div>
 
   <div class="content contribution">
     <section>
-      <div class="col-md-12">
-        <p>
-          The goal of this project was to leverage the existing English Live
-          platform on desktop Web and rethink the design and interaction
-          patterns of the e-learning templates in a way better suited to mobile
-          platforms.
-        </p>
-        <p>
-          <strong>My involvement</strong> was to rethink these interactions and create
-          wireframes and interactive prototypes for more than 10 activity templates.
-          Expanding beyond the original scope of the project, I also designed some
-          activity templates unique to mobile.
-        </p>
-        <p>
-          Framing this work, our team also took into consideration our target
-          customers, the existing language barrier, mobile OS design consistency
-          and even 17 supported UI languages. The work covered in English Live
-          for iOS &amp; Android: ideation, sketching, wireframes, user testing
-          &amp; research, visual style exploration, interactive prototyping.
-        </p>
-      </div>
+      <p>
+        The goal of this project was to leverage the existing English Live
+        platform on desktop Web and rethink the design and interaction patterns
+        of the e-learning templates in a way better suited to mobile platforms.
+      </p>
+      <p>
+        <strong>My involvement</strong> was to rethink these interactions and create
+        wireframes and interactive prototypes for more than 10 activity templates.
+        Expanding beyond the original scope of the project, I also designed some activity
+        templates unique to mobile.
+      </p>
+      <p>
+        Framing this work, our team also took into consideration our target
+        customers, the existing language barrier, mobile OS design consistency
+        and even 17 supported UI languages. The work covered in English Live for
+        iOS &amp; Android: ideation, sketching, wireframes, user testing &amp;
+        research, visual style exploration, interactive prototyping.
+      </p>
     </section>
   </div>
 </Base>

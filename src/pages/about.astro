@@ -1,389 +1,350 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
+import "../styles/about.css";
 const title = "Alexis Morin - About";
+
+import aboutPortrait from "../images/about/aboutPortrait@2x.jpg";
+import rightChevron from "../images/rightChevron.svg";
+import myDesignProcess from "../images/about/my-design-process.jpg";
+import arduino from "../images/about/arduino.svg";
+import audi from "../images/about/audi.svg";
+import autodesk from "../images/about/autodesk.svg";
+import ba from "../images/about/ba.svg";
+import compass from "../images/about/compass.svg";
+import designit from "../images/about/designit.svg";
+import ef from "../images/about/ef.svg";
+import ford from "../images/about/ford.svg";
+import google from "../images/about/google.svg";
+import hk from "../images/about/hk.png";
+import imagination from "../images/about/imagination.png";
+import jbl from "../images/about/jbl.png";
+import lightspeed from "../images/about/lightspeed.svg";
+import lincoln from "../images/about/lincoln.svg";
+import mastercard from "../images/about/mastercard.svg";
+import meta from "../images/about/meta.svg";
+import ubisoft from "../images/about/ubisoft.svg";
+import milano from "../images/about/milano@2x.jpg";
+import typewheelPortfolio from "../images/projects/side/typewheel_portfolio.jpg";
+import dotsPortfolio from "../images/projects/side/dots_portfolio.jpg";
+import wechatUIKit from "../images/projects/side/wechat-ui-kit.jpg";
+import dribbbleFlagGlobe from "../images/projects/side/dribbble-flag-globe-badges.png";
 ---
 
 <Base title={title}>
-  <Fragment slot="head">
-    <link rel="stylesheet" href="/css/about.css" />
-  </Fragment>
-
-  <div class="body-img"></div>
-
   <div class="content">
     <section>
-      <div class="col-md-12 center">
-        <div class="row">
-          <div class="col-md-4">
-            <img
-              src="/images/about/aboutPortrait@2x.jpg"
-              id="portrait"
-              style="width: 100%"
-              alt="Alexis Morin smiling wearing a blue shirt, with waved hair parted to the side, and a light beard."
-            />
-          </div>
-          <div class="col-md-8">
-            <h3 class="about">
-              I'm a design engineer at
-              <a href="https://www.autodesk.com" target="_blank">Autodesk</a>,
-              <br />
-              co-chair for
-              <a href="https://21.ixda.org" target="_blank">Interaction 21</a>,
-              <br />
-              master of interaction design,
-              <span
-                title="This means I speak 6 or more languages at a conversational level."
-                >hyperpolyglot</span
-              >, and programmer based in Montréal,
-              <span title="🇨🇦">Canada</span>.
-            </h3>
-          </div>
-          <div class="col-md-8">
-            <p class="text-left">
-              I have over 18 years of experience working with teams and
-              organizations, building and shipping meaningful digital
-              experiences. I've collaborated with brands such as Google, Meta,
-              Autodesk, Radio-Canada, Compass, Ubisoft, EF Education First,
-              Lightspeed, JBL, Harman Kardon, Audi, Jaguar, Ford, and Lincoln.
-              <br />
-              My work helps people reach goals they set out to accomplish.
-            </p>
-          </div>
-        </div>
-
-        <br />
-
-        <div class="row">
-          <div class="col-md-6">
-            <a href="mailto:the.alexis.morin@gmail.com" class="aboutLink">
-              Say hi 👋<img
-                src="/images/rightChevron.svg"
-                role="presentation"
-              />
-            </a>
-          </div>
-
-          <div class="col-md-6">
-            <a
-              href="https://drive.google.com/file/d/0B6kD2rd16Ju7TnpIX3YxUjVuazQ/view?usp=sharing&resourcekey=0-praDD_YGhw-VVSrukOuJmw"
-              class="aboutLink"
-            >
-              Download my resumé<img
-                src="/images/rightChevron.svg"
-                role="presentation"
-              />
-            </a>
-          </div>
+      <div id="about-intro" class="multi-col" style="--gtc: 2fr 3fr">
+        <Image
+          src={aboutPortrait}
+          id="portrait"
+          style="width: 100%; height: auto;"
+          alt="Alexis Morin smiling wearing a blue shirt, with waved hair parted to the side, and a light beard."
+        />
+        <div>
+          <h3 class="about">
+            I'm a design engineer at <a
+              href="https://www.autodesk.com"
+              target="_blank">Autodesk</a
+            >, <br /> co-chair for <a href="https://21.ixda.org" target="_blank"
+              >Interaction 21</a
+            >, <br />
+            master of interaction design, <span
+              title="This means I speak 6 or more languages at a conversational level."
+              >hyperpolyglot</span
+            >, and programmer based in Montréal, <span title="🇨🇦">Canada</span>.
+          </h3>
+          <p class="text-left">
+            I have over 18 years of experience working with teams and
+            organizations, building and shipping meaningful digital experiences.
+            I've collaborated with brands such as Google, Meta, Autodesk,
+            Radio-Canada, Compass, Ubisoft, EF Education First, Lightspeed, JBL,
+            Harman Kardon, Audi, Jaguar, Ford, and Lincoln. <br /> My work helps people
+            reach goals they set out to accomplish.
+          </p>
         </div>
       </div>
-    </section>
-  </div>
-
-  <div class="content">
-    <section>
-      <div class="col-md-12">
-        <div class="col-md-12">
-          <div class="row">
-            <h2>How I work</h2>
-          </div>
-        </div>
-        <div class="row">
-          <img
-            src="/images/about/my-design-process.jpg"
-            width="100%"
-            alt="Diagram of a design process with four quadrants: understand, experiment, build, release. A circle overlaid with the quadrants shows that the process is continuous."
+      <div
+        id="contact-buttons"
+        class="multi-col"
+        style="--gtc: 1fr 1fr; --gap: 0.75em"
+      >
+        <a href="mailto:the.alexis.morin@gmail.com" class="aboutLink">
+          Say hi 👋<Image src={rightChevron} alt="" role="presentation" />
+        </a>
+        <a
+          href="https://drive.google.com/file/d/0B6kD2rd16Ju7TnpIX3YxUjVuazQ/view?usp=sharing&resourcekey=0-praDD_YGhw-VVSrukOuJmw"
+          class="aboutLink"
+        >
+          Download my resumé<Image
+            src={rightChevron}
+            role="presentation"
+            alt=""
           />
-        </div>
+        </a>
       </div>
     </section>
   </div>
-
+  <div class="content">
+    <section>
+      <h2>How I work</h2>
+      <Image
+        src={myDesignProcess}
+        style="width: 100%; height: auto;"
+        alt="Diagram of a design process with four quadrants: understand, experiment, build, release. A circle overlaid with the quadrants shows that the process is continuous."
+      />
+    </section>
+  </div>
   <div class="content" id="brandsworkedwith">
-    <section style="display: flow-root">
-      <div class="col-md-12">
-        <h2>Companies I've worked with</h2>
-        <div class="brandsgrid">
-          <img src="/images/about/arduino.svg" alt="Arduino" />
-          <img src="/images/about/audi.svg" alt="Audi " />
-          <img src="/images/about/autodesk.svg" alt="Autodesk " />
-          <img src="/images/about/ba.svg" alt="Bombardier" />
-          <img src="/images/about/compass.svg" alt="Compass" />
-          <img src="/images/about/designit.svg" alt="Designit" />
-          <img src="/images/about/ef.svg" alt="EF Education First" />
-          <img src="/images/about/ford.svg" alt="Ford" />
-          <img src="/images/about/google.svg" alt="Google" />
-          <img src="/images/about/hk.png" alt="harmon/kardon" />
-          <img src="/images/about/imagination.png" alt="Imagination" />
-          <img src="/images/about/jbl.png" alt="JBL" />
-          <img src="/images/about/lightspeed.svg" alt="Lightspeed Commerce" />
-          <img src="/images/about/lincoln.svg" alt="Lincoln" />
-          <img src="/images/about/mastercard.svg" alt="MasterCard" />
-          <img src="/images/about/meta.svg" alt="Meta" />
-          <img src="/images/about/ubisoft.svg" alt="Ubisoft" />
-        </div>
+    <section aria-labelledby="companies-i-worked-with">
+      <h2 id="companies-i-worked-with">Companies I've worked with</h2>
+      <div
+        class="brandsgrid multi-col"
+        style="grid-template-columns: repeat(auto-fill,
+minmax(150px, 1fr))"
+      >
+        <Image src={arduino} alt="Arduino" />
+        <Image src={audi} alt="Audi " />
+        <Image src={autodesk} alt="Autodesk " />
+        <Image src={ba} alt="Bombardier" />
+        <Image src={compass} alt="Compass" />
+        <Image src={designit} alt="Designit" />
+        <Image src={ef} alt="EF Education First" />
+        <Image src={ford} alt="Ford" />
+        <Image src={google} alt="Google" />
+        <Image src={hk} alt="harmon/kardon" />
+        <Image src={imagination} alt="Imagination" />
+        <Image src={jbl} alt="JBL" />
+        <Image src={lightspeed} alt="Lightspeed Commerce" />
+        <Image src={lincoln} alt="Lincoln" />
+        <Image src={mastercard} alt="MasterCard" />
+        <Image src={meta} alt="Meta" />
+        <Image src={ubisoft} alt="Ubisoft" />
       </div>
     </section>
   </div>
-
   <div class="content" id="about_facts_h">
     <section>
-      <div class="col-md-12 center">
-        <div class="row">
-          <div class="col-md-4" style="margin-bottom: 16px">
-            <img
-              src="/images/about/milano@2x.jpg"
-              width="100%"
-              alt="Alexis in 2020, speaking at a podium in Milan, announces the location for the Interaction 21 conference."
-            />
-          </div>
-          <div class="col-md-8">
-            <h2>Contributions</h2>
-          </div>
-          <div class="col-md-8">
-            <a href="https://apero-ux.com/" rel="noreferrer" target="_blank">
-              <h3>ApéroUX co-organizer</h3>
+      <div class="multi-col" style="--gtc: 1fr 2fr; margin-bottom: 2em">
+        <Image
+          src={milano}
+          style="width: 100%; height: auto;"
+          alt="Alexis in 2020, speaking at a podium in Milan, announces the location for the Interaction 21 conference."
+        />
+        <div>
+          <h2>Contributions</h2>
+          <a href="https://apero-ux.com/" rel="noreferrer" target="_blank">
+            <h3>ApéroUX co-organizer</h3>
+          </a>
+          <h3>
+            <a
+              href="https://interaction21.ixda.org"
+              rel="noreferrer"
+              target="_blank">Interaction Week 2021 Co-Chair</a
+            >
+          </h3>
+          <h3>
+            <a
+              href="https://x.com/ixdamontreal"
+              rel="noreferrer"
+              target="_blank"
+            >
+              IxDA Local Leader for Montreal since 2018
             </a>
-
-            <h3>
-              <a
-                href="https://interaction21.ixda.org"
-                rel="noreferrer"
-                target="_blank">Interaction Week 2021 Co-Chair</a
-              >
-            </h3>
-            <h3>
-              <a
-                href="https://x.com/ixdamontreal"
-                rel="noreferrer"
+          </h3>
+        </div>
+      </div>
+      <h2>Talks, Podcasts &amp; Awards</h2>
+      <div class="multi-col" style="--gtc: 1fr 2fr;">
+        <div></div>
+        <ul role="list">
+          <style is:inline>
+            @scope {
+              li {
+                margin-bottom: 0.75em;
+              }
+            }
+          </style>
+          <li>
+            <strong
+              ><a
                 target="_blank"
+                rel="noreferrer"
+                href="https://apero-ux.com/episode-19-vibecoding/"
+                >Apéro-UX Podcast (2025)</a
+              ></strong
+            ><br /> Episode 19 "Vibecoding"
+          </li>
+          <li>
+            <strong
+              ><a target="_blank" rel="noreferrer" href="https://lu.ma/az1drni5"
+                >Design Connect Montreal (2024)</a
+              ></strong
+            ><br /> Builder mindset: dancing between design & engineering
+          </li>
+          <li>
+            <strong
+              ><a
+                target="_blank"
+                rel="noreferrer"
+                href="https://uxpod.ca/2024/09/03/figma/">UXPod (2024)</a
+              ></strong
+            ><br />
+            Qu&apos;est-ce qui se passe avec FIGMA
+          </li>
+          <li>
+            <strong
+              ><a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.youtube.com/watch?v=iqgy2wka8Tk"
+                >The Dev Morning Show (at night) (2023)</a
+              ></strong
+            ><br /> Removing Biases and Designing For Your User with Alexis Morin,
+            Design System Lead
+          </li>
+          <li>
+            <strong
+              ><a
+                target="_blank"
+                rel="noreferrer"
+                href="https://open.spotify.com/episode/07c4o1eOWfQK771kT87hUS"
+                >World-class Designer Podcast (2021)</a
+              ></strong
+            ><br /> Ep.14 Don't Take Shortcuts - Alex Morin
+          </li>
+          <li>
+            <strong
+              ><a
+                target="_blank"
+                rel="noreferrer"
+                href="https://rosenfeldmedia.com/design-at-scale-2021/sponsors/compass/#tab=day-2"
+                >Rosenfeld - Design at Scale (2021)</a
+              ></strong
+            ><br /> Space for Everyone: Reframing Accessibility Through a Wider Lens
+          </li>
+          <li>
+            <strong
+              ><a
+                target="_blank"
+                rel="noreferrer"
+                href="https://open.spotify.com/show/16SsOKOCt6i0ILlpn6tU57"
+                >IxDA Stories - Host (2021)</a
+              ></strong
+            ><br /> The Interaction Design Association Podcast
+          </li>
+          <li>
+            <strong
+              ><a
+                target="_blank"
+                rel="noreferrer"
+                href="http://www.dh.umu.se/en/uid-13/projects/projects/ixd/alexis-morin/"
+                >UID Talks (2013)</a
+              ></strong
+            > lin'guage - Self-Directed Language Learning <br /><i
+              >Umeå, Sweden</i
+            >
+          </li>
+          <li>
+            <strong>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="http://swissdesignnetwork.ch/symposia/disruptive-interaction"
               >
-                IxDA Local Leader for Montreal since 2018
+                Swiss Design Network (2012)
               </a>
-            </h3>
-          </div>
-
-          <div class="col-md-8">
-            <h2>Talks, Podcasts &amp; Awards</h2>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-8 col-md-offset-4">
-            <p>
-              <strong
-                ><a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://apero-ux.com/episode-19-vibecoding/"
-                  >Apéro-UX Podcast (2025)</a
-                ></strong
-              ><br />
-              Episode 19 "Vibecoding"
-            </p>
-            <p>
-              <strong
-                ><a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://lu.ma/az1drni5"
-                  >Design Connect Montreal (2024)</a
-                ></strong
-              ><br />
-              Builder mindset: dancing between design & engineering
-            </p>
-            <p>
-              <strong
-                ><a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://uxpod.ca/2024/09/03/figma/">UXPod (2024)</a
-                ></strong
-              ><br />
-              Qu&apos;est-ce qui se passe avec FIGMA
-            </p>
-            <p>
-              <strong
-                ><a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.youtube.com/watch?v=iqgy2wka8Tk"
-                  >The Dev Morning Show (at night) (2023)</a
-                ></strong
-              ><br />
-              Removing Biases and Designing For Your User with Alexis Morin, Design
-              System Lead
-            </p>
-            <p>
-              <strong
-                ><a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://open.spotify.com/episode/07c4o1eOWfQK771kT87hUS"
-                  >World-class Designer Podcast (2021)</a
-                ></strong
-              ><br />
-              Ep.14 Don't Take Shortcuts - Alex Morin
-            </p>
-            <p>
-              <strong
-                ><a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://rosenfeldmedia.com/design-at-scale-2021/sponsors/compass/#tab=day-2"
-                  >Rosenfeld - Design at Scale (2021)</a
-                ></strong
-              ><br />
-              Space for Everyone: Reframing Accessibility Through a Wider Lens
-            </p>
-            <p>
-              <strong
-                ><a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://open.spotify.com/show/16SsOKOCt6i0ILlpn6tU57"
-                  >IxDA Stories - Host (2021)</a
-                ></strong
-              ><br />
-              The Interaction Design Association Podcast
-            </p>
-            <p>
-              <strong
-                ><a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="http://www.dh.umu.se/en/uid-13/projects/projects/ixd/alexis-morin/"
-                  >UID Talks (2013)</a
-                ></strong
+            </strong> Disruptive interactions in blind gaming <br />
+            <i>Lugano, Switzerland</i>
+          </li>
+          <li>
+            <strong>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="http://www.mindtrek.org/"
               >
-              lin'guage - Self-Directed Language Learning <br /><i
-                >Umeå, Sweden</i
+                Nokia Mindtrek Ubimedia awards (2011)
+              </a>
+            </strong> Honorable Mention for Service Design <br />
+            <i>Tampere, Finland</i>
+          </li>
+          <li>
+            <strong>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://twitter.com/SIDeRIxD"
               >
-            </p>
-            <p>
-              <strong>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="http://swissdesignnetwork.ch/symposia/disruptive-interaction"
-                >
-                  Swiss Design Network (2012)
-                </a>
-              </strong>
-              Disruptive interactions in blind gaming <br />
-              <i>Lugano, Switzerland</i>
-            </p>
-            <p>
-              <strong>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="http://www.mindtrek.org/"
-                >
-                  Nokia Mindtrek Ubimedia awards (2011)
-                </a>
-              </strong>
-              Honorable Mention for Service Design <br />
-              <i>Tampere, Finland</i>
-            </p>
-            <p>
-              <strong>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://twitter.com/SIDeRIxD"
-                >
-                  SIDeR (2011)</a
-                >
-              </strong>
-              Why designers should learn to code <br />
-              <i>Copenhagen, Denmark</i>
-            </p>
-          </div>
-        </div>
+                SIDeR (2011)</a
+              >
+            </strong> Why designers should learn to code <br />
+            <i>Copenhagen, Denmark</i>
+          </li>
+        </ul>
       </div>
     </section>
   </div>
-
   <div class="content" id="about_side_projects">
     <section>
       <div class="col-md-12 center">
-        <div class="row">
-          <div class="col-md-8">
-            <h2>Side Projects</h2>
-          </div>
+        <h2>Side Projects</h2>
+        <p>
+          Because I worked as a programmer for so many years, the love of coding
+          has never left me. I've published a Figma Widget, 2 Android
+          applications. The userbase totals more than 90&nbsp;000 users.
+        </p>
+        <div class="multi-col" style="--gtc: repeat(2, 1fr);">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://play.google.com/store/apps/details?id=com.alexismorin.typewheel2"
+          >
+            <Image
+              src={typewheelPortfolio}
+              style="width: 100%; height: auto;"
+              alt="Type Wheel for Pokémon. An app screenshot with 2 wheels for selecting Pokémon Types. A badge reads Get it on Google play."
+            />
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://play.google.com/store/apps/details?id=com.alexismorin.dotswatchface"
+          >
+            <Image
+              src={dotsPortfolio}
+              style="width: 100%; height: auto;"
+              alt="Dots smartwatch face. A smartwatch shows a clock made entirely of dots. A badge reads Get it on Google play."
+            />
+          </a>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p>
-              Because I worked as a programmer for so many years, the love of
-              coding has never left me. I've published a Figma Widget, 2 Android
-              applications. The userbase totals more than 90&nbsp;000 users.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://play.google.com/store/apps/details?id=com.alexismorin.typewheel2"
-            >
-              <img
-                src="/images/projects/side/typewheel_portfolio.jpg"
-                width="100%"
-                alt="Type Wheel for Pokémon. An app screenshot with 2 wheels for selecting Pokémon Types. A badge reads Get it on Google play."
-              />
-            </a>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://play.google.com/store/apps/details?id=com.alexismorin.dotswatchface"
-            >
-              <img
-                src="/images/projects/side/dots_portfolio.jpg"
-                width="100%"
-                alt="Dots smartwatch face. A smartwatch shows a clock made entirely of dots. A badge reads Get it on Google play."
-              />
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p>
-              I have also produced Open Source packs of graphical assets for
-              other designers to freely download.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.sketchappsources.com/free-source/1933-wechat-ui-kit-sketch-freebie-resource.html"
-            >
-              <img
-                src="/images/projects/side/wechat-ui-kit.jpg"
-                width="100%"
-                alt="iOS WeChat UI Kit. Three screenshots of WeChat: two in English, one in Chinese."
-              />
-            </a>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.sketchappsources.com/free-source/3208-all-country-flags-sketch-freebie-resource.html"
-            >
-              <img
-                src="/images/projects/side/dribbble-flag-globe-badges.png"
-                width="100%"
-                alt="Flags by Lightspeed. A sphere comprised of world flags. Text reads: 267 world flags, svg & png assets, Sketch source file, Sketch library file."
-              />
-            </a>
-          </div>
+        <p>
+          I have also produced Open Source packs of graphical assets for other
+          designers to freely download.
+        </p>
+        <div class="multi-col" style="--gtc: repeat(2, 1fr);">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.sketchappsources.com/free-source/1933-wechat-ui-kit-sketch-freebie-resource.html"
+          >
+            <Image
+              src={wechatUIKit}
+              style="width: 100%; height: auto;"
+              alt="iOS WeChat UI Kit. Three screenshots of WeChat: two in English, one in Chinese."
+            />
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.sketchappsources.com/free-source/3208-all-country-flags-sketch-freebie-resource.html"
+          >
+            <Image
+              src={dribbbleFlagGlobe}
+              style="width: 100%; height: auto;"
+              alt="Flags by Lightspeed. A sphere comprised of world flags. Text reads: 267 world flags, svg & png assets, Sketch source file, Sketch library file."
+            />
+          </a>
         </div>
       </div>
     </section>

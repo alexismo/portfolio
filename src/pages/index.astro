@@ -1,6 +1,34 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 const title = "Alexis Morin - Designer";
+
+import compassDSHero from "../images/projects/compass/compass-ds@2x.jpg";
+import compassLogo from "../images/projects/compass/compass-logo.svg";
+import compassLogoSmall from "../images/projects/compass/compass-logo-small.svg";
+
+import connectHero from "../images/projects/connect/ubiConnectHero@2x.jpg";
+import ubiLogo from "../images/projects/connect/ubiconnectLogo.svg";
+import ubiLogoSmall from "../images/projects/connect/ubisoft-logo-small.svg";
+
+import flameHero from "../images/projects/flame/flameHover@2x.jpg";
+import lsLogo from "../images/projects/flame/flameTitle.svg";
+import lsLogoSmall from "../images/projects/flame/lightspeed-logo-small.svg";
+
+import aopHero from "../images/projects/aop/aopHero@2x.jpg";
+import jagLogo from "../images/projects/aop/jagAOPLogo@2x.png";
+import jagLogoSmall from "../images/projects/aop/jaguar-logo-small.svg";
+
+import classroomHero from "../images/projects/classroom/classroom@2x.jpg";
+import efLogo from "../images/projects/classroom/ef-classroom.svg";
+import efLogoSmall from "../images/projects/classroom/ef-logo-small.svg";
+
+import englishLiveHero from "../images/projects/englishlive/englishlive@2x.jpg";
+import englishLiveLogo from "../images/projects/englishlive/englishliveLogo.svg";
+
+import ampupHero from "../images/projects/ampup/ampUpHero@2x.jpg";
+import jblAmpUpLogo from "../images/projects/ampup/jblAmpUpLogo.svg";
+import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
 ---
 
 <Base title={title}>
@@ -26,13 +54,13 @@ const title = "Alexis Morin - Designer";
   <div style="clear: both"></div>
   <a name="work"></a>
   <section class="projects">
-    <ul>
+    <ul role="list">
       <li>
         <a class="white" href="/compass">
           <div class="project" id="project-compass">
             <div class="projectHero">
-              <img
-                src="/images/projects/compass/compass-ds@2x.jpg"
+              <Image
+                src={compassDSHero}
                 style="view-transition-name: --project-compass;"
                 alt="Composition of Compass Design System components: real estate listing card, badge, row, alert banner, avatar, search"
               />
@@ -40,13 +68,10 @@ const title = "Alexis Morin - Designer";
             <div class="projectDescription ondark">
               <picture class="projectTitle">
                 <source
-                  srcset="/images/projects/compass/compass-logo-small.svg"
-                  media="(max-width: 737px)"
+                  srcset={compassLogoSmall.src}
+                  media="(max-width: 736px)"
                 />
-                <img
-                  src="/images/projects/compass/compass-logo.svg"
-                  alt="Compass"
-                />
+                <img src={compassLogo.src} alt="Compass" />
               </picture>
               <div class="project-title-name">
                 <h3>Compass DS</h3>
@@ -60,22 +85,16 @@ const title = "Alexis Morin - Designer";
         <a class="white" href="/connect">
           <div class="project" id="project-connect">
             <div class="projectHero">
-              <img
-                src="/images/projects/connect/ubiConnectHero@2x.jpg"
+              <Image
+                src={connectHero}
                 style="view-transition-name: --project-connect;"
                 alt="Three screenshots of the Ubisoft connect app: mobile, console, and web."
               />
             </div>
             <div class="projectDescription ondark">
               <picture class="projectTitle">
-                <source
-                  srcset="/images/projects/connect/ubisoft-logo-small.svg"
-                  media="(max-width: 737px)"
-                />
-                <img
-                  src="/images/projects/connect/ubiconnectLogo.svg"
-                  alt="Ubisoft connect"
-                />
+                <source srcset={ubiLogoSmall.src} media="(max-width: 736px)" />
+                <img src={ubiLogo.src} alt="Ubisoft connect" />
               </picture>
               <div class="project-title-name">
                 <h3>Ubisoft Connect</h3>
@@ -89,22 +108,16 @@ const title = "Alexis Morin - Designer";
         <a class="grey" href="/flame">
           <div class="project" id="project-flame">
             <div class="projectHero">
-              <img
-                src="/images/projects/flame/flameHover@2x.jpg"
+              <Image
+                src={flameHero}
                 style="view-transition-name: --project-flame;"
                 alt="A hand holding a pencil is drawing a composition of components from the Lightspeed Flame Design System: card, icons, badge, button, date range picker."
               />
             </div>
             <div class="projectDescription onlight">
               <picture class="projectTitle">
-                <source
-                  srcset="/images/projects/flame/lightspeed-logo-small.svg"
-                  media="(max-width: 737px)"
-                />
-                <img
-                  src="/images/projects/flame/flameTitle.svg"
-                  alt="Lightspeed flame"
-                />
+                <source srcset={lsLogoSmall.src} media="(max-width: 736px)" />
+                <img src={lsLogo.src} alt="Lightspeed flame" />
               </picture>
               <div class="project-title-name">
                 <h3>Lightspeed Flame</h3>
@@ -118,22 +131,16 @@ const title = "Alexis Morin - Designer";
         <a class="white" href="/artofperformance">
           <div class="project" id="project-aop">
             <div class="projectHero">
-              <img
-                src="/images/projects/aop/aopHero@2x.jpg"
+              <Image
+                src={aopHero}
                 style="view-transition-name: --project-aop;"
                 alt="A cloud of red particles draws the outline of a jaguar vehicle."
               />
             </div>
             <div class="projectDescription ondark">
               <picture class="projectTitle">
-                <source
-                  srcset="/images/projects/aop/jaguar-logo-small.svg"
-                  media="(max-width: 737px)"
-                />
-                <img
-                  src="/images/projects/aop/jagAOPLogo@2x.png"
-                  alt="Jaguar the art of performance"
-                />
+                <source srcset={jagLogoSmall.src} media="(max-width: 736px)" />
+                <img src={jagLogo.src} alt="Jaguar the art of performance" />
               </picture>
               <div class="project-title-name">
                 <h3>Jaguar Art of Performance</h3>
@@ -147,22 +154,16 @@ const title = "Alexis Morin - Designer";
         <a class="white" href="/classroom">
           <div class="project" id="project-classroom">
             <div class="projectHero">
-              <img
-                src="/images/projects/classroom/classroom@2x.jpg"
+              <Image
+                src={classroomHero}
                 style="view-transition-name: --project-classroom;"
                 alt="A person sitting with a tablet on their lap. The tablet shows the interface for a virtual english classroom."
               />
             </div>
             <div class="projectDescription ondark">
               <picture class="projectTitle">
-                <source
-                  srcset="/images/projects/classroom/ef-logo-small.svg"
-                  media="(max-width: 737px)"
-                />
-                <img
-                  src="/images/projects/classroom/ef-classroom.svg"
-                  alt="English first classroom"
-                />
+                <source srcset={efLogoSmall.src} media="(max-width: 736px)" />
+                <img src={efLogo.src} alt="English first classroom" />
               </picture>
               <div class="project-title-name">
                 <h3>English First Classroom</h3>
@@ -176,22 +177,16 @@ const title = "Alexis Morin - Designer";
         <a class="grey" href="/englishlive">
           <div class="project" id="project-englishlive">
             <div class="projectHero">
-              <img
-                src="/images/projects/englishlive/englishlive@2x.jpg"
+              <Image
+                src={englishLiveHero}
                 style="view-transition-name: --project-englishlive;"
                 alt="An iphone with the English Live app. The screen reads: Learn real life language and shows categories for learning: vocabulary, expressions, writing, grammar, reading, listening, speaking, quiz, final task."
               />
             </div>
             <div class="projectDescription onlight">
               <picture class="projectTitle">
-                <source
-                  srcset="/images/projects/classroom/ef-logo-small.svg"
-                  media="(max-width: 737px)"
-                />
-                <img
-                  src="/images/projects/englishlive/englishliveLogo.svg"
-                  alt="English live"
-                />
+                <source srcset={efLogoSmall.src} media="(max-width: 736px)" />
+                <img src={englishLiveLogo.src} alt="English live" />
               </picture>
               <div class="project-title-name">
                 <h3>English Live</h3>
@@ -205,22 +200,16 @@ const title = "Alexis Morin - Designer";
         <a class="grey" href="/ampup">
           <div class="project" id="project-ampup">
             <div class="projectHero">
-              <img
-                src="/images/projects/ampup/ampUpHero@2x.jpg"
+              <Image
+                src={ampupHero}
                 style="view-transition-name: --project-ampup;"
                 alt="A tablet docked on a JBL brand speaker dock shows an interface of a music player, large clock, and weather background."
               />
             </div>
             <div class="projectDescription onlight">
               <picture class="projectTitle">
-                <source
-                  srcset="/images/projects/ampup/jbl-logo-small.svg"
-                  media="(max-width: 737px)"
-                />
-                <img
-                  src="/images/projects/ampup/jblAmpUpLogo.svg"
-                  alt="JBL Amp up"
-                />
+                <source srcset={jblLogoSmall.src} media="(max-width: 736px)" />
+                <img src={jblAmpUpLogo.src} alt="JBL Amp up" />
               </picture>
               <div class="project-title-name">
                 <h3>JBL AmpUp!</h3>

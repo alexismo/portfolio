@@ -1,364 +1,369 @@
 ---
 import Base from "../layouts/Base.astro";
+import "../styles/aop.css";
+import "../styles/images-grid.css";
 const title = "The Art of Performance Tour - Alexis Morin";
+const metaD =
+  "Jaguar Art of Performance Tour, an experiential design project by Alexis Morin. Digital installations including a reactive wall and photo booth for Jaguar Land Rover's touring exhibition in China.";
+
+import { Image } from "astro:assets";
+import singleLateWebm from "../images/projects/aop/SingleLateAmazondolphin.webm";
+import singleLateMp4 from "../images/projects/aop/SingleLateAmazondolphin.mp4";
+import photoBooth from "../images/projects/aop/photo-booth-2000.jpg";
+import particleWall from "../images/projects/aop/particle-wall-2000.jpg";
+import paintAJaguar from "../images/projects/aop/paint-a-jaguar-2000.jpg";
+import photoBooth1 from "../images/projects/aop/photo_booth_1-2000.avif";
+import sloMoWebm from "../images/projects/aop/slo-mo-capture.webm";
+import sloMoMp4 from "../images/projects/aop/slo-mo-capture.mp4";
+import sloMoPoster from "../images/projects/aop/slo-mo-capture.jpg";
+import reactiveWall1 from "../images/projects/aop/reactive_wall_1.jpg";
+import paintStudio1 from "../images/projects/aop/paint_studio_1-2000.avif";
+import paintWallWebm from "../images/projects/aop/paint-wall-video.webm";
+import paintWallMp4 from "../images/projects/aop/paint-wall-video.mp4";
+import paintWallPoster from "../images/projects/aop/paint-wall-video-poster.jpg";
 ---
 
-<Base title={title}>
-  <Fragment slot="head">
-    <link rel="stylesheet" href="/css/aop.css" />
-  </Fragment>
-
+<Base title={title} metaD={metaD}>
   <div class="body-img bdimg-aop">
-    <video class="share-video" id="hero-share-video" autoplay muted loop>
-      <source
-        id="webmSource"
-        src="/images/projects/aop/SingleLateAmazondolphin.webm"
-        type="video/webm"
-      />
-      <source
-        id="mp4Source"
-        src="/images/projects/aop/SingleLateAmazondolphin.mp4"
-        type="video/mp4"
-      />
+    <video
+      class="share-video"
+      id="hero-share-video"
+      autoplay
+      muted
+      loop
+      role="presentation"
+    >
+      <source id="webmSource" src={singleLateWebm} type="video/webm" />
+      <source id="mp4Source" src={singleLateMp4} type="video/mp4" />
     </video>
   </div>
 
   <div id="intro">
-    <h3 class="tagline mobile-glass" style="color: white;">
-      Jaguar Art of Performance Tour
-    </h3>
+    <div class="tagline mobile-glass" style="color: white;">
+      <h2>Jaguar Art of Performance Tour</h2>
+      <form>
+        <label for="reducemotion">
+          <input type="checkbox" id="reducemotion" />Reduce motion
+        </label>
+      </form>
+    </div>
+    <script>
+      const video = document.getElementById(
+        "hero-share-video",
+      ) as HTMLVideoElement;
+      const checkbox = document.getElementById(
+        "reducemotion",
+      ) as HTMLInputElement;
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      prefersReducedMotion && video.pause();
+      checkbox.checked = prefersReducedMotion;
+
+      document
+        .getElementById("reducemotion")
+        ?.addEventListener("change", (e: Event) => {
+          (e.target as HTMLInputElement).checked ? video.pause() : video.play();
+        });
+    </script>
   </div>
 
   <div class="content" id="aopintro">
     <section>
-      <div class="col-md-12">
-        <div class="col-12">
-          <h2>Jaguar Art of Performace Tour (捷豹 感知性能美学)</h2>
-        </div>
-        <div class="col-12">
-          <p>
-            A collaboration with Jaguar Land Rover and Imagination; The Art of
-            Performance Tour brings forward Jaguar Land Rover's classic British
-            Heritage in an exposé that bridges trusted performace to the way
-            humans connect with Jaguar's powerful machines.
-          </p>
-          <p>
-            Art of Performance marries the iconic design language of Jaguar
-            vehicles with 3 digital installations in 20 cities across China.
-          </p>
-        </div>
-      </div>
+      <h2>Jaguar Art of Performace Tour (捷豹 感知性能美学)</h2>
+      <p>
+        A collaboration with Jaguar Land Rover and Imagination; The Art of
+        Performance Tour brings forward Jaguar Land Rover's classic British
+        Heritage in an exposé that bridges trusted performace to the way humans
+        connect with Jaguar's powerful machines.
+      </p>
+      <p>
+        Art of Performance marries the iconic design language of Jaguar vehicles
+        with 3 digital installations in 20 cities across China.
+      </p>
     </section>
   </div>
 
   <div class="content contribution">
     <section>
-      <div class="col-xs-12 center">
-        <p>My contribution to the projects were:</p>
-        <h3>For all activations:</h3>
-        <ul style="list-style-type: circle; margin-left: 20px">
-          <li>imagine concepts for digital activations,</li>
-          <li>validate concepts for brand and local culture fit,</li>
-          <li>ensure quality, stability, and deployability of activations.</li>
-        </ul>
-        <h3>For the World Record Cam:</h3>
-        <ul style="list-style-type: circle; margin-left: 20px">
-          <li>hardware design for photo booth installation,</li>
-          <li>design the content delivery pipeline,</li>
-          <li>
-            end-to-end implementation of the required Android &amp; Mac apps,
-          </li>
-          <li>video and audio editing of shareable souvenir,</li>
-          <li>UX &amp; UI Design on remote control tablet,</li>
-        </ul>
-        <h3>For the Reactive Wall:</h3>
-        <ul style="list-style-type: circle; margin-left: 20px">
-          <li>
-            prototype visuals and concepts to capture an accurate feel for the
-            participants,
-          </li>
-          <li>
-            produce design and experience specifications for distribution to
-            remote development teams,
-          </li>
-        </ul>
-        <h3>For the Paint Studio:</h3>
-        <ul style="list-style-type: circle; margin-left: 20px">
-          <li>
-            source local artists to create blank-canvas sketches of Jaguar cars,
-          </li>
-        </ul>
-        <p>
-          <span class="am-bold">Client:</span> Jaguar Land Rover&trade; <br />
-          <span class="am-bold">Team:</span> Mauricio Estrella, Sam McMorran, Samuel
-          Walsh, Iain Greenhalgh <br />
-          <span class="am-bold">Agency:</span> The Imagination Group <br />
-          <span class="am-bold">Role:</span> Senior Creative <br />
-          <span class="am-bold">Status:</span> Deployed to 20 cities across China
-          from January to March 2016 <br />
-          <span class="am-bold">Timeline:</span> December 2015
-        </p>
+      <p>My contribution to the projects were:</p>
+      <h3>For all activations:</h3>
+      <ul>
+        <li>imagine concepts for digital activations,</li>
+        <li>validate concepts for brand and local culture fit,</li>
+        <li>ensure quality, stability, and deployability of activations.</li>
+      </ul>
+      <h3>For the World Record Cam:</h3>
+      <ul>
+        <li>hardware design for photo booth installation,</li>
+        <li>design the content delivery pipeline,</li>
+        <li>
+          end-to-end implementation of the required Android &amp; Mac apps,
+        </li>
+        <li>video and audio editing of shareable souvenir,</li>
+        <li>UX &amp; UI Design on remote control tablet,</li>
+      </ul>
+      <h3>For the Reactive Wall:</h3>
+      <ul>
+        <li>
+          prototype visuals and concepts to capture an accurate feel for the
+          participants,
+        </li>
+        <li>
+          produce design and experience specifications for distribution to
+          remote development teams,
+        </li>
+      </ul>
+      <h3>For the Paint Studio:</h3>
+      <ul>
+        <li>
+          source local artists to create blank-canvas sketches of Jaguar cars,
+        </li>
+      </ul>
+      <p>
+        <span class="am-bold">Client:</span> Jaguar Land Rover&trade; <br />
+        <span class="am-bold">Team:</span> Mauricio Estrella, Sam McMorran, Samuel
+        Walsh, Iain Greenhalgh <br />
+        <span class="am-bold">Agency:</span> The Imagination Group <br />
+        <span class="am-bold">Role:</span> Senior Creative <br />
+        <span class="am-bold">Status:</span> Deployed to 20 cities across China from
+        January to March 2016 <br />
+        <span class="am-bold">Timeline:</span> December 2015
+      </p>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <div class="multi-col" style="--gtc: repeat(3, 1fr);">
+        <figure>
+          <button light-box title="View larger">
+            <Image
+              src={photoBooth}
+              widths={[600, 2000]}
+              sizes="100vw, (width >= 768px) 33vw"
+              alt="A photo booth and poster background for the world record cam"
+            />
+          </button>
+          <figcaption>1. World Record Cam</figcaption>
+        </figure>
+        <figure>
+          <button light-box title="View larger">
+            <Image
+              src={particleWall}
+              widths={[600, 2000]}
+              sizes="100vw, (width >= 768px) 33vw"
+              alt="A woman standing in from of 3 TV showing red particles in the shape of a Jaguar"
+            />
+          </button>
+          <figcaption>2. Reactive Wall</figcaption>
+        </figure>
+        <figure>
+          <button light-box title="View larger">
+            <Image
+              src={paintAJaguar}
+              widths={[600, 2000]}
+              sizes="100vw, (width >= 768px) 33vw"
+              alt="A woman adding color to a sketch of a Jaguar car"
+            />
+          </button>
+          <figcaption>3. Paint Studio</figcaption>
+        </figure>
       </div>
     </section>
   </div>
 
   <div class="content">
     <section>
-      <div class="col-md-12 center">
-        <div class="col-sm-4">
-          <h3 id="wrc-booth">1. World Record Cam</h3>
-          <img
-            src="/images/projects/aop/photo-booth.jpg"
-            alt="A photo booth and poster background for the world record cam"
-          />
+      <h2>World Record Cam</h2>
+      <div class="multi-col" style="--gtc: repeat(2, 1fr);">
+        <div>
+          <p>
+            I led the design for hardware, software, and implementation of the
+            World Record Cam. In this activation, participants would dress up as
+            legendary stunt driver Terry Grant, place themselves in a photo
+            booth, receive a countdown and a prompt, after which an automated
+            remote-controlled rig would snap a F-PACE themed high-speed
+            motion-photo to be shared on WeChat (Chinese social media).
+          </p>
+          <p>
+            This activation strategically re-used code, and hardware design from
+            a previous installation for Ford Motors which occured at the New
+            Delhi Auto Show 2016.
+          </p>
         </div>
-        <div class="col-sm-4">
-          <h3>2. Reactive Wall</h3>
-          <img
-            src="/images/projects/aop/particle-wall.jpg"
-            alt="A woman standing in from of 3 TV showing red particles in the shape of a Jaguar"
-          />
-        </div>
-        <div class="col-sm-4">
-          <h3>3. Paint Studio</h3>
-          <img
-            src="/images/projects/aop/paint-a-jaguar.jpg"
-            alt="A woman adding color to a sketch of a Jaguar car"
-          />
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="content">
-    <section>
-      <div class="col-md-12">
-        <div class="col-12">
-          <h2>World Record Cam</h2>
-          <div class="col-md-6">
-            <p>
-              I led the design for hardware, software, and implementation of the
-              World Record Cam. In this activation, participants would dress up
-              as legendary stunt driver Terry Grant, place themselves in a photo
-              booth, receive a countdown and a prompt, after which an automated
-              remote-controlled rig would snap a F-PACE themed high-speed
-              motion-photo to be shared on WeChat (Chinese social media).
-            </p>
-            <p>
-              This activation strategically re-used code, and hardware design
-              from a previous installation for Ford Motors which occured at the
-              New Delhi Auto Show 2016.
-            </p>
-          </div>
-          <div class="col-md-6">
-            <figure>
-              <img
-                src="/images/projects/aop/photo_booth_1.jpg"
-                title="Jaguar-themed backdrop for taking the motion-photo"
+        <div>
+          <figure>
+            <button light-box title="View larger">
+              <Image
+                src={photoBooth1}
+                widths={[600, 2000]}
+                sizes="100vw, (width >= 768px) 33vw"
                 alt="Jaguar-themed backdrop for taking the motion-photo"
-                width="100%"
+                style="width: 100%;"
               />
-              <figcaption>
-                Jaguar-themed backdrop for taking the motion-photo
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-md-6">
-            <figure>
-              <video
-                class="share-video"
-                preload="none"
-                poster="/images/projects/aop/slo-mo-capture.jpg"
-                controls
-                muted
-                height="331"
-                onclick="this.paused?this.play():this.pause();"
-              >
-                <source
-                  id="webmSource"
-                  src="/images/projects/aop/slo-mo-capture.webm"
-                  type="video/webm"
-                />
-                <source
-                  id="mp4Source"
-                  src="/images/projects/aop/slo-mo-capture.mp4"
-                  type="video/mp4"
-                />
-                <img
-                  title="Sorry, your browser doesn't support HTML5 video."
-                  src="/images/projects/aop/slo-mo-capture.jpg"
-                />
-              </video>
-              <figcaption>Slo-mo souvenir, shareable on WeChat</figcaption>
-            </figure>
-          </div>
-          <div class="col-md-6">
-            <figure>
-              <div
-                style="
-                  width: 100%;
-                  height: 0;
-                  padding-bottom: 56%;
-                  position: relative;
-                "
-              >
-                <iframe
-                  width="100%"
-                  style="aspect-ratio: 16/9;"
-                  src="https://www.youtube.com/embed/38q9PDCVsTA?si=48c6xsekuhV0ibiC"
-                  title="Early prototype of a tablet-controlled camera rig."
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen></iframe>
-              </div>
-              <figcaption>
-                Early prototype of a tablet-controlled camera rig.
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="content">
-    <section>
-      <div class="col-md-12">
-        <div class="col-12">
-          <h2>Reactive Wall</h2>
-          <p>
-            The Jaguar F-PACE is a technologically advanced vehicle, passively
-            attentive to its driver's every movement. To embody this concept, we
-            invisioned a large interactive wall which evolves and reacts as
-            passerbys come and go.
-          </p>
-        </div>
-        <div class="col-md-12">
-          <figure>
-            <img
-              src="/images/projects/aop/reactive_wall_1.jpg"
-              title="Reactive Wall Setup for Suzhou, Jiangsu province"
-              alt="Reactive Wall Setup for Suzhou, Jiangsu province"
-              width="100%"
-            />
+            </button>
             <figcaption>
-              Reactive Wall Setup for Suzhou, Jiangsu province
+              Jaguar-themed backdrop for taking the motion-photo
             </figcaption>
           </figure>
         </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="content">
-    <section>
-      <div class="col-xs-12">
-        <figure>
-          <div
-            style="
-              width: 100%;
-              height: 0;
-              padding-bottom: 56%;
-              position: relative;
-            "
-          >
-            <iframe
-              width="100%"
-              style="aspect-ratio: 16/9;"
-              src="https://www.youtube.com/embed/_INVFX7-pB0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              aria-labelledby="reactive-wall-effects-video"
-              allowfullscreen></iframe>
-          </div>
-          <figcaption id="reactive-wall-effects-video">
-            Video compilation of the effects available on the reactive wall.
-            <br />
-            Large spots of particles indicate a person passing by.
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-  </div>
-
-  <div class="content">
-    <section>
-      <div class="col-xs-12">
-        <figure>
-          <iframe
-            width="100%"
-            style="aspect-ratio: 16/9;"
-            src="https://www.youtube.com/embed/R4mehM33hzU"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            aria-labelledby="reactive-wall-development-video"
-            allowfullscreen></iframe>
-          <figcaption id="reactive-wall-development-video">
-            Progress video of the Reactive Wall still in development, <br />
-            with some explanations from the Producer on the project.
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-  </div>
-
-  <div class="content">
-    <section>
-      <div class="col-md-12">
-        <div class="col-12">
-          <h2>Paint Studio</h2>
-          <p>
-            Just as the car designers at Jaguar bring vehicles to life through
-            sketching, so can participants with the Jaguar Paint Studio.
-          </p>
-          <p>
-            Provided with 6 artist-drawn sketches of cars, and 4 color
-            pallettes, participants could bring their a car sketch to life on a
-            digital screen, using a real paintbrush.
-          </p>
-        </div>
-        <div class="col-md-6">
-          <figure>
-            <img
-              src="/images/projects/aop/paint_studio_1.jpg"
-              title="A younger participant, choosing a color palette."
-              alt="A younger participant, choosing a color palette."
-              width="100%"
-            />
-            <figcaption>
-              A younger participant, choosing a color palette.
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-md-6">
+        <div>
           <figure>
             <video
               class="share-video"
               preload="none"
-              poster="/images/projects/aop/paint-wall-video-poster.jpg"
+              poster={sloMoPoster.src}
               controls
               muted
+              height="450"
               onclick="this.paused?this.play():this.pause();"
-              width="100%"
             >
-              <source
-                id="webmSource"
-                src="/images/projects/aop/paint-wall-video.webm"
-                type="video/webm"
-              />
-              <source
-                id="mp4Source"
-                src="/images/projects/aop/paint-wall-video.mp4"
-                type="video/mp4"
-              />
-              <img
+              <source id="webmSource" src={sloMoWebm} type="video/webm" />
+              <source id="mp4Source" src={sloMoMp4} type="video/mp4" />
+              <Image
                 title="Sorry, your browser doesn't support HTML5 video."
-                src="/images/projects/aop/paint-wall-video-poster.jpg"
+                src={sloMoPoster}
+                alt="Video poster"
               />
             </video>
+            <figcaption>Slo-mo souvenir, shareable on WeChat</figcaption>
+          </figure>
+        </div>
+        <div>
+          <figure>
+            <iframe
+              width="100%"
+              style="aspect-ratio: 16/9;"
+              src="https://www.youtube.com/embed/38q9PDCVsTA?si=48c6xsekuhV0ibiC"
+              title="Early prototype of a tablet-controlled camera rig."
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
             <figcaption>
-              A participant adding the final touches to her piece.
+              Early prototype of a tablet-controlled camera rig.
             </figcaption>
           </figure>
         </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <h2>Reactive Wall</h2>
+      <p>
+        The Jaguar F-PACE is a technologically advanced vehicle, passively
+        attentive to its driver's every movement. To embody this concept, we
+        invisioned a large interactive wall which evolves and reacts as
+        passerbys come and go.
+      </p>
+      <div class="images--grid" style="--max-columns: 1">
+        <article>
+          <figure>
+            <button light-box title="View larger">
+              <Image
+                src={reactiveWall1}
+                title="Reactive Wall Setup for Suzhou, Jiangsu province"
+                alt="Reactive Wall Setup for Suzhou, Jiangsu province"
+                style="width: 100%;"
+              />
+            </button>
+            <figcaption>
+              Reactive Wall Setup for Suzhou, Jiangsu province
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <figure>
+        <iframe
+          width="100%"
+          style="aspect-ratio: 16/9;"
+          src="https://www.youtube.com/embed/_INVFX7-pB0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          aria-labelledby="reactive-wall-effects-video"
+          allowfullscreen></iframe>
+        <figcaption id="reactive-wall-effects-video">
+          Video compilation of the effects available on the reactive wall.
+          <br />
+          Large spots of particles indicate a person passing by.
+        </figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <figure>
+        <iframe
+          width="100%"
+          style="aspect-ratio: 16/9;"
+          src="https://www.youtube.com/embed/R4mehM33hzU"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          aria-labelledby="reactive-wall-development-video"
+          allowfullscreen></iframe>
+        <figcaption id="reactive-wall-development-video">
+          Progress video of the Reactive Wall still in development, <br />
+          with some explanations from the Producer on the project.
+        </figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <div class="content">
+    <section>
+      <h2>Paint Studio</h2>
+      <p>
+        Just as the car designers at Jaguar bring vehicles to life through
+        sketching, so can participants with the Jaguar Paint Studio.
+      </p>
+      <p>
+        Provided with 6 artist-drawn sketches of cars, and 4 color pallettes,
+        participants could bring their a car sketch to life on a digital screen,
+        using a real paintbrush.
+      </p>
+      <div class="multi-col" style="--gtc: repeat(2, 1fr);">
+        <figure>
+          <button light-box title="View larger">
+            <Image
+              src={paintStudio1}
+              widths={[600, 2000]}
+              sizes="100vw, (width >= 768px) 50vw"
+              alt="A younger participant, choosing a color palette."
+              style="width: 100%;"
+            />
+          </button>
+          <figcaption>
+            A younger participant, choosing a color palette.
+          </figcaption>
+        </figure>
+        <figure>
+          <video
+            class="share-video"
+            preload="none"
+            poster={paintWallPoster.src}
+            controls
+            muted
+            onclick="this.paused?this.play():this.pause();"
+            width="100%"
+          >
+            <source id="webmSource" src={paintWallWebm} type="video/webm" />
+            <source id="mp4Source" src={paintWallMp4} type="video/mp4" />
+            <Image
+              title="Sorry, your browser doesn't support HTML5 video."
+              src={paintWallPoster}
+              alt="Video poster"
+            />
+          </video>
+          <figcaption>
+            A participant adding the final touches to her piece.
+          </figcaption>
+        </figure>
       </div>
     </section>
   </div>
