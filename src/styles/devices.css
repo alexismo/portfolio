@@ -68,12 +68,16 @@
   }
 
   .topbar {
-    grid-template-columns: 1fr 1fr;
-    padding: 0 24px 0 32px;
+    grid-template-columns: auto 1fr;
+    padding-inline-start: 24px;
 
     ul {
       gap: 2rem;
-      justify-content: end;
+      justify-content: space-evenly;
+
+      a {
+        padding: 24px;
+      }
     }
   }
 
