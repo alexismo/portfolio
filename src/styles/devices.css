@@ -70,6 +70,7 @@
   .topbar {
     grid-template-columns: auto 1fr;
     padding-inline-start: 24px;
+    padding-inline-end: 16px;
 
     ul {
       gap: 2rem;
