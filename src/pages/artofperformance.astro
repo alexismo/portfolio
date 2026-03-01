@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import "../styles/images-grid.css";
 const title = "The Art of Performance Tour - Alexis Morin";
 const metaD =
   "Jaguar Art of Performance Tour, an experiential design project by Alexis Morin. Digital installations including a reactive wall and photo booth for Jaguar Land Rover's touring exhibition in China.";
@@ -22,9 +23,8 @@ import paintWallPoster from "../images/projects/aop/paint-wall-video-poster.jpg"
 ---
 
 <Base title={title} metaD={metaD}>
-  <style slot="head">
+  <style is:global slot="head">
     @import "../styles/aop.css";
-    @import "../styles/images-grid.css";
   </style>
 
   <div class="body-img bdimg-aop">
