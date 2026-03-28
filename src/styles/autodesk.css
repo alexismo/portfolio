@@ -1,0 +1,30 @@
+.bgimg-autodesk {
+  background-image: url("../images/projects/adsk/adsk-poster.png");
+  background-position: 50% 0;
+  view-transition-name: --project-adsk;
+
+  @media (width <=736px) {
+    background-position: 900px -300px;
+    background-size: 1800px auto;
+  }
+
+}
+
+.tagline {
+  background-color: #161616;
+  border-radius: 100vmax;
+  color: #fff;
+
+  .highlight {
+    color: #ff0;
+  }
+}
+
+#autodeskintro {
+  background-color: #1d91d0;
+  color: #000;
+
+  h2 {
+    margin-block: 1rem;
+  }
+}

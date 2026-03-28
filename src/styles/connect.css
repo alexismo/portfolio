@@ -15,7 +15,7 @@ body {
     linear-gradient(90deg, rgb(13, 13, 13) 45.36%, rgba(36, 36, 36, 0) 57.45%);
 }
 
-.bdimg-connect {
+.bgimg-connect {
   background-image: url("../images/projects/connect/connectPoster.jpg");
   background-position: 50% 0;
   view-transition-name: --project-connect;

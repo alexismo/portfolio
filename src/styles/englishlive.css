@@ -1,6 +1,6 @@
-.bdimg-classroom {
+.bgimg-englishlive {
   background-image: url("../images/projects/englishlive/englishLiveHero.jpg");
-  background-position: 50% 0;
+  background-position: 50% -12svh;
   view-transition-name: --project-englishlive;
 }
 
