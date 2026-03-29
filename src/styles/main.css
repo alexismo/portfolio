@@ -447,6 +447,8 @@ section.contribution {
 }
 
 section#intro {
+  /*only the index*/
+  min-height: 76svh;
   display: flex;
   flex-direction: column;
   line-height: inherit;
@@ -519,6 +521,7 @@ section.projects li:has(a:focus-visible) {
 }
 
 .project {
+  width: 100%;
   height: 100%;
   display: grid;
   place-content: center;
