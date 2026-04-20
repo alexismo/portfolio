@@ -221,6 +221,11 @@
   /*case studies*/
   .body-img {
     height: 76svh;
+
+    @supports (hanging-punctuation: first) {
+      background-attachment: scroll;
+      /* iOS background-attachment bug*/
+    }
   }
 
   /* about page */
