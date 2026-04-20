@@ -30,7 +30,7 @@
 }
 
 @property --valint {
-  syntax: "<integer>";
+  syntax: "<number>";
   inherits: true;
   initial-value: 0;
 }

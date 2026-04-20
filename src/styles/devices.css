@@ -61,6 +61,13 @@
     }
   }
 
+  .mobile-glass {
+    color: #fff;
+    background: #0000008c;
+    box-shadow: 0 4px 30px #0000001a;
+    backdrop-filter: blur(5px);
+  }
+
   .glass {
     @supports (position-anchor: --wtv) and (hanging-punctuation: first) {
       background-color: var(--bg);

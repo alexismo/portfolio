@@ -681,16 +681,6 @@ p.role {
   letter-spacing: 1.6px;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes handwave {
   0% {
     transform: rotate(0deg);
