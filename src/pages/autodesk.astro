@@ -1,0 +1,83 @@
+---
+import Base from "../layouts/Base.astro";
+
+import "../styles/images-grid.css";
+
+const title = "Autodesk.com website redesign - Alexis Morin";
+const metaD =
+    "Autodesk.com website refresh case study by Alexis Morin. Including the process of design engineering, and resulting design system.";
+---
+
+<Base title={title} metaD={metaD}>
+    <style is:global slot="head">
+        @import "../styles/autodesk.css";
+    </style>
+    <div class="body-img bgimg-autodesk"></div>
+
+    <div id="intro">
+        <h1 class="tagline mobile-glass">
+            <span class="highlight">Design engineering</span> and design system
+        </h1>
+    </div>
+
+    <div class="content" id="autodeskintro">
+        <section>
+            <h2>Brand refresh &amp; website redesign</h2>
+            <p>
+                In 2024, the Autodesk brand got a fresh new look. As a part of
+                this refresh, our team redesigned the website to be more
+                expressive and engaging. Driving more than 32 million views per
+                month, this site is Autodesk's primary digital and e-commerce
+                touchpoint.
+            </p>
+        </section>
+    </div>
+    <div class="content">
+        <section class="contribution">
+            <div>
+                <h3>My contribution</h3>
+                <p>
+                    Through design engineering, I redefined what was possible to
+                    ship on our parent brand website and e-commerce platform.
+                </p>
+                <p>
+                    I worked closely with the brand's Creative Director to
+                    understand the vision and intent of brand elements,
+                    iterating on in-browser elements directly in code.
+                </p>
+            </div>
+            <dl>
+                <dt>Role</dt>
+                <dd>Design engineer</dd>
+                <dt>Timeline</dt>
+                <dd>2025 - 2026</dd>
+                <dt>Status</dt>
+                <dd>
+                    Live: <a
+                        href="https://www.autodesk.com"
+                        target="_blank"
+                        rel="noopener">autodesk.com</a
+                    >
+                </dd>
+            </dl>
+        </section>
+    </div>
+    <div class="content">
+        <section>
+            <p>
+                This case study is in construction at the moment. So in the
+                meantime, you can visit the live <a
+                    href="https://autodesk.com"
+                    target="_blank"
+                    rel="noopener">autodesk.com</a
+                > or check out this before &amp; after view.
+            </p>
+            <div
+                class="range-wrapper"
+                style="--min: clamp(-10, -10 + 10 * (100vw - 390px) / 586px, 0); --max: clamp(106, 138 - 36 * (100vw - 390px) / 586px, 138);"
+            >
+                <input type="range" min="0" max="100" />
+            </div>
+        </section>
+    </div>
+</Base>

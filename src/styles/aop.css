@@ -1,14 +1,7 @@
-.bdimg-aop {
-  height: calc(100dvh - 10rem);
+.bgimg-aop {
   overflow: hidden;
-  z-index: 0;
+  z-index: -1;
   view-transition-name: --project-aop;
-}
-
-@media only screen and (min-width: 737px) {
-  .bdimg-aop {
-    height: 100dvh;
-  }
 }
 
 header {
@@ -19,7 +12,7 @@ header {
   }
 }
 
-.bdimg-aop video {
+.bgimg-aop video {
   position: absolute;
   inset: 0;
   width: 100%;

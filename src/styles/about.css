@@ -4,6 +4,7 @@
 
 #portrait {
   border-radius: 12px;
+  animation: fadeIn 1s ease forwards;
 }
 
 #about_facts_h {

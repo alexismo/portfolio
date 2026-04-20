@@ -3,7 +3,11 @@ import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 const title = "Alexis Morin - Designer";
 
-import compassDSHero from "../images/projects/compass/compass-ds@2x.jpg";
+import adskHero from "../images/projects/adsk/adsk-cover.png";
+import adskLogo from "../images/projects/adsk/adsk-logo.svg";
+import adskLogoSmall from "../images/projects/adsk/adsk-logo-small.svg";
+
+import compassDSHeroTrans from "../images/projects/compass/compass-ds-trans.png";
 import compassLogo from "../images/projects/compass/compass-logo.svg";
 import compassLogoSmall from "../images/projects/compass/compass-logo-small.svg";
 
@@ -56,11 +60,35 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
   <section class="projects">
     <ul role="list">
       <li>
+        <a class="white" href="/autodesk">
+          <div class="project" id="project-adsk">
+            <div class="projectHero">
+              <Image
+                src={adskHero}
+                quality="90"
+                style="view-transition-name: --project-adsk;"
+                alt="Screenshots of the refreshed Autodesk.com website on desktop and mobile"
+              />
+            </div>
+            <div class="projectDescription ondark">
+              <picture class="projectTitle">
+                <source srcset={adskLogoSmall.src} media="(max-width: 736px)" />
+                <img src={adskLogo.src} alt="Autodesk" />
+              </picture>
+              <div class="project-title-name">
+                <h3>Autodesk.com</h3>
+                <p>Brand refresh and design system</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li>
         <a class="white" href="/compass">
           <div class="project" id="project-compass">
             <div class="projectHero">
               <Image
-                src={compassDSHero}
+                src={compassDSHeroTrans}
                 style="view-transition-name: --project-compass;"
                 alt="Composition of Compass Design System components: real estate listing card, badge, row, alert banner, avatar, search"
               />
