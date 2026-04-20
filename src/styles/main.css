@@ -630,8 +630,6 @@ section.projects li:has(a:focus-visible) {
 }
 
 .projectDescription {
-  opacity: 0;
-  animation: fadeIn 3s ease forwards;
   padding: 36px 50px;
   transition: scale;
   scale: 1;

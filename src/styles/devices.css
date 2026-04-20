@@ -168,6 +168,15 @@
       align-items: center;
       gap: 12px;
 
+      .projectTitle,
+      .project-title-name {
+        @starting-style {
+          opacity: 0;
+        }
+
+        animation: fadeIn 3s ease forwards;
+      }
+
       .projectTitle {
         background-color: rgba(0, 0, 0, 0.85);
         border-radius: 8px;
