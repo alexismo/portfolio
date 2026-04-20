@@ -46,11 +46,7 @@
 }
 
 .range-wrapper {
-  p::after {
-    position: absolute;
-    counter-reset: --cnt var(--valint);
-    content: counter(--cnt);
-  }
+  aspect-ratio: 1459 / 1188;
 
   position: relative;
   timeline-scope: --thumb;
@@ -73,19 +69,20 @@
 
   &::before {
     background-image: url("../images/projects/adsk/dotcom-before.png");
+    content: "" / "autodesk.com legacy site";
   }
 
   &::after {
     background-image: url("../images/projects/adsk/dotcom-after.png");
+    content: "" / "autodesk.com refreshed site";
     mask-image: linear-gradient(to right, black, black var(--adj), transparent var(--adj), transparent);
   }
-
 }
 
 input[type="range"] {
   position: relative;
   width: 100%;
-  aspect-ratio: 1459 / 1188;
+  aspect-ratio: inherit;
   appearance: none;
   background-color: transparent;
   container: --range / size;
@@ -138,4 +135,25 @@ input[type="range"] {
     background-color: transparent;
   }
 
+}
+
+@supports not (animation-timeline: view()) {
+  .range-wrapper {
+    aspect-ratio: 1459 / 2376;
+
+    &::before,
+    &::after {
+      height: 50%
+    }
+
+    &::after {
+      top: 50%;
+      mask-image: none;
+    }
+  }
+
+
+  input[type="range"] {
+    display: none;
+  }
 }
