@@ -10,8 +10,10 @@
 
 }
 
-.tagline {
-  background-color: #161616;
+.tagline.tagline {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  border: solid 1px rgb(255 255 255 / 0.2);
   border-radius: 100vmax;
   color: #fff;
 
