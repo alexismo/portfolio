@@ -29,7 +29,6 @@
 /* iPhone 5, 6, and 6 Plus, Portrait and Landscape */
 @media only screen and (max-width: 736px) {
   body {
-    font-size: 115%;
     padding-bottom: 125px;
   }
 

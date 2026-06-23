@@ -1,21 +1,3 @@
-@font-face {
-  font-family: "proxima-nova-regular";
-  src: url("../fonts/prxnv-reg.woff2") format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "proxima-nova-bold";
-  src: url("../fonts/prxnv-bld.woff2") format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "proxima-nova-light";
-  src: url("../fonts/prxnv-lt.woff2") format("woff2");
-  font-display: swap;
-}
-
 @view-transition {
   navigation: auto;
 }
@@ -38,6 +20,13 @@
   --links: hsl(208, 72%, 68%);
   --text: var(--white);
   --bg: var(--grey);
+
+  --ff: "proxima-nova-regular", "Nunito", system-ui, sans-serif;
+  --ff: "proxima-vara", sans-serif;
+
+  --ff-reg: "wght" 360, "wdth" 890;
+  --ff-semi: "wght" 580, "wdth" 890;
+  --ff-bold: "wght" 780, "wdth" 890;
 }
 
 * {
@@ -46,26 +35,15 @@
 }
 
 html {
-  font-size: 1rem;
+  font-size: 62.5%;
   line-height: 1.5;
-}
-
-.visually-hidden {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  clip-path: inset(50%) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  white-space: nowrap !important;
-  width: 1px !important;
 }
 
 body {
   color: var(--text);
-  font-family: "proxima-nova-regular", "Helvetica", sans-serif;
+  font-family: var(--ff);
+  font-variation-settings: var(--ff-reg);
+  font-size: 1.8rem;
   line-height: 1.5;
   background-color: var(--bg);
   background-image: linear-gradient(180deg,
@@ -79,15 +57,23 @@ body {
       hsl(240deg 7% 8%) 95%,
       hsl(240deg 9% 9%) 97%,
       hsl(240deg 6% 9%) 100%);
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='4.8' numOctaves='1' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.10' /></svg>");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
+
 
 a,
 a:hover {
   color: var(--links);
-}
-
-.am-bold {
-  font-family: proxima-nova-bold, sans-serif;
 }
 
 .body-img {
@@ -106,22 +92,21 @@ a:hover {
 header {
   margin-top: 80px;
   width: 100%;
-}
 
-header a {
-  color: #fff;
-}
+  a {
+    color: #fff;
+    transition: font-variation-settings 0.225s ease-in;
 
-header a:hover,
-header a:focus {
-  transition: font-weight 200ms ease;
-  color: #fff;
-  font-family: "proxima-nova-regular", Roboto, sans-serif;
-  font-weight: bold;
-  text-decoration: none;
-  outline-offset: 2px;
-  outline-width: 2px;
-  outline-color: white;
+    &:hover,
+    &:focus {
+      color: #fff;
+      font-variation-settings: var(--ff-bold);
+      text-decoration: none;
+      outline-offset: 2px;
+      outline-width: 2px;
+      outline-color: white;
+    }
+  }
 }
 
 .glass {
@@ -152,7 +137,6 @@ footer .socialicons a {
 .socialicons a:focus {
   transition: color 200ms ease;
   color: #93939e;
-  font-family: "proxima-nova-regular", Roboto, sans-serif;
   text-decoration: none;
 }
 
@@ -171,6 +155,13 @@ footer .socialicons a {
 }
 
 h1,
+h2,
+h3,
+h4 {
+  font-variation-settings: var(--ff-semi);
+}
+
+h1,
 h2 {
   margin-block-start: 8px;
   padding: 0;
@@ -185,8 +176,8 @@ header h2 {
 }
 
 .row h1 {
-  font-family: "proxima-nova-bold", Roboto, sans-serif;
-  font-size: 18px;
+  font-variation-settings: var(--ff-bold);
+  font-size: 1.8rem;
   letter-spacing: 1.12px;
   margin-bottom: 4px;
 }
@@ -197,25 +188,31 @@ header h2 {
 }
 
 nav {
-  .header-logo h1 span {
-    font-family: "proxima-nova-light", Roboto, sans-serif;
-    font-size: 18px;
-    letter-spacing: 7.42px;
+  .header-logo h1 span:nth-child(2) {
+    font-size: 1.8rem;
+    font-variation-settings: var(--ff-reg);
+    letter-spacing: 7.6px;
     color: #fff;
   }
 
   ul {
     padding: 0;
-    font-family: "proxima-nova-light", Roboto, sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 7.5rem;
+    position: relative;
   }
 
-  a {
+  li {
+    width: 50%;
+    text-align: center;
+  }
+
+  a:not(:has(h1)) {
     text-decoration: none;
+    text-align: center;
   }
 }
 
@@ -379,7 +376,7 @@ footer #heart:hover {
   width: 100%;
   font-size: 150%;
   text-align: center;
-  font-family: "proxima-nova-light", Roboto, sans-serif;
+  font-weight: 300;
 }
 
 .content section {
@@ -393,8 +390,6 @@ footer #heart:hover {
 }
 
 .content section p {
-  font-family: "proxima-nova-regular", Roboto, sans-serif;
-
   margin-inline: auto;
 }
 
@@ -465,17 +460,15 @@ p.greeting {
   flex-direction: column;
   padding: 16px;
   margin: 0;
-  font-family: "proxima-nova-bold", Roboto, sans-serif;
-  font-size: 3.75rem;
-  font-size: clamp(3.75rem, 3.1rem + 3.25vw, 7rem);
-  font-weight: 700;
+  font-size: clamp(6rem, 4.96rem + 5.2vw, 12.8rem);
+  font-variation-settings: var(--ff-semi);
   line-height: 110%;
-}
 
-p.greeting span {
-  font-size: 24px;
-  line-height: 90%;
-  font-family: "proxima-nova-regular", Roboto, sans-serif;
+  span {
+    font-size: 2.4rem;
+    font-variation-settings: var(--ff-reg);
+    line-height: 90%;
+  }
 }
 
 div#intro {
@@ -540,14 +533,6 @@ section.projects li:has(a:focus-visible) {
 
 .projectniceties p {
   margin-top: 10px;
-}
-
-.viewProject {
-  font-family: "proxima-nova-light", Roboto, sans-serif;
-  text-transform: uppercase;
-  font-size: 20px;
-  bottom: 42px;
-  position: absolute;
 }
 
 .project a.white {
@@ -652,32 +637,8 @@ section.projects li:has(a:focus-visible) {
   scale: 1;
 }
 
-.downchevron {
-  color: var(--grey);
-  width: 150px;
-  margin: 0 auto;
-  position: relative;
-  top: -100px;
-  margin-bottom: -26px;
-  cursor: pointer;
-  text-align: center;
-  font-family: "proxima-nova-light", Roboto, sans-serif;
-  font-size: 16px;
-}
-
-.downchevron img {
-  margin-top: 7px;
-}
-
 div.homegreeting {
   margin-top: -10%;
-}
-
-p.role {
-  font-family: "proxima-nova-light", Roboto, sans-serif;
-  font-weight: 300;
-  font-size: 32px;
-  letter-spacing: 1.6px;
 }
 
 @keyframes handwave {

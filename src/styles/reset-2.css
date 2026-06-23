@@ -58,7 +58,6 @@
     text-wrap: balance;
     margin: revert-layer;
     overflow-wrap: break-word;
-    line-height: 1.3;
   }
 
   p:first-child,
@@ -78,4 +77,17 @@
 
 iframe {
   border: none;
+}
+
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
 }
