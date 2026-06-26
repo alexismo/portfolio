@@ -11,7 +11,8 @@ import compassDSHeroTrans from "../images/projects/compass/compass-ds-trans.png"
 import compassLogo from "../images/projects/compass/compass-logo.svg";
 import compassLogoSmall from "../images/projects/compass/compass-logo-small.svg";
 
-import connectHero from "../images/projects/connect/ubiConnectHero@2x.jpg";
+import connectHero from "../images/projects/connect/ubiConnectHero.jpg";
+import connectDevices from "../images/projects/connect/connect-devices.png";
 import ubiLogo from "../images/projects/connect/ubiconnectLogo.svg";
 import ubiLogoSmall from "../images/projects/connect/ubisoft-logo-small.svg";
 
@@ -40,19 +41,13 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
   <section id="intro">
     <p class="greeting">
       <span>Human-centered</span>
-      Designer
-    </p>
-    <p class="greeting">
+      <span>Designer</span>
       <span>Multi-faceted</span>
-      Coder
-    </p>
-    <p class="greeting">
+      <span>Coder</span>
       <span>Design systems</span>
-      Innovator
-    </p>
-    <p class="greeting">
+      <span>Innovator</span>
       <span>Pun intended</span>
-      Dad joker
+      <span>Dad joker</span>
     </p>
   </section>
   <div style="clear: both"></div>
@@ -113,10 +108,14 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
       </li>
       <li>
         <a class="white" href="/connect">
-          <div class="project" id="project-connect">
+          <div
+            class="project"
+            id="project-connect"
+            style={{ backgroundImage: `url(${connectHero.src})` }}
+          >
             <div class="projectHero">
               <Image
-                src={connectHero}
+                src={connectDevices}
                 style="view-transition-name: --project-connect;"
                 alt="Three screenshots of the Ubisoft connect app: mobile, console, and web."
               />
