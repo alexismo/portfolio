@@ -179,7 +179,7 @@ header h2 {
 .row h1 {
   font-variation-settings: var(--ff-bold);
   font-size: 1.8rem;
-  letter-spacing: 1.12px;
+  letter-spacing: 0.112px;
   margin-bottom: 4px;
 }
 
@@ -198,7 +198,7 @@ nav {
 
   ul {
     padding: 0;
-    font-size: 20px;
+    font-size: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
