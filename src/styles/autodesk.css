@@ -7,7 +7,6 @@
     background-position: 900px -300px;
     background-size: 1800px auto;
   }
-
 }
 
 .tagline.tagline {
@@ -55,7 +54,8 @@
 
   animation: --before-after linear both;
   animation-timeline: --thumb;
-  animation-range: entry calc((50vw - min((50vw), 480px)) - var(--pi)) entry calc((50vw + min(50vw, 480px)) + var(--pi));
+  animation-range: entry calc((50vw - min((50vw), 48rem)) - var(--pi)) entry
+    calc((50vw + min(50vw, 48rem)) + var(--pi));
 
   --adj: calc(var(--valint) * 1%);
 
@@ -77,7 +77,13 @@
   &::after {
     background-image: url("../images/projects/adsk/dotcom-after.png");
     content: "" / "autodesk.com refreshed site";
-    mask-image: linear-gradient(to right, black, black var(--adj), transparent var(--adj), transparent);
+    mask-image: linear-gradient(
+      to right,
+      black,
+      black var(--adj),
+      transparent var(--adj),
+      transparent
+    );
   }
 }
 
@@ -91,12 +97,26 @@ input[type="range"] {
 
   &::-webkit-slider-runnable-track {
     height: 93cqb;
-    background-image: linear-gradient(to right, transparent, transparent var(--adj), white calc(var(--adj) + 1px), transparent calc(var(--adj) + 2px), transparent);
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      transparent var(--adj),
+      white calc(var(--adj) + 1px),
+      transparent calc(var(--adj) + 2px),
+      transparent
+    );
   }
 
   &::-moz-range-track {
     height: 93cqb;
-    background-image: linear-gradient(to right, transparent, transparent var(--adj), white calc(var(--adj) + 1px), transparent calc(var(--adj) + 2px), transparent);
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      transparent var(--adj),
+      white calc(var(--adj) + 1px),
+      transparent calc(var(--adj) + 2px),
+      transparent
+    );
   }
 
   &::-webkit-slider-thumb {
@@ -136,7 +156,6 @@ input[type="range"] {
   &::-webkit-slider-runnable-track {
     background-color: transparent;
   }
-
 }
 
 @supports not (animation-timeline: view()) {
@@ -153,7 +172,6 @@ input[type="range"] {
       mask-image: none;
     }
   }
-
 
   input[type="range"] {
     display: none;
