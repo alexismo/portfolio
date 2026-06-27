@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import Base from "../layouts/Base.astro";
 const title = "Alexis Morin - Designer";
 
@@ -12,6 +12,7 @@ import compassLogo from "../images/projects/compass/compass-logo.svg";
 import compassLogoSmall from "../images/projects/compass/compass-logo-small.svg";
 
 import connectHero from "../images/projects/connect/ubiConnectHero.jpg";
+const connectHeroOptim = await getImage( {src: connectHero});
 import connectDevices from "../images/projects/connect/connect-devices.png";
 import ubiLogo from "../images/projects/connect/ubiconnectLogo.svg";
 import ubiLogoSmall from "../images/projects/connect/ubisoft-logo-small.svg";
@@ -50,10 +51,8 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
       <span>Dad joker</span>
     </p>
   </section>
-  <div style="clear: both"></div>
-  <a name="work"></a>
-  <section class="projects">
-    <ul role="list">
+  <section class="projects" id="work">
+    <ul>
       <li>
         <a class="white" href="/autodesk">
           <div class="project" id="project-adsk">
@@ -111,7 +110,7 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
           <div
             class="project"
             id="project-connect"
-            style={{ backgroundImage: `url(${connectHero.src})` }}
+            style={{ backgroundImage: `url(${connectHeroOptim.src})` }}
           >
             <div class="projectHero">
               <Image
