@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import BlogPost from "../../layouts/BlogPost.astro";
+
+export const getStaticPaths = (async () => {
+  const posts = (
+    await getCollection(
+      "blog",
+      ({ data }) => import.meta.env.DEV || !data.draft,
+    )
+  ).sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime());
+
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    props: { post, prev: posts[i - 1], next: posts[i + 1] },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post, prev, next } = Astro.props;
+const { Content, headings, remarkPluginFrontmatter } = await render(post);
+---
+
+<BlogPost
+  post={post}
+  headings={headings}
+  minutesRead={remarkPluginFrontmatter.minutesRead}
+  prev={prev
+    ? { slug: `/blog/${prev.id}/`, title: prev.data.title }
+    : undefined}
+  next={next
+    ? { slug: `/blog/${next.id}/`, title: next.data.title }
+    : undefined}
+>
+  <Content />
+</BlogPost>
