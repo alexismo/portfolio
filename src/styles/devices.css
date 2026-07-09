@@ -7,7 +7,6 @@
 
 /* tablets in Portrait */
 @media only screen and (min-width: 735px) and (max-width: 1024px) {
-
   section.projects li {
     width: calc(100% - 32px);
     margin: 0 auto;
@@ -33,7 +32,7 @@
     padding-block: 40px;
   }
 
-  header {
+  header.glass {
     width: calc(100% - 1.6rem);
     margin: 0 0.8rem max(env(safe-area-inset-bottom, 0), 0.8rem) 0.8rem;
     position: fixed;
@@ -255,7 +254,7 @@
     padding: 16px;
   }
 
-  .topbar>div {
+  .topbar > div {
     width: 50%;
   }
 

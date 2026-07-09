@@ -1,9 +1,10 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
+import "../styles/blog-post.css";
+
 import Base from "./Base.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import Prose from "../components/Prose.astro";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -49,29 +50,30 @@ const { post, minutesRead, prev, next } = Astro.props;
       <header class="post-header">
         <a href={`/blog/tags/${post.data.category.toLowerCase()}`}
           >{post.data.category}</a
-        > •
+        >{" "}•{" "}
         <FormattedDate date={post.data.pubDate} /> • {minutesRead}
         <h1>{post.data.title}</h1>
         <p class="post-lede">{post.data.description}</p>
       </header>
-      <div class="post-layout">
-        <Prose><slot /></Prose>
+      <slot />
+
+      <div class="tags">
+        {
+          post.data.tags.length > 0 ? (
+            <ul>
+              {post.data.tags.map((t) => (
+                <li>
+                  <a href={`/blog/tags/${t.toLowerCase()}`}>{t}</a>
+                </li>
+              ))}
+            </ul>
+          ) : null
+        }
       </div>
-
-      {
-        post.data.tags.length > 0 ? (
-          <ul>
-            {post.data.tags.map((t) => (
-              <li>
-                <a href={`/blog/tags/${t.toLowerCase()}`}>{t}</a>
-              </li>
-            ))}
-          </ul>
-        ) : null
-      }
-
-      {prev ? <a href={prev.slug}>{prev.title}</a> : null}
-      {next ? <a href={next.slug}>{next.title}</a> : null}
+      <div class="prev-next">
+        {prev ? <a href={prev.slug}>{prev.title}</a> : null}
+        {next ? <a href={next.slug}>{next.title}</a> : null}
+      </div>
     </article>
   </main>
 </Base>
