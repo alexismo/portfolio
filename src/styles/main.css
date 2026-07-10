@@ -76,6 +76,12 @@ body {
 a,
 a:hover {
   color: var(--links);
+
+  &:focus {
+    outline-offset: 2px;
+    outline-width: 2px;
+    outline-color: white;
+  }
 }
 
 .body-img {
@@ -91,7 +97,7 @@ a:hover {
   animation: fadeIn 3s;
 }
 
-header {
+header.glass {
   margin-top: 80px;
   width: 100%;
 
@@ -104,9 +110,6 @@ header {
       color: #fff;
       font-variation-settings: var(--ff-bold);
       text-decoration: none;
-      outline-offset: 2px;
-      outline-width: 2px;
-      outline-color: white;
     }
   }
 }

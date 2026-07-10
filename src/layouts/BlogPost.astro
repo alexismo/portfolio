@@ -57,13 +57,14 @@ const { post, minutesRead, prev, next } = Astro.props;
       </header>
       <slot />
 
+      <hr />
       <div class="tags">
         {
           post.data.tags.length > 0 ? (
             <ul>
               {post.data.tags.map((t) => (
                 <li>
-                  <a href={`/blog/tags/${t.toLowerCase()}`}>{t}</a>
+                  <a href={`/blog/tags/${t.toLowerCase()}`}>#{t}</a>
                 </li>
               ))}
             </ul>
@@ -71,8 +72,26 @@ const { post, minutesRead, prev, next } = Astro.props;
         }
       </div>
       <div class="prev-next">
-        {prev ? <a href={prev.slug}>{prev.title}</a> : null}
-        {next ? <a href={next.slug}>{next.title}</a> : null}
+        {
+          prev ? (
+            <span class="prev">
+              Previous post
+              <a href={prev.slug}>{prev.title}</a>
+            </span>
+          ) : (
+            <span />
+          )
+        }
+        {
+          next ? (
+            <span class="next">
+              Next post
+              <a href={next.slug}>{next.title}</a>
+            </span>
+          ) : (
+            <span />
+          )
+        }
       </div>
     </article>
   </main>

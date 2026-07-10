@@ -1,0 +1,56 @@
+---
+title: "View transitions on the blog"
+description: "Testing shared-element transitions between the blog index and individual post pages"
+pubDate: "2026-07-08"
+category: "Design"
+tags: ["css", "view-transitions"]
+author: "Alexis Morin"
+draft: true
+---
+
+## Smooth navigation between list and detail
+
+View transitions make moving from the blog index to a post feel continuous instead of abrupt.
+Naming key elements—like the post title and hero area—lets the browser animate them across route changes.
+
+### Naming elements for continuity
+
+The blog header uses a dedicated `view-transition-name` so it can morph in place while the rest of the page cross-fades.
+That small detail keeps context visible during navigation.
+
+```css
+.blog-header {
+  view-transition-name: --blog-header;
+  font-size: 6.4rem;
+}
+```
+
+## Embedded demos still work
+
+Rich content should not break when transitions are enabled.
+This post includes the same CodePen embed pattern as the hello-world sample to confirm scripts and iframes survive the page swap.
+
+<p
+  class="codepen"
+  data-height="300"
+  data-pen-title="Background-image transition"
+  data-default-tab="html,result"
+  data-slug-hash="ZYOBXWY"
+  data-user="alexismo"
+  style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+>
+  <span>
+    See the Pen{" "}
+    <a href="https://codepen.io/alexismo/pen/ZYOBXWY">
+      Background-image transition
+    </a>{" "}
+    by Alexis Morin (<a href="https://codepen.io/alexismo">@alexismo</a>) on{" "}
+    <a href="https://codepen.io">CodePen</a>.
+  </span>
+</p>
+<script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+## More transition experiments ahead
+
+Once the baseline works, I want to try animating tag chips and reading-time metadata between routes.
+Sample posts like this one make those experiments easier to validate in the browser.

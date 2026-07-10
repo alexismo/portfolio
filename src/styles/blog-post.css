@@ -10,6 +10,23 @@ article {
     grid-column: 2;
   }
 
+  a {
+    transition-property: text-decoration-color, text-decoration-thickness;
+    transition: 125ms ease;
+    text-decoration-color: inherit;
+  }
+  a:hover {
+    text-decoration-color: var(--text);
+    text-decoration-thickness: 2px;
+  }
+
+  *:focus-visible {
+    outline: solid 2px;
+    outline-color: white;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
   .post-header {
     margin-block: 8rem;
 
@@ -49,6 +66,67 @@ article {
   pre {
     color: var(--shiki-dark) !important;
     background-color: var(--shiki-dark-bg) !important;
+  }
+
+  hr {
+    grid-column: 2/4;
+    border-color: lch(from var(--text) 0.6 c h);
+    margin-block: 0.8rem;
+  }
+
+  .tags {
+    ul {
+      display: flex;
+      gap: 0.8rem;
+    }
+  }
+
+  .prev-next {
+    grid-column: 2 / 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
+    margin-top: 3.6rem;
+    .prev {
+      a {
+        padding-inline-start: 1.2rem;
+      }
+      a::before {
+        content: "←" / "previous article";
+      }
+    }
+    .next {
+      text-align: end;
+      a {
+        justify-content: end;
+        padding-inline-end: 1.2rem;
+      }
+
+      a::after {
+        content: "→" / "next article";
+      }
+    }
+
+    a {
+      display: flex;
+      gap: 0.8rem;
+      border: solid var(--text) 1px;
+      padding-block: 1.6rem;
+      text-decoration: none;
+      color: var(--text);
+      align-items: center;
+      text-box-trim: trim-both;
+      font-size: 2.4rem;
+      transition: font-variation-settings 0.225s ease-in;
+      &:hover,
+      &:focus-visible {
+        font-variation-settings: var(--ff-bold);
+      }
+      &::before,
+      &::after {
+        font-variation-settings: var(--ff-bold);
+      }
+    }
   }
 }
 
