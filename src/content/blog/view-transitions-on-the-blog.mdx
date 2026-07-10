@@ -25,6 +25,15 @@ That small detail keeps context visible during navigation.
 }
 ```
 
+```javascript
+document.addEventListener("astro:after-swap", () => {
+  const header = document.querySelector(".blog-header");
+  if (header) {
+    header.style.viewTransitionName = "--blog-header";
+  }
+});
+```
+
 ## Embedded demos still work
 
 Rich content should not break when transitions are enabled.

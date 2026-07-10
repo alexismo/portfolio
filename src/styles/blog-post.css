@@ -64,8 +64,23 @@ article {
   }
 
   pre {
+    border-radius: 4px;
     color: var(--shiki-dark) !important;
     background-color: var(--shiki-dark-bg) !important;
+
+    margin-inline: -16px;
+    padding-block: 16px;
+
+    margin-bottom: 4.8rem;
+
+    span.line {
+      padding-inline: 16px;
+    }
+
+    * {
+      color: var(--shiki-dark) !important;
+      background-color: var(--shiki-dark-bg) !important;
+    }
   }
 
   hr {
