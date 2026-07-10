@@ -12,7 +12,8 @@ article {
 
   a {
     transition-property: text-decoration-color, text-decoration-thickness;
-    transition: 125ms ease;
+    transition-duration: 125ms;
+    transition-timing-function: ease;
     text-decoration-color: inherit;
   }
   a:hover {
@@ -143,7 +144,4 @@ article {
       }
     }
   }
-}
-
-.post-layout {
 }
