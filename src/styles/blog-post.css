@@ -1,9 +1,11 @@
 article {
   display: grid;
   padding-inline: var(--pi);
+  margin-block-start: 8rem;
+  scroll-target-group: auto;
 
   @media (width > 736px) {
-    grid-template-columns: 1fr 730px 230px 1fr;
+    grid-template-columns: 1fr 680px 280px 1fr;
   }
 
   & > * {
@@ -29,7 +31,7 @@ article {
   }
 
   .post-header {
-    margin-block: 8rem;
+    margin-block-end: 8rem;
 
     h1 {
       text-transform: none;
@@ -37,7 +39,58 @@ article {
   }
 
   .toc {
+    position: sticky;
+    top: 2.4rem;
+    width: 25rem;
+    margin-left: auto;
+    h2 {
+      font-size: 1.25em;
+      margin-block-start: 5.4rem;
+    }
     grid-column: 3;
+    a {
+      display: block;
+      position: relative;
+      margin-top: 1.2rem;
+      padding-left: calc(0.8rem * var(--depth));
+      color: lch(from var(--text) 70 c h);
+      transition: color 125ms ease;
+      text-decoration: none;
+      &:hover {
+        color: var(--text);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        width: 3px;
+        height: 100%;
+        background-color: var(--text);
+        border-radius: 100vmax;
+        transition: transform 225ms ease;
+        transform: scaleY(0%);
+        transform-origin: bottom;
+        @supports (container-type: scroll-state) {
+          @container scroll-state(scrolled: top) {
+            transform-origin: top;
+          }
+        }
+      }
+
+      &:target-current {
+        color: var(--text);
+        &::before {
+          transform: scaleY(100%);
+          transform-origin: top;
+          @supports (container-type: scroll-state) {
+            @container scroll-state(scrolled: top) {
+              transform-origin: bottom;
+            }
+          }
+        }
+      }
+    }
   }
 
   h2,
@@ -46,7 +99,9 @@ article {
     scroll-margin-top: 4.5rem;
 
     &:target {
-      outline: solid var(--links) 2px;
+      outline-style: solid;
+      outline-color: var(--links);
+      outline-width: 2px;
       outline-offset: 3px;
       border-radius: 4px;
     }
@@ -64,10 +119,15 @@ article {
     margin-block: 0 1em;
   }
 
+  code {
+    font-size: 90%;
+  }
+
   pre {
     border-radius: 4px;
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
+    border: solid 1px;
+    border-color: lch(from var(--text) 30 c h);
+    background-color: lch(from var(--shiki-light-bg) l c h / 0.05);
 
     margin-inline: -16px;
     padding-block: 16px;
@@ -79,14 +139,14 @@ article {
     }
 
     * {
-      color: var(--shiki-dark) !important;
-      background-color: var(--shiki-dark-bg) !important;
+      color: var(--shiki-dark);
+      background-color: transparent;
     }
   }
 
   hr {
     grid-column: 2/4;
-    border-color: lch(from var(--text) 0.6 c h);
+    border-color: lch(from var(--text) 40 c h);
     margin-block: 0.8rem;
   }
 
@@ -127,13 +187,14 @@ article {
       display: flex;
       gap: 0.8rem;
       border: solid var(--text) 1px;
+      border-radius: 4px;
       padding-block: 1.6rem;
       text-decoration: none;
       color: var(--text);
       align-items: center;
       text-box-trim: trim-both;
       font-size: 2.4rem;
-      transition: font-variation-settings 0.225s ease-in;
+      transition: font-variation-settings 0.225s ease-out;
       &:hover,
       &:focus-visible {
         font-variation-settings: var(--ff-bold);

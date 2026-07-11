@@ -1,19 +1,21 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
 
 import "../styles/blog-post.css";
 
 import Base from "./Base.astro";
+import TableOfContents from "../components/TableOfContents.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 
 interface Props {
   post: CollectionEntry<"blog">;
-  headings: any[]; // unused for now, ToC comes later
+  headings: MarkdownHeading[];
   minutesRead: string;
   prev?: { slug: string; title: string };
   next?: { slug: string; title: string };
 }
-const { post, minutesRead, prev, next } = Astro.props;
+const { post, headings, minutesRead, prev, next } = Astro.props;
 ---
 
 <Base title={`${post.data.title} - Alexis Morin`} metaD={post.data.description}>
@@ -55,6 +57,7 @@ const { post, minutesRead, prev, next } = Astro.props;
         <h1>{post.data.title}</h1>
         <p class="post-lede">{post.data.description}</p>
       </header>
+      <TableOfContents headings={headings} />
       <slot />
 
       <hr />

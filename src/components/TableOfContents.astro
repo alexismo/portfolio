@@ -1,0 +1,23 @@
+---
+import type { MarkdownHeading } from "astro";
+import { map } from "astro:schema";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+---
+
+<aside class="toc" aria-labelledby="toc">
+  <h2 id="toc">On this page</h2>
+  <nav aria-labelledby="toc">
+    {
+      headings.map((h) => (
+        <a style={`--depth:${h.depth - 2}`} href={`#${h.slug}`}>
+          {h.text}
+        </a>
+      ))
+    }
+  </nav>
+</aside>

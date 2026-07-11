@@ -26,7 +26,7 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 - [x] Task 7 — BlogPost layout (`src/layouts/BlogPost.astro`) (`f16bdc4`)
 - [x] Task 8 — Dynamic post route (`src/pages/blog/[...slug].astro`) (`ba9833f`)
 - [x] ✓ Checkpoint: `npm run dev` → `/blog/hello-world` renders with reading time, date, prose
-- [ ] Task 9 — blog-post.css
+- [x] Task 9 — blog-post.css (`0417f08`)
 - [ ] Task 10 — TableOfContents component
 - [ ] ✓ Checkpoint: ToC visible in sidebar, active section highlights on scroll
 
