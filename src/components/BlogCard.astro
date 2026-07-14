@@ -4,6 +4,9 @@ import FormattedDate from "./FormattedDate.astro";
 interface Props {
   post: CollectionEntry<"blog">;
 }
+
+import "../styles/blog-card.css";
+
 const { post } = Astro.props;
 ---
 

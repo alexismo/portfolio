@@ -15,6 +15,7 @@
 :root {
   --dark-grey: #09090c;
   --grey: #161619;
+  --border-card: rgb(255 255 255 / 0.09);
   --white: #fff;
 
   --links: hsl(208, 72%, 68%);
@@ -166,17 +167,6 @@ header.glass {
   }
 }
 
-footer .socialicons a {
-  color: var(--white);
-}
-
-.socialicons a:hover,
-.socialicons a:focus {
-  transition: color 200ms ease;
-  color: #93939e;
-  text-decoration: none;
-}
-
 .logo {
   margin-block: auto;
 }
@@ -239,6 +229,20 @@ ul.socialicons.socialicons {
     width: auto;
     align-content: center;
   }
+}
+
+footer .socialicons.socialicons {
+  justify-content: center;
+}
+
+footer .socialicons a {
+  color: var(--white);
+}
+
+.socialicons a:hover,
+.socialicons a:focus {
+  transition: color 200ms ease;
+  text-decoration: none;
 }
 
 .icon {
@@ -319,10 +323,6 @@ footer {
 
 footer p {
   text-align: center;
-}
-
-footer .socialicons {
-  justify-content: center;
 }
 
 footer #hand {
@@ -521,7 +521,7 @@ section.projects li {
   border-radius: 12px;
   border-style: solid;
   border-width: 1px;
-  border-color: rgb(255 255 255 / 0.09);
+  border-color: var(--border-card);
   transition: scale 750ms ease;
 }
 

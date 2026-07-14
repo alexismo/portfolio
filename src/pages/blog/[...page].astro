@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import Base from "../../layouts/Base.astro";
+import BlogCard from "../../components/BlogCard.astro";
+
+import "../../styles/blog-card.css";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = (
+    await getCollection(
+      "blog",
+      ({ data }) => import.meta.env.DEV || !data.draft,
+    )
+  ).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+  const allTags = [...new Set(posts.flatMap((p) => p.data.tags))];
+
+  return paginate(posts, { pageSize: 6, props: { allTags } });
+}) satisfies GetStaticPaths;
+
+const { page, allTags } = Astro.props;
+---
+
+<Base>
+  <main class="blog-list">
+    <ul>
+      {
+        page.data.map((p) => (
+          <li>
+            <BlogCard post={p} />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Base>
