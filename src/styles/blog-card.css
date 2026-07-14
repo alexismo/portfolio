@@ -1,12 +1,15 @@
-main.blog-list {
+main.blog-list-page {
   display: grid;
   grid-template-columns: 1fr min(100%, 960px) 1fr;
   margin-block-start: 8rem;
 
-  ul {
+  > * {
+    grid-column: 2;
+  }
+
+  ul.blog-list {
     display: grid;
     gap: 2.4rem;
-    grid-column: 2;
     padding-inline: var(--pi);
 
     article {
@@ -61,5 +64,13 @@ main.blog-list {
         }
       }
     }
+  }
+}
+
+ul.tag-list {
+  display: inline-flex;
+  gap: 0.8rem;
+  li {
+    display: inline;
   }
 }

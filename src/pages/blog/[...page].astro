@@ -4,6 +4,7 @@ import type { GetStaticPaths } from "astro";
 import Base from "../../layouts/Base.astro";
 import BlogCard from "../../components/BlogCard.astro";
 
+import "../../styles/blog.css";
 import "../../styles/blog-card.css";
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -21,9 +22,9 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page, allTags } = Astro.props;
 ---
 
-<Base>
-  <main class="blog-list">
-    <ul>
+<Base title="Blog" metaD="List of blog posts from Alexis Morin's blog">
+  <main class="blog-list-page">
+    <ul class="blog-list">
       {
         page.data.map((p) => (
           <li>
@@ -32,5 +33,39 @@ const { page, allTags } = Astro.props;
         ))
       }
     </ul>
+    <div class="content">
+      <section>
+        <h2>Tags</h2>
+        <ul class="tag-list">
+          {
+            allTags.map((t) => (
+              <li>
+                <a href={`/blog/tags/${t.toLowerCase()}`}>#{t}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      {
+        page.lastPage > 1 && (
+          <div class="content prev-next">
+            {page.url.prev ? (
+              <a href={page.url.prev} class="prev">
+                Earlier posts
+              </a>
+            ) : (
+              <span />
+            )}
+            {page.url.next ? (
+              <a href={page.url.next} class="next">
+                Later posts
+              </a>
+            ) : (
+              <span />
+            )}
+          </div>
+        )
+      }
+    </div>
   </main>
 </Base>
