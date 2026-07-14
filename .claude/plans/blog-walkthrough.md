@@ -32,7 +32,7 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 
 ### Phase 3 — Listing page
 - [x] Task 11 — BlogCard component (`c509768`)
-- [ ] Task 12 — Blog listing page (`src/pages/blog/[...page].astro`)
+- [x] Task 12 — Blog listing page (`src/pages/blog/[...page].astro`) (`4e4e3e4`)
 - [ ] Task 13 — blog.css
 - [ ] ✓ Checkpoint: `/blog` shows card grid, pagination nav
 - [ ] Task 14 — Tag filter pages (`src/pages/blog/tags/[tag].astro`)

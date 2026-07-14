@@ -16,8 +16,8 @@ main.blog-list-page {
       border: solid 1px;
       border-color: var(--border-card);
       border-radius: 12px;
-      transition-property: scale, border-color, outline-color;
-      transition-duration: 750ms;
+      transition-property: border-color, outline-color;
+      transition-duration: 250ms;
       transition-timing-function: ease;
       outline: solid;
       outline-width: 2px;
@@ -35,7 +35,7 @@ main.blog-list-page {
 
       &:has(a:hover),
       &:has(a:focus-visible) {
-        border-color: solid var(--text) 1px;
+        border-color: var(--text);
         outline-color: var(--text);
       }
 
