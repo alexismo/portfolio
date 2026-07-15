@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+
+import Base from "../../../layouts/Base.astro";
+import BlogCard from "../../../components/BlogCard.astro";
+
+import "../../../styles/blog.css";
+import "../../../styles/blog-card.css";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection(
+    "blog",
+    ({ data }) => import.meta.env.DEV || !data.draft,
+  );
+  const tags = [...new Set(posts.flatMap((p) => p.data.tags))];
+
+  return tags.map((tag) => ({
+    params: { tag: tag.toLocaleLowerCase() },
+    props: {
+      posts: posts.filter((p) =>
+        p.data.tags
+          .map((t) => t.toLocaleLowerCase())
+          .includes(tag.toLocaleLowerCase()),
+      ),
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Base
+  title={`#${tag} blog posts - Alexis Morin`}
+  metaD={`Blog posts tagged ${tag} on Alexis Morin's blog`}
+>
+  <main class="blog-list-page">
+    <a href="/blog">← All posts</a>
+    <h2>Blog posts tagged <u>#{tag}</u></h2>
+    <ul class="blog-list">
+      {posts.map((p) => <li>{<BlogCard post={p} />}</li>)}
+    </ul>
+  </main>
+</Base>

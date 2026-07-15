@@ -22,7 +22,10 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page, allTags } = Astro.props;
 ---
 
-<Base title="Blog" metaD="List of blog posts from Alexis Morin's blog">
+<Base
+  title="Blog - Alexis Morin"
+  metaD="List of blog posts from Alexis Morin's blog"
+>
   <main class="blog-list-page">
     <ul class="blog-list">
       {
