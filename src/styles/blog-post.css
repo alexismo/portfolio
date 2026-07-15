@@ -31,7 +31,10 @@ article {
   }
 
   .post-header {
-    margin-block-end: 8rem;
+    margin-block-end: 2rem;
+    @media (width > 736px) {
+      margin-block-end: 8rem;
+    }
 
     h1 {
       text-transform: none;
@@ -39,15 +42,24 @@ article {
   }
 
   .toc {
-    position: sticky;
-    top: 2.4rem;
-    width: 25rem;
-    margin-left: auto;
+    grid-column: 2;
+    @media (width > 736px) {
+      grid-column: 3;
+      position: sticky;
+      top: 2.4rem;
+      width: 25rem;
+      margin-left: auto;
+
+      h2 {
+        margin-block-start: 5.4rem;
+      }
+    }
+
     h2 {
       font-size: 1.25em;
-      margin-block-start: 5.4rem;
+      margin-block-start: 2rem;
     }
-    grid-column: 3;
+
     a {
       display: block;
       position: relative;

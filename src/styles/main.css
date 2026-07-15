@@ -132,8 +132,7 @@ header.glass {
       font-size: 2rem;
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      gap: 7.5rem;
+      justify-content: space-between;
       position: relative;
     }
 
@@ -177,7 +176,7 @@ header.glass {
   height: 80px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   color: #fff;
 }

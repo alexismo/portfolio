@@ -39,7 +39,7 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 - [ ] ✓ Checkpoint: `/blog/tags/<tag>` shows filtered cards
 
 ### Phase 4 — Infrastructure
-- [ ] Task 15 — RSS feed (`src/pages/rss.xml.ts`)
+- [x] Task 15 — RSS feed (`src/pages/rss.xml.ts`) (`e1779b4`)
 - [ ] Task 16 — Nav link + sitemap cleanup
 - [ ] ✓ Checkpoint: `npm run build` passes, sitemap-index.xml in dist/
 
