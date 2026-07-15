@@ -35,7 +35,7 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 - [x] Task 12 — Blog listing page (`src/pages/blog/[...page].astro`) (`4e4e3e4`)
 - [x] Task 13 — blog.css (`dc574ec`)
 - [ ] ✓ Checkpoint: `/blog` shows card grid, pagination nav
-- [ ] Task 14 — Tag filter pages (`src/pages/blog/tags/[tag].astro`)
+- [x] Task 14 — Tag filter pages (`src/pages/blog/tags/[tag].astro`) (`e5fe06f`)
 - [ ] ✓ Checkpoint: `/blog/tags/<tag>` shows filtered cards
 
 ### Phase 4 — Infrastructure

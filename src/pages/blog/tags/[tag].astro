@@ -16,12 +16,10 @@ export const getStaticPaths = (async () => {
   const tags = [...new Set(posts.flatMap((p) => p.data.tags))];
 
   return tags.map((tag) => ({
-    params: { tag: tag.toLocaleLowerCase() },
+    params: { tag: tag.toLowerCase() },
     props: {
       posts: posts.filter((p) =>
-        p.data.tags
-          .map((t) => t.toLocaleLowerCase())
-          .includes(tag.toLocaleLowerCase()),
+        p.data.tags.map((t) => t.toLowerCase()).includes(tag.toLowerCase()),
       ),
     },
   }));
