@@ -1,0 +1,212 @@
+---
+title: "What designers should know before diving into Claude Code"
+description: "A cautionary tale about eager designers stepping foot into a new world"
+pubDate: "2026-07-15"
+category: "claude"
+tags: ["ai", "design-system", "vibe-coding"]
+author: "Alexis Morin"
+---
+
+import "./styles.css";
+
+## Enter Claude Code
+
+Happy new year! It's January 2026. You're a UX designer at a big corporation.
+Management won't shut up about this new AI tool was recently made available: Claude Code. What is he, French? 🥖
+You start reading internal wikis. Looks complicated. I'll stick to Figma.
+
+A few months pass. A designer on your team shares a link. They say it's their design. This isn't a Figma link. 🤯 the work is really good. You immediately pick up what they're putting down. Maybe this Claude thing is worth a try.
+
+### What this post is really about
+
+Over the past months, I've had the privilege to be a point-person for many things AI &amp; Design.
+I've had to make our design system AI-ready: seeing how far we can get off-the-shelf LLMs to leverage our design system and have them regurgitate screens using the system the right way.
+
+It wasn't long before I create a step-by-step tutorial, video walkthroughs _of_ that tutorial.
+Despite the documentation, I've sat with tens of excited UXers, onboarding them to these tools over Zoom because
+one of the steps in the tutorial didn't match up exactly with what they saw on their machine.
+
+Note: examples align with naming from a certain fruity company. This is a conscious decision as many UXers work using that brand of computer.
+
+The most difficult moments of these sessions remains **getting around in Terminal**. This blog post is a long (sorry) and thorough introduction to working in the Terminal,
+with the assumption that you've never used one.
+
+The desire to write a blog post on the topic and help my fellow designer was so strong,
+it's actually the whole reason I set up this blog section on my site.
+
+To this day, designers are daunted by the idea of having to work in a Terminal. It's not visual, so how can it count as design?
+
+## 1. Hello Terminal
+
+Terminal comes pre-installed on macOS. You'll find it under Applications > Utilities, or in Spotlight.
+
+```bash
+alexis@CORPK4M7R92X5N ~ %
+
+
+
+
+```
+
+The first time you launch Terminal, it's not very friendly-looking. What are these characters? What the heck is going on? Let's break it down.
+
+`alexis` ← that's your username, at least what your computer knows you as.
+
+`CORPK4M7R92X5N` ← that's your computer's name. It's the same one you'll see in System Settings → General.
+
+The `@` sign is a convention from Unix systems: `user @ host`.
+
+`~` ← next comes your "present working directory". That character is called a [tilde](https://en.wikipedia.org/wiki/Tilde).
+It's computer shorthand for your "home" directory. On macOS, that's `/Users/alexis` (or whatever your username is).
+That tilde will change as you work in Terminal. We'll see how soon.
+
+`%` is known as the standard prompt. It marks the end of the computer's output and the beginning of where you can start typing.
+
+## 2. How Terminal works
+
+Terminal leverages the same interface as the terminals used in the 1970s to access [mainframe computers](https://en.wikipedia.org/wiki/Mainframe_computer).
+The way it operates hasn't changed much: write a command into Terminal, then run it.
+
+### 2.1 Commands and arguments
+
+**Commands** are something you want your computer to do. It's the equivalent of using app on a phone to do a job.
+
+**Arguments** tell the command **what** you want done. Let's take for example:
+
+```bash
+alexis@CORPK4M7R92X5N ~ % cook potato --temperature 425
+```
+
+| command | argument | option       | option argument |
+| ------- | -------- | ------------ | --------------- |
+| cook    | potato   | --temprature | 425             |
+
+`cook` is the **command**. It's the action.
+
+`potato` is the **argument**. It's the recipient of the action. A command can take one or more arguments.
+
+`--oven` is the option. Not all commands require options. Think of them as modifiers to commands.
+
+`425` as the option argument specifies an argument to its option.
+
+### 2.2 Running commands
+
+To run a command, you type or paste it into the Terminal and hit the <kbd>⮐</kbd> / <kbd>Return</kbd> / <kbd>Enter</kbd> key.
+
+## 3. Essential commands
+
+Good news! You don't have to remember many commands.
+Here's what I found to be the absolute minimum set of commands you should know as a designer.
+
+### 3.1 `cd`
+
+The GOAT. Stands for "change directory".
+`cd` will change your present working directory.
+
+From a fresh Terminal, try running:
+
+```bash
+alexis@CORPK4M7R92X5N ~ % cd Documents
+```
+
+You'll now see
+
+```bash
+alexis@CORPK4M7R92X5N ~ % cd Documents
+alexis@CORPK4M7R92X5N Documents %
+```
+
+Where it used to show `~`, Terminal now shows `Documents`.
+What you did is the same as opening Finder and double-clicking the Documents folder.
+You're now _in_ the Documents folder.
+
+#### 3.1.1 Folder aliases
+
+When using `cd` (or other commands which take a folder as input), there are a 2 important shorthand names for common folders you should remember:
+
+1. `~` tilde is the alias for your home directory: `/Users/alexis`
+2. `..` double period is the alias for "the parent". Running `cd ..` from `/Users/alexis/Documents` will move you to `/Users/alexis`.
+
+### 3.2 `pwd`
+
+Stands for "present working directory" (not for "password"). `pwd` is the sanity check.
+It tells you the full path of your present directory. Try it out!
+
+```bash
+alexis@CORPK4M7R92X5N Documents % pwd
+```
+
+You'll get
+
+```bash
+alexis@CORPK4M7R92X5N Documents % pwd
+/Users/alexis/Documents
+alexis@CORPK4M7R92X5N Documents %
+```
+
+### 3.3 `ls`
+
+Stands for "list". Notice how even `cd Documents` didn't show you what's in the Documents folder?
+That's why there's `ls`. It "lists" what's in your present working directory. Your output will be different and reflect what's in your pwd.
+Give it a spin.
+
+```bash
+alexis@CORPK4M7R92X5N Documents % ls
+projects     funstuff     ideas.pdf     kitten.jpg
+```
+
+### 3.4 `mkdir`
+
+Stands for "make directory". It takes as an argument the name of the directory you want to create.
+Note that if a directory of that same name already exists, a new one will note be created. Let's try it:
+
+```bash
+alexis@CORPK4M7R92X5N Documents % mkdir testing
+```
+
+Will get you
+
+```bash
+alexis@CORPK4M7R92X5N Documents % mkdir testing
+alexis@CORPK4M7R92X5N Documents %
+```
+
+Don't worry, it worked. Try `ls` or `cd` to check.
+
+## 4. UX conventions
+
+As we use software on phones and computers, we've built up muscle memory for how software feels & reacts to us. Habits are strong.
+Mostly due to historical reasons, Terminal doesn't always abide by what we'd call "modern" UX conventions. So let's tweak those expectations.
+
+### 4.1 Silence means success
+
+Some commands tell you something, while others do something.
+
+Commands that **do** something often provide no feedback whatsoever, unless they fail; then you'll get an error message telling you why it failed.
+
+**This is expected.**
+
+### 4.2 Keyboard first
+
+Most Terminals don't allow you to use a mouse to move your typing cursor around.
+You have to use the <kbd>←</kbd> and <kbd>→</kbd> arrows on your keyboard to move your cursor around.
+
+Some more modern Terminal apps (e.g. [Warp](https://app.warp.dev/referral/2EQ68N)) do allow you to use the mouse to change the cursor's location or select, copy and paste text.
+
+Useful shortcuts to know are:
+
+- Ctrl+C
+- Up arrow
+
+### 4.3 A rectangular cursor
+
+We're used to typing with new characters being inserted at the `|` caret, _between_ characters.
+
+Many Terminals still use a `▊` block which sits _atop_ characters.
+Think of the left edge of the block as your vertical bar cursor. It's where characters get inserted.
+
+## What's next?
+
+If you've read up to here, you're one article into your journey to working in harmony with Claude Code. Congrats!
+
+Keep on reading the following articles where I'll build on what you've learned here and start creating agentic prototypes in no time.

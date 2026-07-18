@@ -22,7 +22,6 @@
   --text: var(--white);
   --bg: var(--grey);
 
-  --ff: "proxima-nova-regular", "Nunito", system-ui, sans-serif;
   --ff: "proxima-vara", sans-serif;
 
   --ff-reg: "wght" 360, "wdth" 890;

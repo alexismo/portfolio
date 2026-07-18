@@ -40,7 +40,7 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 
 ### Phase 4 — Infrastructure
 - [x] Task 15 — RSS feed (`src/pages/rss.xml.ts`) (`e1779b4`)
-- [ ] Task 16 — Nav link + sitemap cleanup
+- [x] Task 16 — Nav link + sitemap cleanup (`65992f7`)
 - [ ] ✓ Checkpoint: `npm run build` passes, sitemap-index.xml in dist/
 
 ### Phase 5 — Enhancements

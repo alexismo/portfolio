@@ -60,7 +60,8 @@ const { post, headings, minutesRead, prev, next } = Astro.props;
       </header>
       <TableOfContents headings={headings} />
       <slot />
-
+    </article>
+    <div class="article-footer">
       <hr />
       <div class="tags">
         {
@@ -97,6 +98,6 @@ const { post, headings, minutesRead, prev, next } = Astro.props;
           )
         }
       </div>
-    </article>
+    </div>
   </main>
 </Base>

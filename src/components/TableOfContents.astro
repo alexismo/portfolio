@@ -12,11 +12,13 @@ const { headings } = Astro.props;
   <h2 id="toc">On this page</h2>
   <nav aria-labelledby="toc">
     {
-      headings.map((h) => (
-        <a style={`--depth:${h.depth - 2}`} href={`#${h.slug}`}>
-          {h.text}
-        </a>
-      ))
+      headings
+        .filter((h) => h.depth < 4)
+        .map((h) => (
+          <a style={`--depth:${h.depth - 2}`} href={`#${h.slug}`}>
+            {h.text}
+          </a>
+        ))
     }
   </nav>
 </aside>

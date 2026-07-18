@@ -1,0 +1,4 @@
+code {
+  --shiki-light: #f69d50;
+  color: var(--shiki-light);
+}
