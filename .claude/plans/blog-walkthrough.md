@@ -34,14 +34,14 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 - [x] Task 11 — BlogCard component (`c509768`)
 - [x] Task 12 — Blog listing page (`src/pages/blog/[...page].astro`) (`4e4e3e4`)
 - [x] Task 13 — blog.css (`dc574ec`)
-- [ ] ✓ Checkpoint: `/blog` shows card grid, pagination nav
+- [x] ✓ Checkpoint: `/blog` shows list layout with tag filter rail, pagination works (`200663c`)
 - [x] Task 14 — Tag filter pages (`src/pages/blog/tags/[tag].astro`) (`e5fe06f`)
-- [ ] ✓ Checkpoint: `/blog/tags/<tag>` shows filtered cards
+- [x] ✓ Checkpoint: `/blog/tags/<tag>` shows filtered cards (`200663c`)
 
 ### Phase 4 — Infrastructure
 - [x] Task 15 — RSS feed (`src/pages/rss.xml.ts`) (`e1779b4`)
 - [x] Task 16 — Nav link + sitemap cleanup (`65992f7`)
-- [ ] ✓ Checkpoint: `npm run build` passes, sitemap-index.xml in dist/
+- [x] ✓ Checkpoint: `npm run build` passes, sitemap-index.xml in dist/ (`200663c`)
 
 ### Phase 5 — Enhancements
 - [ ] Task 17 — OG image generation
