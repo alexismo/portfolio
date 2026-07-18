@@ -8,6 +8,7 @@ import "../styles/blog-post.css";
 import Base from "./Base.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import BlueskyComments from "../components/BlueskyComments.astro";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -63,6 +64,14 @@ const { post, headings, minutesRead, prev, next } = Astro.props;
       </header>
       <TableOfContents headings={headings} />
       <slot />
+      {
+        post.data.blueskyPostUri ? (
+          <>
+            <hr />
+            <BlueskyComments postUri={post.data.blueskyPostUri} />
+          </>
+        ) : null
+      }
     </article>
     <div class="article-footer">
       <hr />

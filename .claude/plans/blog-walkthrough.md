@@ -46,13 +46,14 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 ### Phase 5 — Enhancements
 - [x] Task 17 — OG image generation (`200663c`)
 - [x] ✓ Checkpoint: `/blog/hello-world/og.png` is a valid 1200×630 PNG, with favicon and branding (`200663c`)
-- [ ] Task 18 — standard.site well-known endpoint
-- [ ] Task 19 — BlueskyComments component
+- [x] Task 18 — standard.site well-known endpoint (`200663c`)
+- [x] Task 19 — BlueskyComments component
 - [ ] ✓ Checkpoint: Ready to go live
 
 ### Phase 6 — Improvements (after launch)
 - [ ] Task 20 — Mobile ToC collapsing
 - [ ] ✓ Checkpoint: ToC collapses in `<details>` on mobile, expands/closes smoothly
+- [ ] Task 21 — Automate Bluesky post + standard.site record creation on publish
 
 ---
 
@@ -540,6 +541,25 @@ The TableOfContents component should collapse into a `<details>` dropdown on mob
 - Ensure the toggle works smoothly (already natively collapsible)
 
 Commit: `blog: mobile ToC collapsing`
+
+---
+
+**Task 21 — Automate Bluesky post + standard.site record creation on publish**
+
+Currently, `blueskyPostUri` and `standardDocumentUri` are manual frontmatter fields — you have to post to Bluesky yourself, copy the resulting AT URI, and paste it back into the post's frontmatter (and same for standard.site's publication record).
+
+**Goal**: automate this so publishing a post also:
+1. Creates a Bluesky post announcing it (via the Bluesky API — requires app-password or OAuth auth)
+2. Captures the returned AT URI and writes it into the post's frontmatter as `blueskyPostUri`
+3. Creates the corresponding standard.site document record and writes its URI as `standardDocumentUri`
+
+**Open questions to resolve when picking this up**:
+- Where does this run — a GitHub Action on push, or a local script run before committing?
+- Bluesky API auth: app password stored as a repo secret, or OAuth flow?
+- What should the auto-generated Bluesky post text look like (title + link, description, etc.)?
+- standard.site: does creating a record require the publication record (`site.standard.publication`) to exist first?
+
+Commit: `blog: automate bluesky + standard.site publishing`
 
 ---
 
