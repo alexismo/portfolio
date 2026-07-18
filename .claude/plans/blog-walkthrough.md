@@ -44,8 +44,8 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 - [x] ✓ Checkpoint: `npm run build` passes, sitemap-index.xml in dist/ (`200663c`)
 
 ### Phase 5 — Enhancements
-- [ ] Task 17 — OG image generation
-- [ ] ✓ Checkpoint: `/blog/hello-world/og.png` is a valid 1200×630 PNG
+- [x] Task 17 — OG image generation (`200663c`)
+- [x] ✓ Checkpoint: `/blog/hello-world/og.png` is a valid 1200×630 PNG, with favicon and branding (`200663c`)
 - [ ] Task 18 — standard.site well-known endpoint
 - [ ] Task 19 — BlueskyComments component
 - [ ] ✓ Checkpoint: Ready to go live

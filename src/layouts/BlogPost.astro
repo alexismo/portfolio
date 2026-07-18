@@ -39,7 +39,10 @@ const { post, headings, minutesRead, prev, next } = Astro.props;
       property="og:url"
       content={`https://alexismorin.com/blog/${post.id}`}
     />
-    <meta property="og:image" content={`blog/${post.id}/og.png`} />
+    <meta
+      property="og:image"
+      content={`https://alexismorin.com/blog/${post.id}/og.png`}
+    />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content={post.data.title} />

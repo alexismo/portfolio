@@ -8,11 +8,13 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
   site: "https://alexismorin.com",
-  /* vite: {
-    server: {
+  vite: {
+    /* server: {
       allowedHosts: [".ngrok-free.app"],
-    },
-  }, */
+    }, */
+    ssr: { external: ["@resvg/resvg-js"] },
+    optimizeDeps: { exclude: ["@resvg/resvg-js"] },
+  },
   integrations: [mdx(), sitemap()],
   markdown: {
     processor: unified({ remarkPlugins: [remarkReadingTime] }),
