@@ -48,7 +48,7 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 - [x] ✓ Checkpoint: `/blog/hello-world/og.png` is a valid 1200×630 PNG, with favicon and branding (`189e4a9`)
 - [x] Task 18 — standard.site well-known endpoint (`d823114`)
 - [x] Task 19 — BlueskyComments component (`d823114`)
-- [ ] ✓ Checkpoint: Ready to go live
+- [x] ✓ Checkpoint: Ready to go live — deployed to https://alexismorin.com/blog/ (`d823114`)
 
 ### Phase 6 — Improvements (after launch)
 - [ ] Task 20 — Mobile ToC collapsing
