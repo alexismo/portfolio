@@ -28,7 +28,7 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 - [x] ✓ Checkpoint: `npm run dev` → `/blog/hello-world` renders with reading time, date, prose
 - [x] Task 9 — blog-post.css (`0417f08`)
 - [x] Task 10 — TableOfContents component (`8ab9da3`)
-- [ ] ✓ Checkpoint: ToC visible in sidebar, active section highlights on scroll
+- [x] ✓ Checkpoint: ToC visible in sidebar, active section highlights on scroll (`200663c`)
 
 ### Phase 3 — Listing page
 - [x] Task 11 — BlogCard component (`c509768`)
@@ -48,6 +48,11 @@ A guided, hands-on re-implementation of the blog that was auto-built on the `blo
 - [ ] ✓ Checkpoint: `/blog/hello-world/og.png` is a valid 1200×630 PNG
 - [ ] Task 18 — standard.site well-known endpoint
 - [ ] Task 19 — BlueskyComments component
+- [ ] ✓ Checkpoint: Ready to go live
+
+### Phase 6 — Improvements (after launch)
+- [ ] Task 20 — Mobile ToC collapsing
+- [ ] ✓ Checkpoint: ToC collapses in `<details>` on mobile, expands/closes smoothly
 
 ---
 
@@ -520,6 +525,21 @@ const [did, , rkey] = uri.replace('at://', '').split('/');
 **Enable on a post**: add `blueskyPostUri: "at://did:plc:xxx/app.bsky.feed.post/yyy"` to frontmatter. Get the AT URI by opening the Bluesky post, clicking `⋯` → `Copy post link`, then converting: the URL `https://bsky.app/profile/handle/post/RKEY` maps to `at://did:.../app.bsky.feed.post/RKEY`.
 
 Commit: `blog: Bluesky comments component`
+
+---
+
+### Phase 6 — Improvements (after launch)
+
+**Task 20 — Mobile ToC collapsing**
+
+The TableOfContents component should collapse into a `<details>` dropdown on mobile (`<736px`), rather than always being visible.
+
+**What to update** in `src/components/TableOfContents.astro`:
+- Wrap the nav in `<details open>` on desktop, `<details>` (closed) on mobile
+- Use `@media` or resize-aware wrapper to toggle the `open` attribute behavior
+- Ensure the toggle works smoothly (already natively collapsible)
+
+Commit: `blog: mobile ToC collapsing`
 
 ---
 

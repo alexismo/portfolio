@@ -1,6 +1,8 @@
 main.blog-list-page {
   display: grid;
-  grid-template-columns: 1fr min(100%, 960px) 1fr;
+  @media (width > 736px) {
+    grid-template-columns: 1fr 680px 280px 1fr;
+  }
   margin-block-start: 8rem;
   padding-inline: var(--pi);
 
@@ -64,6 +66,24 @@ main.blog-list-page {
         }
       }
     }
+  }
+}
+
+div:has(section .tag-list) {
+  grid-column: 2;
+
+  @media (width > 736px) {
+    section {
+      padding: 0;
+    }
+
+    grid-column: 3;
+    grid-row: 1 / 999;
+    align-self: start;
+    position: sticky;
+    top: 2.4rem;
+    width: 25rem;
+    margin-left: auto;
   }
 }
 

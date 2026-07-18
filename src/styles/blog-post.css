@@ -97,6 +97,7 @@ article {
       color: lch(from var(--text) 70 c h);
       transition: color 125ms ease;
       text-decoration: none;
+
       &:hover {
         color: var(--text);
       }
