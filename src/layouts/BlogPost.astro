@@ -1,0 +1,115 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+
+import "../styles/blog.css";
+import "../styles/blog-post.css";
+
+import Base from "./Base.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import BlueskyComments from "../components/BlueskyComments.astro";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  headings: MarkdownHeading[];
+  minutesRead: string;
+  prev?: { slug: string; title: string };
+  next?: { slug: string; title: string };
+}
+const { post, headings, minutesRead, prev, next } = Astro.props;
+---
+
+<Base title={`${post.data.title} - Alexis Morin`} metaD={post.data.description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={`https://alexismorin.com/blog/${post.id}`} />
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
+    {
+      post.data.standardDocumentUri ? (
+        <link
+          rel="site.standard.document"
+          href={post.data.standardDocumentUri}
+        />
+      ) : null
+    }
+
+    <meta property="og:title" content={post.data.title} />
+    <meta property="og:description" content={post.data.description} />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content={`https://alexismorin.com/blog/${post.id}`}
+    />
+    <meta
+      property="og:image"
+      content={`https://alexismorin.com/blog/${post.id}/og.png`}
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={post.data.title} />
+    <meta property="twitter:description" content={post.data.description} />
+    <meta property="twitter:image" content={`blog/${post.id}/og.png`} />
+    <meta property="twitter:site" content="@thealexismorin" />
+  </Fragment>
+
+  <main class="blog-post-page">
+    <article>
+      <header class="post-header">
+        <a href={`/blog/tags/${post.data.category.toLowerCase()}`}
+          >{post.data.category}</a
+        >{" "}•{" "}
+        <FormattedDate date={post.data.pubDate} /> • {minutesRead}
+        <h1>{post.data.title}</h1>
+        <p class="post-lede">{post.data.description}</p>
+      </header>
+      <TableOfContents headings={headings} />
+      <slot />
+      {
+        post.data.blueskyPostUri ? (
+          <>
+            <hr />
+            <BlueskyComments postUri={post.data.blueskyPostUri} />
+          </>
+        ) : null
+      }
+    </article>
+    <div class="article-footer">
+      <hr />
+      <div class="tags">
+        {
+          post.data.tags.length > 0 ? (
+            <ul>
+              {post.data.tags.map((t) => (
+                <li>
+                  <a href={`/blog/tags/${t.toLowerCase()}`}>#{t}</a>
+                </li>
+              ))}
+            </ul>
+          ) : null
+        }
+      </div>
+      <div class="prev-next">
+        {
+          prev ? (
+            <span class="prev">
+              Previous post
+              <a href={prev.slug}>{prev.title}</a>
+            </span>
+          ) : (
+            <span />
+          )
+        }
+        {
+          next ? (
+            <span class="next">
+              Next post
+              <a href={next.slug}>{next.title}</a>
+            </span>
+          ) : (
+            <span />
+          )
+        }
+      </div>
+    </div>
+  </main>
+</Base>

@@ -1,0 +1,44 @@
+---
+title: "Astro content collections in practice"
+description: "How the blog uses Astro content collections to load, validate, and render MDX posts"
+pubDate: "2026-07-03"
+category: "Development"
+tags: ["astro", "mdx"]
+author: "Alexis Morin"
+draft: true
+---
+
+## Why content collections
+
+Content collections give the blog a typed layer between raw MDX files and the pages that render them.
+Each post's frontmatter is validated at build time, so broken metadata shows up early instead of in production.
+
+### Schema as a contract
+
+The schema defines what every post must include: title, description, publication date, category, tags, and author.
+Optional fields like `updatedDate` and `ogImage` stay available without forcing every draft to fill them in.
+
+### Draft posts stay out of the listing
+
+Setting `draft: true` keeps a post out of public listings while still letting me preview it locally.
+That makes it easier to iterate on layout and typography before publishing.
+
+## A minimal frontmatter example
+
+Every post starts with YAML frontmatter separated from the body by `---` delimiters.
+
+```yaml
+---
+title: "My post title"
+description: "A short summary for listings and SEO"
+pubDate: "2026-07-03"
+category: "Development"
+tags: ["astro"]
+draft: true
+---
+```
+
+## What comes next
+
+Future posts will exercise more of the stack: React islands, view transitions, and embedded demos.
+For now, this one exists to prove the collection loader picks up multiple files and sorts them by date.
