@@ -52,7 +52,9 @@
   position: relative;
   timeline-scope: --thumb;
 
-  animation: --before-after linear both;
+  animation-name: --before-after;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
   animation-timeline: --thumb;
   animation-range: entry calc((50vw - min((50vw), 48rem)) - var(--pi)) entry
     calc((50vw + min(50vw, 48rem)) + var(--pi));
