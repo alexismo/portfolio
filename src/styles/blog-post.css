@@ -254,3 +254,29 @@ article {
     }
   }
 }
+
+.bsky-comment {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  .bsky-name {
+    font-variation-settings: var(--ff-bold);
+  }
+  .bsky-handle {
+    color: lch(from var(--text) 70 c h);
+  }
+  .bsky-avatar {
+    flex: 1;
+    border-radius: 100vmax;
+  }
+  .bsky-comment-body {
+    flex: 4;
+  }
+  .bsky-text {
+    margin-block: 0;
+  }
+  .bsky-datetime {
+    font-size: 1.4rem;
+    color: lch(from var(--text) 70 c h);
+  }
+}

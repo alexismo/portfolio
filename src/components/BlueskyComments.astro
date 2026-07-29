@@ -55,8 +55,15 @@ const bskyUrl = `https://bsky.app/profile/${did}/post/${rkey}`;
   }
 
   function renderComment(reply: any): string {
+    const dateTime = reply.post?.record?.createdAt;
+    const formattedDateTime = Intl.DateTimeFormat("en-CA", {
+      dateStyle: "medium",
+      timeStyle: "short",
+    }).format(new Date(dateTime));
+
     const author = reply.post?.author;
     const text = escapeHtml(reply.post?.record?.text ?? "");
+    const displayName = escapeHtml(author?.displayName ?? "Unknown");
     const handle = escapeHtml(author?.handle ?? "unknown");
     const avatar = author?.avatar ?? "";
 
@@ -64,8 +71,10 @@ const bskyUrl = `https://bsky.app/profile/${did}/post/${rkey}`;
     <div class="bsky-comment">
         <img src="${avatar}" alt="" class="bsky-avatar" />
         <div class="bsky-comment-body">
+            <span class="bsky-name">${displayName}</span>
             <span class="bsky-handle">@${handle}</span>
             <p class="bsky-text">${text}</p>
+            <span class="bsky-datetime">${formattedDateTime}</span> 
         </div>
     </div>
     `;
