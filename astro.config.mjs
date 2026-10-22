@@ -22,6 +22,17 @@ export default defineConfig({
       themes: { light: "github-light", dark: "github-dark-dimmed" },
       defaultColor: false,
       wrap: true,
+      transformers: [
+        {
+          name: "ascii-art",
+          pre(node) {
+            const meta = this.options.meta?.__raw ?? "";
+            if (meta.includes("ascii")) {
+              this.addClassToHast(node, "ascii-art");
+            }
+          },
+        },
+      ],
     },
   },
 });
