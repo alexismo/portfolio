@@ -59,8 +59,15 @@ const { post, headings, minutesRead, prev, next } = Astro.props;
           >{post.data.category}</a
         >{" "}•{" "}
         <FormattedDate date={post.data.pubDate} /> • {minutesRead}
-        <h1>{post.data.title}</h1>
-        <p class="post-lede">{post.data.description}</p>
+        <h1 style={{ viewTransitionName: `--${post.id}-header` }}>
+          {post.data.title}
+        </h1>
+        <p
+          class="post-lede"
+          style={{ viewTransitionName: `--${post.id}-desc` }}
+        >
+          {post.data.description}
+        </p>
       </header>
       <TableOfContents headings={headings} />
       <slot />

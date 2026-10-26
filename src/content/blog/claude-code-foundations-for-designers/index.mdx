@@ -1,9 +1,9 @@
 ---
 title: "Claude Code Foundations for Designers"
 description: "Important Claude Code concepts for designers before you start"
-pubDate: "2026-07-26"
+pubDate: "2026-10-26"
 category: "claude"
-tags: ["ai", "vibe-coding"]
+tags: ["ai", "claude", "vibe-coding"]
 author: "Alexis Morin"
 draft: true
 ---
@@ -11,7 +11,7 @@ draft: true
 import "../what-designers-should-know-before-diving-into-claude-code/styles.css";
 
 If you're here from [my previous blog post](/blog/what-designers-should-know-before-diving-into-claude-code), welcome back. 
-You should have the tools to use Terminal or Finder to make folders and navigate between them. Let's make use of that knowledge! 
+You now know how to use Terminal or Finder to make folders and navigate between them. Let's make use of that knowledge! 
 In this post, I'm going to share some higher order concepts for dealing with Claude Code. 
 
 ## 1 project = 1 folder
@@ -27,7 +27,7 @@ the Home directory `~`
 
 This isn't new. It's how many of us were organizing files on our computers even before the advent of coding agents. 
 
-Here's how to get Claude working in a new project folder:
+You can do this in Finder, but here's how to do it in Terminal and get Claude working in a new project folder:
 
 1. Create the folder structure for your project
 2. Navigate to your project
@@ -52,6 +52,40 @@ alexis@CORPK4M7R92X5N projects % cd my-website
 alexis@CORPK4M7R92X5N projects % claude
  ```
 
+Now you've launched Claude. An orange robot greets you
+and everything you type shows up between two horizontal lines.
+Remember this context change. 
+
+```bash ascii-art
+
+   ▐▛███▜▌    Claude Code v2.1.269
+  ▝▜█████▛▘   Opus 5. (1M context) with medium effort · Claude Max
+    ▘▘ ▝▝     /Users/alexis/projects/my-website · /rc
+
+
+
+
+
+
+
+
+-----------------
+
+-----------------
+```
+
+## Slash commands
+
+Claude Code's graphical user interface (GUI) is in fact a Terminal User Interface (TUI) and by that virtue is mostly invisible
+and therefore can be very hard to discover & learn; doubly so if you're used to using desktop apps with a mouse.
+
+Operations you may be used to performing via a button or a menu are now neatly tucked away behind a `/`.
+Very similar to Terminal commands, "slash commands" only work in Claude Code. 
+No one tells you about them unless you're a fan of [reading documentation](https://code.claude.com/docs/en/commands#all-commands) 
+or the output of the `/help` command.
+
+I mention slash commands here since we'll go over a few of them in ther post.
+
 ## Get to know the context window
 
 You may have heard of the "context window" agents have. This is their short term memory. 
@@ -60,36 +94,55 @@ Most Claude models have a context window of ~1 million tokens.
 
 A token is a basic unit of text used by models as they work. They are more than a letter, but less than a word.
 
-Claude has no long-term memory.[<sup>1</sup>](#footnote-1) Every time you launch Claude, the context window resets. Any instructions 
-you give Claude about how it should answer, or how it you like working will need to be repeated in every conversation
+As a conversation with Claude progress, the context window fills up. 
+The context window isn't visible by default. you can ask Claude to show you how full it is by running the `/context` command.
+Anecdotal evidence says that the quality of Claude's output diminishes once context has reached ~50%.
+When the context window is full, Claude will automatically "compact" the entirety of your conversation in an effort 
+to extend the context window and keep the conversation going. 
+Unfortunately this process is opaque and some important details may get lost in the compaction.
+
+You can reset the context window with the `/clear` command. This is equivalent to exiting Claude and launching into a new conversation.
+It can be useful if the quality of output has decreased, or you want to move on to a different project task.
+
+But be warned! Claude has no long-term memory.[<sup>1</sup>](#footnote-1) Every time you launch Claude, the context window resets. 
+Any previous context from the converastion you just had or instructions 
+you gave Claude about how it should answer, or how it you like working will need to be repeated,
 e.g.: 
 
 - `use our company design system`
 - `respond briefly`, 
+- `modifiy the design we just worked on`,
 - `don't use em-dashes`, 
 - `simplify technical explanations`
 
-But don't fret! Folks have gotten around this constraint in many different ways.
+Don't fret! Folks have gotten around this constraint in many different ways.
 
 ## Everything is a file
 
-What Claude lacks in long-term memory, it makes up in its ability to infer context from its environment: files & folders.
-Any time Claude is launched in a new folder and given an instruction, it will execute commands that inform its context with
-the files inside that folder.
+Unix-based operating systems has a principle whereby
 
-This is how it forms a picture of what's going on in any given folder and "knows" that (e.g.): 
+**Everything is a file**. 
+
+While this concept goes deeper than we need for our purposes, it's a useful mnemonic device when working with agents. 
+This is because Claude's only way to remember things is files. It makes up for this lack with its ability to infer context from its environment: (you guessed it!) **files & folders**.
+
+When Claude is launched in a folder and given an instruction, it starts by getting it bearings by looking at what files it's working with. 
+It does this by executing commands the files inside that folder. Commands similar to those we learned about in the [previous article](/blog/what-designers-should-know-before-diving-into-claude-code).
+
+This is how it forms a picture of what's going on in any given folder and "knows" (e.g.): 
 
 - images are stored in the `pictures/` folder
 - design decisions are stored in the `decision-log.txt` file
 - website source code is stored in `src/` and CSS in `src/styles/`
+- this project uses React and D3.js for data visualisation
 
 Claude excels at running these commands and giving itself the context it needs, but this comes with a time & token cost. 
-To save time and tokens on Claude doing this every time, Anthropic recommend using a CLAUDE.md file to save any 
+To save time and tokens on Claude doing this every time, Anthropic recommend using a `CLAUDE.md` or `AGENTS.md` file to save any 
 important findings that need to persist across conversations.
 
 ### `CLAUDE.md` matters most
 
-`CLAUDE.md` is a file you can write that gets read by Claude at every new session. It's a good idea to 
+Speaking of files, `CLAUDE.md`[<sup>2</sup>](#footnote-2) is a file you can write that gets read by Claude at every new session. It's a good idea to 
 provide very high-level guidance to Claude in that file. Things like: 
 
 - what this project is (a blog, a mobile game)
@@ -102,7 +155,7 @@ For a project that's already in flight, the fastest way to get a half-decent `CL
 
    ▐▛███▜▌    Claude Code v2.1.269
   ▝▜█████▛▘   Opus 5. (1M context) with medium effort · Claude Max
-    ▘▘ ▝▝     /Users/alexis · /rc
+    ▘▘ ▝▝     /Users/alexis/projects/my-website · /rc
 
 
 -----------------
@@ -113,9 +166,24 @@ For a project that's already in flight, the fastest way to get a half-decent `CL
 I recommend you open this file and read it, for accuracy and to get familiar with what's inside. 
 If anything needs updating, change it. It's just a text file!
 
+### `AGENTS.md` works too
+
+As of September 18 2026, Claude added support `AGENTS.md`: a different filename than `CLAUDE.md` to do the same thing. 
+You may prefer `AGENTS.md` over `CLAUDE.md` to ensure other non-Claude coding agents are also able to ingest the 
+same context as you're providing Claude.
+
+## What's next
+
+By now you have an understanding of where & how to operate Claude Code. In the next post, we'll dive into 
+Model choice, Model Context Protocol (MCP) servers and skills. These are quick ways to help Claude Code gain superpowers.
+
 ---
 
-### Footnotes
+## Footnotes
 
-<span id="footnote-1">1.</span> Some plugins exist which allow Claude to save important details about your chats and carry them over to each session. 
+<span id="footnote-1">1.</span> [Auto memory](https://code.claude.com/docs/en/memory#auto-memory) and some plugins 
+exist which allow Claude to save important details about your chats and carry them over to each session. 
 [Learn more about Claude's long-term memory](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_82126ebcc9)
+
+<span id="footnote-2">2.</span> md is the file extension for Markdown: a lightweight markup that makes 
+it easier to format plain text into a structured document using symbols (e.g. `#` for headings and `*` for bold)

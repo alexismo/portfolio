@@ -1,12 +1,14 @@
 main.blog-list-page {
   display: grid;
+
   @media (width > 736px) {
     grid-template-columns: 1fr 680px 280px 1fr;
   }
+
   margin-block-start: 8rem;
   padding-inline: var(--pi);
 
-  > * {
+  >* {
     grid-column: 2;
   }
 
@@ -30,6 +32,7 @@ main.blog-list-page {
         padding: 1.6rem 2.4rem;
         text-decoration: none;
         color: var(--text);
+
         &:focus {
           outline: none;
         }
@@ -91,6 +94,7 @@ ul.tag-list {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+
   li {
     display: inline;
   }
