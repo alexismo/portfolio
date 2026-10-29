@@ -2,3 +2,7 @@ code {
   --shiki-light: #f69d50;
   color: var(--shiki-light);
 }
+
+pre.ascii-art {
+  line-height: 1;
+}
