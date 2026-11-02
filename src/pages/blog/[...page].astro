@@ -38,7 +38,7 @@ const { page, allTags } = Astro.props;
       }
     </ul>
     <div class="content">
-      <section>
+      <aside>
         <h2>Tags</h2>
         <ul class="tag-list">
           {
@@ -49,7 +49,7 @@ const { page, allTags } = Astro.props;
             ))
           }
         </ul>
-      </section>
+      </aside>
       {
         page.lastPage > 1 && (
           <div class="content prev-next">

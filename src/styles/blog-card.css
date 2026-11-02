@@ -2,7 +2,7 @@ main.blog-list-page {
   display: grid;
 
   @media (width > 736px) {
-    grid-template-columns: 1fr 680px 280px 1fr;
+    grid-template-columns: 1fr fit-content(680px) 280px 1fr;
   }
 
   margin-block-start: 8rem;
@@ -72,11 +72,11 @@ main.blog-list-page {
   }
 }
 
-div:has(section .tag-list) {
+div:has(aside .tag-list) {
   grid-column: 2;
 
   @media (width > 736px) {
-    section {
+    aside {
       padding: 0;
     }
 

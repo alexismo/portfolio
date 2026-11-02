@@ -41,6 +41,7 @@ html {
   line-height: 1.5;
   container-type: scroll-state;
   container-name: scroller;
+
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
@@ -52,19 +53,17 @@ body {
   font-variation-settings: var(--ff-reg);
   font-size: 1.8rem;
   background-color: var(--bg);
-  background-image: linear-gradient(
-    180deg,
-    hsl(240deg 14% 4%) 0%,
-    hsl(240deg 17% 5%) 44%,
-    hsl(240deg 11% 5%) 64%,
-    hsl(240deg 13% 6%) 76%,
-    hsl(240deg 9% 6%) 84%,
-    hsl(240deg 9% 7%) 89%,
-    hsl(240deg 11% 7%) 93%,
-    hsl(240deg 7% 8%) 95%,
-    hsl(240deg 9% 9%) 97%,
-    hsl(240deg 6% 9%) 100%
-  );
+  background-image: linear-gradient(180deg,
+      hsl(240deg 14% 4%) 0%,
+      hsl(240deg 17% 5%) 44%,
+      hsl(240deg 11% 5%) 64%,
+      hsl(240deg 13% 6%) 76%,
+      hsl(240deg 9% 6%) 84%,
+      hsl(240deg 9% 7%) 89%,
+      hsl(240deg 11% 7%) 93%,
+      hsl(240deg 7% 8%) 95%,
+      hsl(240deg 9% 9%) 97%,
+      hsl(240deg 6% 9%) 100%);
 
   &::before {
     content: "";
@@ -276,14 +275,12 @@ footer .socialicons a {
 .icon-instagram {
   position: relative;
   mask-image: url("../images/social/instagram.svg");
-  background-image: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
+  background-image: radial-gradient(circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%);
 
   &:after {
     content: "";
@@ -552,16 +549,16 @@ section.projects li:has(a:focus-visible) {
   view-timeline-name: --revealing-image;
   view-timeline-axis: block;
 
+  animation: linear greyscale both;
+  animation-timeline: --revealing-image;
+  animation-range: entry 25% entry 120%;
+
   background-size: cover;
 
   .projectHero,
   .projectDescription {
     grid-area: 1 / -1;
   }
-}
-
-.projectniceties p {
-  margin-top: 10px;
 }
 
 .project a.white {
@@ -582,12 +579,10 @@ section.projects li:has(a:focus-visible) {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(
-      circle at center,
-      #96969699 1px,
-      transparent 2px,
-      transparent
-    );
+    background-image: radial-gradient(circle at center,
+        #96969699 1px,
+        transparent 2px,
+        transparent);
     background-size: 10px 10px;
     mask-image: radial-gradient(circle at 70% 10%, black 0%, transparent 80%);
     z-index: -1;
@@ -606,12 +601,6 @@ section.projects li:has(a:focus-visible) {
 
 .projectTitle img {
   max-width: 300px;
-}
-
-.rightChevron {
-  margin-left: 17px;
-  margin-top: -4px;
-  transition: margin 250ms ease;
 }
 
 .projectHero {
@@ -639,13 +628,8 @@ section.projects li:has(a:focus-visible) {
   object-fit: cover;
   min-height: 400px;
   transition:
-    scale 750ms,
-    filter 750ms;
+    scale 750ms;
   transform-origin: 70% 60%;
-
-  animation: linear greyscale both;
-  animation-timeline: --revealing-image;
-  animation-range: entry 25% entry 120%;
 }
 
 .project:hover .projectHero img {
@@ -755,7 +739,7 @@ dialog#lightbox {
   }
 
   /* lightbox img sizing */
-  > img {
+  >img {
     block-size: auto;
     max-inline-size: 100dvw;
     max-block-size: 90dvh;
