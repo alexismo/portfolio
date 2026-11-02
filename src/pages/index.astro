@@ -27,6 +27,11 @@ import lsLogoSmall from "../images/projects/flame/lightspeed-logo-small.svg";
 
 import aopHero from "../images/projects/aop/aopHero@2x.jpg";
 import jagLogo from "../images/projects/aop/jagAOPLogo@2x.png";
+const jagLogoOptim = await getImage({
+  src: jagLogo,
+  width: 300,
+  densities: [1, 2],
+});
 import jagLogoSmall from "../images/projects/aop/jaguar-logo-small.svg";
 
 import classroomHero from "../images/projects/classroom/classroom@2x.jpg";
@@ -189,11 +194,9 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             </div>
             <div class="projectDescription ondark">
               <picture class="projectTitle">
-                <source srcset={jagLogoSmall.src} media="(max-width: 736px)" />
-                <Image
-                  src={jagLogo}
-                  width={300}
-                  densities={[1, 2]}
+                <source srcset={jagLogoSmall.src} media="(width <= 736px)" />
+                <img
+                  src={jagLogoOptim.src}
                   alt="Jaguar the art of performance"
                 />
               </picture>
