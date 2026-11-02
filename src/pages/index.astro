@@ -12,7 +12,11 @@ import compassLogo from "../images/projects/compass/compass-logo.svg";
 import compassLogoSmall from "../images/projects/compass/compass-logo-small.svg";
 
 import connectHero from "../images/projects/connect/ubiConnectHero.jpg";
-const connectHeroOptim = await getImage({ src: connectHero });
+const connectHeroOptim = await getImage({
+  src: connectHero,
+  width: 960,
+  densities: [1, 2],
+});
 import connectDevices from "../images/projects/connect/connect-devices.png";
 import ubiLogo from "../images/projects/connect/ubiconnectLogo.svg";
 import ubiLogoSmall from "../images/projects/connect/ubisoft-logo-small.svg";
@@ -67,7 +71,8 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             <div class="projectHero">
               <Image
                 src={adskHero}
-                widths={[960]}
+                width={960}
+                densities={[1, 2]}
                 quality="max"
                 format="webp"
                 style="view-transition-name: --project-adsk;"
@@ -93,6 +98,8 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             <div class="projectHero">
               <Image
                 src={compassDSHeroTrans}
+                width={960}
+                densities={[1, 2]}
                 style="view-transition-name: --project-compass;"
                 alt="Composition of Compass Design System components: real estate listing card, badge, row, alert banner, avatar, search"
               />
@@ -123,6 +130,8 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             <div class="projectHero">
               <Image
                 src={connectDevices}
+                width={960}
+                densities={[1, 2]}
                 style="view-transition-name: --project-connect;"
                 alt="Three screenshots of the Ubisoft connect app: mobile, console, and web."
               />
@@ -146,6 +155,8 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             <div class="projectHero">
               <Image
                 src={flameHero}
+                width={960}
+                densities={[1, 2]}
                 style="view-transition-name: --project-flame;"
                 alt="A hand holding a pencil is drawing a composition of components from the Lightspeed Flame Design System: card, icons, badge, button, date range picker."
               />
@@ -169,6 +180,9 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             <div class="projectHero">
               <Image
                 src={aopHero}
+                width={960}
+                densities={[1, 2]}
+                quality={40}
                 style="view-transition-name: --project-aop;"
                 alt="A cloud of red particles draws the outline of a jaguar vehicle."
               />
@@ -176,7 +190,12 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             <div class="projectDescription ondark">
               <picture class="projectTitle">
                 <source srcset={jagLogoSmall.src} media="(max-width: 736px)" />
-                <img src={jagLogo.src} alt="Jaguar the art of performance" />
+                <Image
+                  src={jagLogo}
+                  width={300}
+                  densities={[1, 2]}
+                  alt="Jaguar the art of performance"
+                />
               </picture>
               <div class="project-title-name">
                 <h3>Jaguar Art of Performance</h3>
@@ -192,6 +211,8 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             <div class="projectHero">
               <Image
                 src={classroomHero}
+                width={960}
+                densities={[1, 2]}
                 style="view-transition-name: --project-classroom;"
                 alt="A person sitting with a tablet on their lap. The tablet shows the interface for a virtual english classroom."
               />
@@ -215,6 +236,8 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             <div class="projectHero">
               <Image
                 src={englishLiveHero}
+                width={960}
+                densities={[1, 2]}
                 style="view-transition-name: --project-englishlive;"
                 alt="An iphone with the English Live app. The screen reads: Learn real life language and shows categories for learning: vocabulary, expressions, writing, grammar, reading, listening, speaking, quiz, final task."
               />
@@ -238,6 +261,8 @@ import jblLogoSmall from "../images/projects/ampup/jbl-logo-small.svg";
             <div class="projectHero">
               <Image
                 src={ampupHero}
+                width={960}
+                densities={[1, 2]}
                 style="view-transition-name: --project-ampup;"
                 alt="A tablet docked on a JBL brand speaker dock shows an interface of a music player, large clock, and weather background."
               />
