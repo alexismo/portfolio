@@ -1,6 +1,7 @@
 code {
   --shiki-light: #f69d50;
   color: var(--shiki-light);
+  text-wrap: nowrap;
 }
 
 pre.ascii-art {

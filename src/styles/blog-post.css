@@ -164,6 +164,7 @@ article {
     margin-block-start: 3rem;
   }
 
+  aside,
   p,
   table,
   ol,
@@ -238,6 +239,8 @@ article {
 
     &::before {
       display: block;
+      position: sticky;
+      left: 0;
       content: "Terminal";
       color: var(--text);
       line-height: 1.5;

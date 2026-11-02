@@ -467,9 +467,17 @@ section#intro {
   }
 }
 
-p.greeting {
+ul.greeting {
   margin: 32px 0 0 0;
   padding-inline-start: var(--pi);
+
+  @media (prefers-reduced-motion: no-preference) {
+    li {
+      animation: greeting 600ms ease-out;
+      animation-fill-mode: backwards;
+      animation-delay: calc(sibling-index() * 90ms);
+    }
+  }
 
   span:nth-child(odd) {
     font-size: 2.4rem;
@@ -486,12 +494,6 @@ p.greeting {
     line-height: 110%;
     font-size: clamp(6rem, 4.96rem + 5.2vw, 12.8rem);
     font-variation-settings: var(--ff-semi);
-
-    @media (prefers-reduced-motion: no-preference) {
-      animation: greeting 500ms ease;
-      animation-fill-mode: backwards;
-      animation-delay: calc(sibling-index() * 75ms);
-    }
   }
 }
 
@@ -695,11 +697,6 @@ div.homegreeting {
 html:has(dialog[open]) {
   overflow: clip;
   scrollbar-gutter: stable;
-}
-
-/* user agent styles as important */
-[popover]:not(:popover-open):not(dialog[open]) {
-  display: none !important;
 }
 
 ::view-transition-group(--light-box),

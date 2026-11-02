@@ -34,7 +34,6 @@
     img {
         display: block;
         margin-block-end: auto;
-        max-height: calc(100dvh - 200px);
         max-width: 100%;
     }
 
@@ -64,7 +63,7 @@ dl.images--grid {
     }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (width < 520px) {
     .images--grid {
         width: calc(100vw - 16px);
         padding-inline: 15px;
