@@ -12,6 +12,7 @@ export default defineConfig({
     /* server: {
       allowedHosts: [".ngrok-free.app"],
     }, */
+    build: { cssMinify: 'esbuild' }, // https://github.com/withastro/astro/issues/17940
     ssr: { external: ["@resvg/resvg-js"] },
     optimizeDeps: { exclude: ["@resvg/resvg-js"] },
   },
